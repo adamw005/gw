@@ -1,0 +1,26 @@
+<div class="signup-modal" data-ix="signup-modal">
+	<div class="signup-wrapper"><a class="signup-close"><strong class="signup-close-button" data-ix="signin-modal">X</strong></a>
+		<h3 class="signup-modal-title">Sign up</h3>
+		<p>Please enter your email and password to sign up.</p>
+		<div class="w-form">
+			<%= form_for('user', data: {name: "Email Form"}, html: {id: "email-form", name: "email-form"}, url: user_registration_path ) do |f| %>
+				<label class="form-label" for="email">Email</label>
+				<%= f.email_field :email, data: {name: 'email'}, class: "w-input", id: "email", maxlength: "256", placeholder: "Email", required: "required", type:"email", autofocus: 'true' %>
+
+				<label class="form-label" for="password">Password</label>
+		    <%= f.password_field :password, data: {name: 'password'}, class: "w-input", id: "password", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
+
+				<label class="form-label" for="password_confirmation">Confirm Password</label>
+				<%= f.password_field :password_confirmation, data: {name: 'password_confirmation'}, class: "w-input", id: "password_confirmation", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
+
+			  <%= f.submit "Sign up", class: 'login-button w-button', data: {wait: 'Please wait...'} %>
+			<% end %>
+			<div class="w-form-done">
+				<div>Thank you! Your submission has been received!</div>
+			</div>
+			<div class="w-form-fail">
+				<div>Oops! Something went wrong while submitting the form</div>
+			</div>
+		</div>
+	</div>
+</div>

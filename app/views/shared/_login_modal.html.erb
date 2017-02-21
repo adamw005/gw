@@ -1,0 +1,23 @@
+<div class="login-modal" data-ix="login-modal">
+	<div class="login-wrapper"><a class="login-close"><strong class="login-close-button" data-ix="login-modal-close">X</strong></a>
+		<h3 class="login-modal-title">Sign in</h3>
+		<p>Please enter your email and password to sign in.</p>
+		<div class="w-form">
+			<%= form_for('user', data: {name: "Email Form"}, html: {id: "email-form", name: "email-form"}, url: user_session_path ) do |f| %>
+				<label class="form-label" for="Email-2">Email</label>
+				<%= f.email_field :email, data: {name: 'email'}, class: "w-input", id: "email", maxlength: "256", placeholder: "Email", required: "required", type:"email", autofocus: 'true' %>
+
+				<label class="form-label" for="password-2">Password</label>
+				<%= f.password_field :password, data: {name: 'password'}, class: "w-input", id: "password", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
+
+				<%= f.submit "Sign in", class: 'login-button w-button', data: {wait: 'Please wait...'} %>
+			<% end %>
+			<div class="w-form-done">
+				<div>Thank you! Your submission has been received!</div>
+			</div>
+			<div class="w-form-fail">
+				<div>Oops! Something went wrong while submitting the form</div>
+			</div>
+		</div>
+	</div>
+</div>

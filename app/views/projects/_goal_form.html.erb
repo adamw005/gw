@@ -1,0 +1,9 @@
+<div class="tier-creation-div">
+	<%= f.fields_for :goals do |r| %>
+		<label for="amount">Goal Amount</label>
+		<%= r.text_field :amount, data: {name: 'amount'}, class: "w-input", id: "amount", maxlength: "256", placeholder: "$100", required: "required",  autofocus: 'true' %>
+
+		<label for="body">Goal Body</label>
+		<%= r.text_area :body, data: {name: 'body'}, class: "w-input", id: "body", maxlength: "5000", placeholder: "We do two shows a week...", required: "required", autofocus: 'true' %>
+	<% end %>
+</div>

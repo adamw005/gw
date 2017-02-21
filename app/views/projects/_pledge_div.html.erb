@@ -1,0 +1,7 @@
+<div class="pledge-div">
+	<h4 class="pledge-title"><%= r.title %></h4>
+	<h6 class="patron-count"><%= r.project.subscriptions.count %> Backers</h6>
+	<%= r.body %>
+	<div class="button-block"><a class="pledge-button w-button" href="#">Pledge <%= number_to_currency(r.min_amount, :unit => "$", :precision => 0) %></a>
+	</div>
+</div>

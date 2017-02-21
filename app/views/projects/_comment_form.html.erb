@@ -1,0 +1,9 @@
+<%= form_for :comment, url: {controller: "comments", action: "create"} do |p| %>
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<%= p.hidden_field :project_id, :value => @project.id %>
+	<%= p.hidden_field :user_id, :value => current_user.id %>
+
+	<label for="body">Body</label>
+	<%= p.text_area :body, data: {name: 'body'}, class: "w-input", id: "body", maxlength: "5000", placeholder: "Leave a comment..", required: "required", autofocus: 'true' %>
+	<input class="submit-project-button w-button" data-wait="Please wait..." type="submit" value="Comment"><a class="cancel-button w-button" href="#">Cancel</a>
+<% end %>

@@ -1,0 +1,18 @@
+<div class="nav-bar w-nav" data-animation="default" data-collapse="medium" data-duration="400">
+	<%= link_to('Groundwork', root_path, class: 'nav-home-link w-nav-link') %>
+	<div class="nav-container w-container">
+		<nav class="nav-menu w-nav-menu" role="navigation">
+			<% if user_signed_in? %>
+				<%= link_to('Sign out', destroy_user_session_path, :method => :delete, class: 'w-nav-link') %>
+			<% else %>
+				<a class="w-nav-link" data-ix="signup-button" href="#">Sign up</a>
+				<a class="w-nav-link" data-ix="login-button" href="#">Sign in</a>
+			<% end %>
+			<a class="w-nav-link" href="/projects/index">Browse</a>
+			<a class="nav-start-button w-button" href="/projects/new">Start a Project</a>
+		</nav>
+		<div class="w-nav-button">
+			<div class="w-icon-nav-menu"></div>
+		</div>
+	</div>
+</div>

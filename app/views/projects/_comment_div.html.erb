@@ -1,0 +1,11 @@
+<div class="comment-div">
+	<div class="w-row">
+		<div class="comment-profile w-col w-col-2"><img src="<%= c.user.avatar %>" width="64">
+		</div>
+		<div class="w-col w-col-10">
+			<h5 class="comment-name"><%= c.user.email %></h5>
+			<p class="comment-time"><%= time_ago_in_words(c.created_at) %></p>
+			<p><%= c.body %></p>
+		</div>
+	</div>
+</div>

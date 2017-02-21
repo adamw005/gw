@@ -1,0 +1,41 @@
+<head>
+  <meta charset="utf-8">
+  <title>Landing Page</title>
+  <meta content="Landing Page" property="og:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+      }
+    });
+  </script>
+</head>
+<body>
+	<%= render '/shared/signup_modal' %>
+	<%= render '/shared/login_modal' %>
+  <div class="landing-section-header">
+		<%= render '/shared/nav_landing' %>
+    <div class="landing-main-container w-container">
+      <h1 class="landing-title">Support your <br>favorite makers</h1>
+      <div class="landing-button-div"><a class="landing-browse-button w-button" href="/projects/index">Browse Projects</a><a class="landing-start-button w-button w-preserve-3d" href="/projects/new">Start a Project</a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="w-container">
+      <h1>Core Beliefs of Groundwork</h1>
+      <ul>
+        <li><strong>The market for independent funding is in it's infancy.</strong> Over the next 10 years, the market for funding independent creatives will grow massively. To date, Patreon has supported $100M in funding. 10 years from now the leader in this space will support $5-10B per year.</li>
+        <li><strong>There is still room to be 10x better than the current leaders in this space. </strong>Patreon, KickStarter, etc are great, but are not at all what the market leader will look like in 10 years. I want to find the path to leading this market revolution.</li>
+        <li><strong>The path to become the leader in this space is to make massive pivots based on understanding our early customers.</strong> This venture aims to start with a platform similar to Patreon in order to learn what customers want. We will make hard pivots, understanding that our final model will not resemble where we started.</li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+</body>
+</html>

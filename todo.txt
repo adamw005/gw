@@ -1,0 +1,121 @@
+# Create app and change dir
+cd 'C:\Users\Awinn\Google Drive\Web Apps\groundwork'
+rails new groundwork --database=postgresql
+cd groundwork
+createdb -U postgres groundwork_development
+#add  username: postgres  to config/databse.yml
+
+# Create Models
+rails g model Project title:string type:string body:text charge_occurrence:text user:references
+rails g model Post title:string body:text release:boolean project:references
+rails g model Comment body:text project:references user:references
+rails g model Subscription amount:decimal project:references user:references:reward_tier:references
+rails g model RewardsTier level:integer title:string body:text min_amount:decimal project:references
+rails g model Goals title:string body:text amount:decimal project:references
+
+# Create Controllers and Views
+rails g controller Projects show index create
+rails g controller Pages landing
+
+# Install Devise
+#add  gem 'devise'  to Gemfile
+bundle install
+rails g devise:install
+#add  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }  to config/environments/development.rb
+rails g devise User
+rails g migration add_columns_to_user stripe_customer_nbr:text paypal_customer_nbr:text
+rake db:migrate:up version=20170214001631 #create user table first
+rake db:migrate
+
+# Insert HTML and CSS from Webflow
+
+# Fix links and images in HTML and CSS
+#replace  'project-index.html'  with  '/projects/index'
+#replace  'project-show.html'  with  '/projects/show'
+#replace  'project-create.html'  with  '/projects/new'
+#remove CSS links in all HTML files
+#remove <script src="js/modernizr.js" type="text/javascript"></script>
+#remove <script src="js/webflow.js" type="text/javascript"></script>
+
+# Remove Turbolinks
+#remove from Gemfile
+#remove from application.js
+#remove from application.html.erb
+
+# Change CSS
+#move all 'landing' classes to the top in site.css
+#add  *= require webflow  to application.css
+#add  *= require site
+
+# Move modals and nav to seperate views
+#cut div 'login-modal' to '/shared/_login_modal.html.erb' [only need to do once]
+#cut div 'signup-modal' to '/shared/_signup_modal.html.erb' [only need to do once]
+#cut div 'nav-bar' to '/shared/_nav.html.erb' [only need to do once]
+#cut div 'landinv nav-bar' to '/shared/_nav_landing.html.erb' [only need to do once]
+#put  <%= render '/shared/_partial.html.erb' %>  in each view
+
+
+# Create Rails Forms: Sign in, Sign up, Create Project
+rails g devise:views
+#making a lot of changes to signup/in forms, should only need to do once
+#copy modal html to devise views (for errors and redirect to pages)
+
+# Protect Create Project page from non-users
+#add 	before_action :authenticate_user!, only: [:new, :create]  to ProjectsController
+
+# Make projects/new form fully working
+
+# Create real Show view that uses model data
+
+# Create routes
+
+[x] Create rewards_tier.title field from min_amount
+[x] Add 'Groundwork' home link to top left nav
+[x] Make Rewards partial show on all 3 tabs
+[x] Add 'Goals' form to 'new' just like 'Rewards'
+[x] Add form for creating posts for Project owner
+[x] Add Posts view to Projects/show
+[x] Add User.name and User.avatar (default image like Slack or Twitter)
+[x] Add form for creating comments for users
+[x] Add Comments view to Projects/show
+
+[] Add wysiwyg box to Body form (Project body only)
+
+[] Initialize git
+[] Push to heroku
+
+[] Add image to new Project form (paperclip gem?)
+[] Add functionality to 'Share' button (with gem)
+
+[] Create footer partial
+
+[] Add username field to User (currently using email in comments)
+
+[] Add functionality to Support project with Stripe
+
+
+Manual changes done to css:
+	.listing-profile: max-width: 100%;
+	.button-block: margin-top: 1rem;
+	added .nav-home-link
+	removed .w-nav-link.w--current color: #0082f3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
