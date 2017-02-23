@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 	before_create :create_avatar
 
 	def create_avatar
-		self.avatar = 'https://api.adorable.io/avatars/64/' + (0...8).map { (65 + rand(36)).chr }.join
+		self.avatar = 'https://api.adorable.io/avatars/64/' + (0...8).map { (65 + rand(26)).chr }.join
 	end
 
 end

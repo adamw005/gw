@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def show
 		@project = Project.find(params[:id])
+		@post = @project.posts.build
   end
 
   def index
@@ -27,7 +28,7 @@ class ProjectsController < ApplicationController
 	private
 
 	def project_params
-		params.require(:project).permit(:user_id, :title, :format, :charge_occurrence, :body, rewards_tiers_attributes: [:min_amount, :body], goals_attributes: [:amount, :body])
+		params.require(:project).permit(:user_id, :title, :format, :charge_occurrence, :body, :box_image, rewards_tiers_attributes: [:min_amount, :body], goals_attributes: [:amount, :body])
 	end
 
 end

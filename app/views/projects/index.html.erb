@@ -48,11 +48,11 @@
 			<% @projects.each do |p| %>
 	      <a class="listing-div w-inline-block" href="<%= projects_path(p.id) %>">
 	        <div class="w-row">
-	          <div class="listing-profile w-col w-col-3"><img src="/assets/after-things-Patreon.png" width="128">
+	          <div class="listing-profile w-col w-col-3"><img src="<%= p.box_image.url(:thumb) %>" width="128">
 	          </div>
 	          <div class="w-col w-col-9">
 	            <h4 class="listing-title"><%= p.title %></h4>
-	            <p><%= truncate(p.body, :length => 160) %></p>
+	            <p><%= truncate(strip_tags(p.body), :length => 160) %></p>
 	            <div class="w-clearfix">
 	              <div class="listing-summary">
 	                <p class="backers-count"><strong><%= p.subscriptions.count %></strong>

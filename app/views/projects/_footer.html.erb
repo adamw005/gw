@@ -1,0 +1,31 @@
+<div class="footer-container w-container">
+  <div class="w-row">
+    <div class="w-col w-col-8">
+      <div class="w-row">
+        <div class="w-col w-col-3">
+          <h4 class="footer-home-title">Groundwork</h4>
+          <p class="footer-copyright">&copy; <%= Time.current.year %></p>
+        </div>
+        <div class="w-col w-col-3">
+          <h5 class="footer-h5">Sitemap</h5>
+					<a class="footer-link" href="/">Home</a>
+					<a class="footer-link" href="#">About us</a>
+					<a class="footer-link" href="/projects/index">Browse</a>
+					<% if user_signed_in? %>
+						<%= link_to('Sign out', destroy_user_session_path, :method => :delete, class: 'footer-link') %>
+					<% else %>
+						<a class="footer-link" data-ix="signup-button" href="#">Sign up</a>
+						<a class="footer-link" data-ix="login-button" href="#">Sign in</a>
+					<% end %>
+        </div>
+        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-3"></div>
+      </div>
+    </div>
+    <div class="w-col w-col-4">
+      <h5 class="footer-h5">Connect</h5>
+			<a class="footer-link" href="#">Mail <i class="fa fa-envelope" aria-hidden="true"></i></a>
+			<a class="footer-link" href="#">Twitter <i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>

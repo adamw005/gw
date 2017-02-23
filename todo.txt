@@ -78,18 +78,24 @@ rails g devise:views
 [x] Add User.name and User.avatar (default image like Slack or Twitter)
 [x] Add form for creating comments for users
 [x] Add Comments view to Projects/show
+[x] Initialize git
+[x] Push to heroku
+[x] Pay heroku
+[x] Add wysiwyg box to Body form (Project body and Post form)
+[x] Create footer partial
+	This should be 'our' section on the Project page
+	Sitemap | |    Contact/Social
+	Vectors peeking up from bottom of screen
 
-[] Add wysiwyg box to Body form (Project body only)
+[] Add image to new Project form (paperclip gem)
 
-[] Initialize git
-[] Push to heroku
-
-[] Add image to new Project form (paperclip gem?)
-[] Add functionality to 'Share' button (with gem)
-
-[] Create footer partial
+[] RewardsTiers form is only able to add projects[rewards_tier_attributes][1], can't have multiple
 
 [] Add username field to User (currently using email in comments)
+
+[] Move database to Heroku, use that db on localhost
+
+[] Add functionality to 'Share' button (with gem)
 
 [] Add functionality to Support project with Stripe
 

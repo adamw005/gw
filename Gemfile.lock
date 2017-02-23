@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/michelson/dante2.git
+  revision: 69146fbac2196cc0c99f1cfd663fff74c92dd91b
+  branch: dante-vendors
+  specs:
+    dante2-editor (0.3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -58,7 +65,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
     connection_pool (2.2.1)
-    dante2-editor (0.3.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -86,19 +92,19 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.0)
+    mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
     nokogiri (1.7.0.1-x86-mingw32)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
-    paperclip (4.3.7)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
+    paperclip (5.0.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
       mime-types
-      mimemagic (= 0.3.0)
+      mimemagic (~> 0.3.0)
     pg (0.19.0-x86-mingw32)
     rack (1.6.5)
     rack-test (0.6.3)
@@ -158,6 +164,8 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (2.0.6)
+    trix (0.10.1)
+      rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     tzinfo-data (1.2016.10)
@@ -178,16 +186,17 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-  dante2-editor
+  dante2-editor!
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip (~> 4.1)
+  paperclip (~> 5.0.0)
   pg (~> 0.15)
   rails (= 4.2.6)
   react-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  trix
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

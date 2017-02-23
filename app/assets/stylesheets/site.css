@@ -607,6 +607,33 @@
   margin-bottom: 20px;
 }
 
+
+.footer-copyright {
+  float: none;
+  text-align: right;
+}
+
+.footer-home-title {
+  margin-bottom: 0px;
+  text-align: right;
+}
+
+.footer-h5 {
+  margin-bottom: 0px;
+}
+
+.footer-container {
+  text-align: right;
+	margin-top: 1rem;
+	margin-bottom: 4rem;
+}
+
+.footer-link {
+  display: block;
+	color: #333;
+	text-decoration: none;
+}
+
 html.w-mod-js *[data-ix="login-modal"] {
   display: none;
   opacity: 0;

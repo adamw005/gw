@@ -15,4 +15,5 @@
 //= require react
 //= require 'dante-vendors.js'
 //= require 'Dante2.js'
+//= require trix
 //= require_tree .

@@ -1,10 +1,11 @@
-<%= form_for :post, url: {controller: "posts", action: "create"} do |p| %>
+<%= form_for @post, url: {controller: "posts", action: "create"} do |p| %>
 	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 	<%= p.hidden_field :project_id, :value => @project.id %>
 	<label for="title">Title</label>
-	<%= p.text_field :title, data: {name: 'title'}, class: "w-input", id: "title", maxlength: "256", placeholder: "$1", required: "required",  autofocus: 'true' %>
+	<%= p.text_field :title, data: {name: 'title'}, class: "w-input", id: "title", maxlength: "256", placeholder: "Post Title", required: "required",  autofocus: 'true' %>
 
 	<label for="body">Body</label>
-	<%= p.text_area :body, data: {name: 'body'}, class: "w-input", id: "body", maxlength: "5000", placeholder: "Post an update..", required: "required", autofocus: 'true' %>
+	<%= p.trix_editor :body %>
+	<% # p.text_area :body, data: {name: 'body'}, class: "w-input", id: "body", maxlength: "5000", placeholder: "Post an update..", required: "required", autofocus: 'true' %>
 	<input class="submit-project-button w-button" data-wait="Please wait..." type="submit" value="Create Post"><a class="cancel-button w-button" href="#">Cancel</a>
 <% end %>

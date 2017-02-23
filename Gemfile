@@ -33,9 +33,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'dante2-editor'
+gem 'dante2-editor', git: 'https://github.com/michelson/dante2.git', :branch => "dante-vendors"
 gem 'react-rails' #, '~> 1.4.0'
-gem 'paperclip', '~> 4.1'
+gem "paperclip", "~> 5.0.0"
+gem 'trix'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

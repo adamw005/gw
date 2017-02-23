@@ -34,8 +34,12 @@
 					<%= f.select :charge_occurrence, [['Monthly', 'monthly'], ['Per Episode', 'episodic']], {include_blank: false}, {'data-name': 'charge_occurrence', class: "w-input", maxlength: "256", required: "required"} %>
 
           <label for="body">Body</label>
-					<%= f.text_area :body, data: {name: 'body'}, class: "w-input", id: "body", maxlength: "5000", placeholder: "Body text goes here", required: "required" %>
+					<%= f.trix_editor :body %>
+					<% #f. text_area :body, data: {name: 'body'}, class: "w-input", id: "body", maxlength: "5000", placeholder: "Body text goes here", required: "required" %>
 					<div id="dante2-editor"></div>
+
+					<label for="box_image">Image</label>
+					<%= f.file_field :box_image, data: {name: 'box-image'}, class: "w-input", id: "box-image" %>
 
           <div class="rewards-creation-div" id="rewards-creation-div">
             <h4>Rewards</h4>
@@ -75,7 +79,10 @@
     </div>
   </div>
 </body>
+<footer>
+	<%= render 'footer' %>
+</footer>
 
 <script type="text/javascript">
-	new Dante({ el: "#dante2-editor"});
+	new Dante({ el: "dante2-editor"});
 </script>
