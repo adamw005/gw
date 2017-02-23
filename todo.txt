@@ -86,14 +86,14 @@ rails g devise:views
 	This should be 'our' section on the Project page
 	Sitemap | |    Contact/Social
 	Vectors peeking up from bottom of screen
-
-[] Add image to new Project form (paperclip gem)
+[x] Add image to new Project form (paperclip gem)
+[x] Move database to Heroku, use that db on localhost
 
 [] RewardsTiers form is only able to add projects[rewards_tier_attributes][1], can't have multiple
 
-[] Add username field to User (currently using email in comments)
+[] Fix Trix gem on Heroku
 
-[] Move database to Heroku, use that db on localhost
+[] Add username field to User (currently using email in comments)
 
 [] Add functionality to 'Share' button (with gem)
 

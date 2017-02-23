@@ -4,7 +4,7 @@
 		</div>
 		<div class="w-col w-col-10">
 			<h5 class="comment-name"><%= c.user.email %></h5>
-			<p class="comment-time"><%= time_ago_in_words(c.created_at) %></p>
+			<p class="comment-time"><%= time_ago_in_words(c.created_at) %> ago</p>
 			<p><%= c.body %></p>
 		</div>
 	</div>
