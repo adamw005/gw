@@ -1,10 +1,10 @@
 class Project < ActiveRecord::Base
   belongs_to :user
-	has_many :subscriptions
-	has_many :posts
-	has_many :comments
-	has_many :rewards_tiers
-	has_many :goals
+	has_many :subscriptions,  dependent: :destroy
+	has_many :posts,  dependent: :destroy
+	has_many :comments,  dependent: :destroy
+	has_many :rewards_tiers,  dependent: :destroy
+	has_many :goals,  dependent: :destroy 
 	accepts_nested_attributes_for :rewards_tiers
 	accepts_nested_attributes_for :goals
 	has_attached_file :box_image, styles: { medium: "300x300#", thumb: "100x100#" }, default_url: "/assets/:style/missing.png"
