@@ -23,8 +23,10 @@ default: &default
 
 development:
   <<: *default
-  database: groundwork_development
-  username: postgres
+  host: ec2-54-225-236-102.compute-1.amazonaws.com
+  database: d80rcouql18j4f
+  username: brmmqgqourqutw
+  password: c80e1638caa011060307763f759f994a665a0eeb3d82fd91620554719c5c089f
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
