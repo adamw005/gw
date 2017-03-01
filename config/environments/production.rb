@@ -80,7 +80,6 @@ Rails.application.configure do
 	config.assets.debug = true
 
 	# AWS on Heroku
-	# config/environments/production.rb
 	config.paperclip_defaults = {
 	  storage: :s3,
 	  s3_credentials: {
