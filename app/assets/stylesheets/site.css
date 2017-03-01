@@ -385,6 +385,9 @@
   color: #272727;
 }
 
+.project-post-title {
+	margin-bottom: 0px;
+}
 .comments-title {
   margin-bottom: 0px;
   color: #999;

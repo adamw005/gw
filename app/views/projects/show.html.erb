@@ -83,7 +83,7 @@
 									<%= render 'post_form' %>
 								<% end %>
 								<% @project.posts.order("created_at desc").each do |post| %>
-									<h1><%= post.title %></h1>
+									<h1 class="project-post-title"><%= post.title %></h1>
 									<p class="comment-time"><%= time_ago_in_words(post.created_at) %> ago</p>
 									<p><%= post.body.html_safe %></p>
 								<% end %>
