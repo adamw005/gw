@@ -96,5 +96,15 @@ Rails.application.configure do
 	# config.paperclip_defaults = { s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com", }
 	# The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
 
-
+	#paperclip S3
+	config.paperclip_defaults = {
+	    storage: :s3,
+	    s3_region: ENV["AWS_S3_REGION"],
+	    s3_credentials: {
+	      s3_host_name: ENV["AWS_S3_HOST_NAME"],
+	      bucket: ENV["AWS_S3_BUCKET"],
+	      access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+	      secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
+	      }
+	    } 
 end
