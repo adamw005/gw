@@ -84,7 +84,7 @@
 								<% end %>
 								<% @project.posts.order("created_at desc").each do |post| %>
 									<h1><%= post.title %></h1>
-									<span><%= time_ago_in_words(post.created_at) %></span>
+									<p class="comment-time"><%= time_ago_in_words(post.created_at) %> ago</p>
 									<p><%= post.body.html_safe %></p>
 								<% end %>
 							</div>
