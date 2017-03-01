@@ -37,7 +37,7 @@ gem 'dante2-editor', git: 'https://github.com/michelson/dante2.git', :branch => 
 gem 'react-rails' #, '~> 1.4.0'
 gem "paperclip", "~> 5.0.0"
 gem 'trix'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '~> 2'
 gem 'stripe'
 
 group :development, :test do
