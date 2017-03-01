@@ -106,7 +106,7 @@ Rails.application.configure do
 	#       }
   # }
 	#
-	# config.paperclip_defaults = { s3_host_name: "s3-us-west-1.amazonaws.com", }
+	config.paperclip_defaults = { s3_host_name: "s3-us-west-1.amazonaws.com", }
 	# The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
 
 end
