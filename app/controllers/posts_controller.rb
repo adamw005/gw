@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new post_params
     if @post.save
-      redirect_to projects_path(@post.project_id)
+      redirect_to projects_path(@post.project_id, anchor: "posts")
     else
       render :action => 'new'
     end

@@ -91,10 +91,10 @@ rails g devise:views
 [x] Fix Trix gem on Heroku
 [x] Add username field to User (currently using email in comments)
 [x] Refreshing project#show page should stay on Comments/Posts tab
+[x] Add AWS to paperclip
+
 
 [] RewardsTiers form is only able to add projects[rewards_tier_attributes][1], can't have multiple
-
-[] Add AWS to paperclip
 
 [] Add functionality to 'Share' button
 
