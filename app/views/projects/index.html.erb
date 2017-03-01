@@ -23,28 +23,6 @@
 	<%= render '/shared/nav' %>
   <div class="section-class">
     <div class="w-container">
-      <a class="listing-div w-inline-block" href="/projects/show">
-        <div class="w-row">
-          <div class="listing-profile w-col w-col-3"><img src="/assets/after-things-Patreon.png" width="128">
-          </div>
-          <div class="w-col w-col-9">
-            <h4 class="listing-title">Weird Things Podcast</h4>
-            <p>Bigfoot. Aliens. Yetis. Killer AI’s. Space privateers. Goblins, ghosts, ESP, and full-on shouting arguments over space elevators.</p>
-            <div class="w-clearfix">
-              <div class="listing-summary">
-                <p class="backers-count"><strong>412</strong>
-                </p>
-                <p class="backers-p">backers</p>
-              </div>
-              <div class="listing-summary">
-                <p class="funded-amount"><strong>$508</strong>
-                </p>
-                <p class="perepisode-p">per episode</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
 			<% @projects.each do |p| %>
 	      <a class="listing-div w-inline-block" href="<%= projects_path(p.id) %>">
 	        <div class="w-row">
