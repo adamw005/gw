@@ -273,4 +273,5 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
 	config.authentication_keys = [ :login ]
+	config.secret_key = 'bacbb933707826fa506df812f7a2f16994e81a0c1836cbba3272e6ec1ba478dd64d9f1b254daeda5af601b5d435906baf2f8b9988059136e0688af4613dc122f'
 end
