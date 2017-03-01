@@ -35,7 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'dante2-editor', git: 'https://github.com/michelson/dante2.git', :branch => "dante-vendors"
 gem 'react-rails' #, '~> 1.4.0'
-gem "paperclip", "~> 5.0.0"
+gem "paperclip"
 gem 'trix'
 gem 'aws-sdk', '~> 2'
 gem 'stripe'
