@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
 	has_many :goals,  dependent: :destroy
 	accepts_nested_attributes_for :rewards_tiers
 	accepts_nested_attributes_for :goals
-	has_attached_file :box_image, storage: :s3, styles: { medium: "300x300#", thumb: "100x100#" }, default_url: "/assets/:style/missing.png"
+	has_attached_file :box_image, styles: { medium: "300x300#", thumb: "100x100#" }, default_url: "/assets/:style/missing.png"
  	validates_attachment_content_type :box_image, content_type: /\Aimage\/.*\z/
 
 	def amount_sum
