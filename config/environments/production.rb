@@ -93,8 +93,6 @@ Rails.application.configure do
 	# path: '/:class/:attachment/:id_partition/:style/:filename'
 	# }
 	#
-	config.paperclip_defaults = { s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com", }
-	# The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
 
 	#paperclip S3
 	config.paperclip_defaults = {
@@ -106,5 +104,9 @@ Rails.application.configure do
 	      access_key_id: ENV["AWS_ACCESS_KEY_ID"],
 	      secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
 	      }
-	    }
+  }
+
+	config.paperclip_defaults = { s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com", }
+	# The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
+
 end
