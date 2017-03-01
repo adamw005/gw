@@ -15,11 +15,10 @@ class Project < ActiveRecord::Base
 		Subscription.where(project_id: self.id).sum(:amount)
 	end
 
-
 	private
 
 	def destroy_original
-	  File.unlink(self.photo.path)
+	  File.unlink(self.box_image.path)
 	end
 
 end
