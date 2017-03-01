@@ -93,6 +93,6 @@ Rails.application.configure do
 	path: '/:class/:attachment/:id_partition/:style/:filename'
 	}
 
-	config.paperclip_defaults = { s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com", }
+	# config.paperclip_defaults = { s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com", }
 
 end

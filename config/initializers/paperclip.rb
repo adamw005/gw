@@ -13,4 +13,4 @@
 # When both:
 	# Read-only file system @ dir_s_mkdir - /projects
 # When none:
-	# 
+	# It doesn't use AWS, uses local storage
