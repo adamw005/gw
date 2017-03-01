@@ -198,14 +198,14 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  aws-sdk (~> 2.3)
+  aws-sdk (~> 2)
   byebug
   coffee-rails (~> 4.1.0)
   dante2-editor!
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip (~> 5.0.0)
+  paperclip
   pg (~> 0.15)
   rails (= 4.2.6)
   react-rails
