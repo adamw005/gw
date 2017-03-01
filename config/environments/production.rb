@@ -88,9 +88,10 @@ Rails.application.configure do
 	    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
 	    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
 	    s3_region: ENV['AWS_REGION'],
-	  }
+	  },
+	:url =>':s3_domain_url',
+	:path => '/:class/:attachment/:id_partition/:style/:filename',
+	s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com"
 	}
-
-	config.paperclip_defaults = { s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com", }
 
 end
