@@ -88,17 +88,19 @@ rails g devise:views
 	Vectors peeking up from bottom of screen
 [x] Add image to new Project form (paperclip gem)
 [x] Move database to Heroku, use that db on localhost
+[x] Fix Trix gem on Heroku
+[x] Add username field to User (currently using email in comments)
+[x] Refreshing project#show page should stay on Comments/Posts tab
 
 [] RewardsTiers form is only able to add projects[rewards_tier_attributes][1], can't have multiple
 
-[] Fix Trix gem on Heroku
+[] Add AWS to paperclip
 
-[] Add username field to User (currently using email in comments)
-
-[] Add functionality to 'Share' button (with gem)
+[] Add functionality to 'Share' button
 
 [] Add functionality to Support project with Stripe
 
+[] Add Paypal integration
 
 Manual changes done to css:
 	.listing-profile: max-width: 100%;

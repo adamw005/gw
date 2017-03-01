@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new comment_params
     if @comment.save
-      redirect_to projects_path(@comment.project_id)
+      redirect_to projects_path(@comment.project_id, anchor: "comments")
     else
       render :action => 'new'
     end

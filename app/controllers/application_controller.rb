@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 	# place to return to (for example, we don't want to return to the sign in page
 	# after signing in), which is what the :unless prevents
 	before_filter :store_current_location, :unless => :devise_controller?
+	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	private
   # override the devise helper to store the current location so we can
@@ -16,4 +17,13 @@ class ApplicationController < ActionController::Base
   def store_current_location
     store_location_for(:user, request.url)
   end
+
+	protected
+
+  def configure_permitted_parameters
+    added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  end
+
 end

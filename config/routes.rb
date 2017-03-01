@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 	post 'comments/create'
 	root to: 'pages#landing'
 
+	resources :charges
+
 end

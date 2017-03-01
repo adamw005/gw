@@ -7,6 +7,9 @@
 				<label class="form-label" for="email">Email</label>
 				<%= f.email_field :email, data: {name: 'email'}, class: "w-input", id: "email", maxlength: "256", placeholder: "Email", required: "required", type:"email", autofocus: 'true' %>
 
+				<label class="form-label" for="username">Username</label>
+				<%= f.email_field :username, data: {name: 'username'}, class: "w-input", id: "username", maxlength: "256", placeholder: "Username", required: "required", type:"username", autofocus: 'true' %>
+
 				<label class="form-label" for="password">Password</label>
 		    <%= f.password_field :password, data: {name: 'password'}, class: "w-input", id: "password", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
 

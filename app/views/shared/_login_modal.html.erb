@@ -4,8 +4,8 @@
 		<p>Please enter your email and password to sign in.</p>
 		<div class="w-form">
 			<%= form_for('user', data: {name: "Email Form"}, html: {id: "email-form", name: "email-form"}, url: user_session_path ) do |f| %>
-				<label class="form-label" for="Email-2">Email</label>
-				<%= f.email_field :email, data: {name: 'email'}, class: "w-input", id: "email", maxlength: "256", placeholder: "Email", required: "required", type:"email", autofocus: 'true' %>
+				<label class="form-label" for="Email-2">Login</label>
+				<%= f.email_field :login, data: {name: 'login'}, class: "w-input", id: "login", maxlength: "256", placeholder: "Login", required: "required", type:"login", autofocus: 'true' %>
 
 				<label class="form-label" for="password-2">Password</label>
 				<%= f.password_field :password, data: {name: 'password'}, class: "w-input", id: "password", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>

@@ -44,18 +44,18 @@
   <div>
     <div class="w-tabs" data-duration-in="300" data-duration-out="100">
       <div class="main-tabs-menu w-tab-menu">
-        <a class="main-tab-link w--current w-inline-block w-tab-link" data-w-tab="Tab 1">
+        <a class="main-tab-link w--current w-inline-block w-tab-link" data-w-tab="overview">
           <div>Overview</div>
         </a>
-        <a class="main-tab-link w-inline-block w-tab-link" data-w-tab="Tab 2">
+        <a class="main-tab-link w-inline-block w-tab-link" data-w-tab="posts">
           <div>Posts</div>
         </a>
-        <a class="main-tab-link w-inline-block w-tab-link" data-w-tab="Tab 3">
+        <a class="main-tab-link w-inline-block w-tab-link" data-w-tab="comments">
           <div>Comments</div>
         </a>
       </div>
       <div class="tab-pane w-tab-content">
-        <div class="body-class w--tab-active w-tab-pane" data-w-tab="Tab 1">
+        <div class="body-class w--tab-active w-tab-pane" data-w-tab="overview">
           <div class="tab-div">
             <div class="w-row">
               <div class="w-col w-col-1"></div>
@@ -74,7 +74,7 @@
             </div>
           </div>
         </div>
-        <div class="w-tab-pane" data-w-tab="Tab 2">
+        <div class="w-tab-pane" data-w-tab="posts">
           <div class="tab-div">
             <div class="w-row">
               <div class="w-col w-col-1"></div>
@@ -101,7 +101,7 @@
           </div>
         </div>
 			</div>
-        <div class="w-tab-pane" data-w-tab="Tab 3">
+        <div class="w-tab-pane" data-w-tab="comments">
           <div class="tab-div">
             <div class="w-row">
               <div class="w-col w-col-1"></div>
@@ -143,4 +143,12 @@
 <footer>
 	<%= render 'footer' %>
 </footer>
+<script>
+Webflow.push(function() {
+  $('.w-tab-link').each(function() {
+    $(this).attr('href', '#' + $(this).attr('data-w-tab').toLowerCase().replace(/[^a-z0-9]+/, '-'));
+  });
+  if(location.hash != '') $('.w-tab-link[href="'+location.hash+'"]')[0].click();
+});
+</script>
 </html>
