@@ -44,7 +44,7 @@
           <div class="rewards-creation-div" id="rewards-creation-div">
             <h4>Rewards</h4>
 						<% @indx = 0 %>
-						<%= render 'rewards_tier_form', f: f %>
+						<%= render 'rewards_tier_form', f: f, child_index: @indx %>
           </div>
 					<div>
 						<a class="add-tier-button w-button" id="add-tier-button" href="#">+ Add tier</a>
