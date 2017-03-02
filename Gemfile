@@ -39,6 +39,7 @@ gem "paperclip"
 gem 'trix'
 gem 'aws-sdk', '~> 2'
 gem 'stripe'
+gem "recaptcha", require: "recaptcha/rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

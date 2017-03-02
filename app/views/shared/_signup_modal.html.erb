@@ -16,6 +16,8 @@
 				<label class="form-label" for="password_confirmation">Confirm Password</label>
 				<%= f.password_field :password_confirmation, data: {name: 'password_confirmation'}, class: "w-input", id: "password_confirmation", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
 
+				<%= recaptcha_tags %>
+
 			  <%= f.submit "Sign up", class: 'login-button w-button', data: {wait: 'Please wait...'} %>
 			<% end %>
 			<div class="w-form-done">
