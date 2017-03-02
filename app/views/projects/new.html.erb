@@ -44,12 +44,16 @@
           <div class="rewards-creation-div" id="rewards-creation-div">
             <h4>Rewards</h4>
 						<% @indx = 0 %>
+						<script type="text/javascript">
+					  	var rewards_tier_index = 0;
+						</script>
 						<%= render 'rewards_tier_form', f: f, child_index: @indx %>
           </div>
 					<div>
 						<a class="add-tier-button w-button" id="add-tier-button" href="#">+ Add tier</a>
 						<script type="text/javascript">
 							$('#add-tier-button').click(function() {
+								rewards_tier_index = rewards_tier_index + 1;
 								$("#rewards-creation-div").append('<%= escape_javascript("#{render 'rewards_tier_form', f: f, child_index: @indx}").html_safe %>');
 							});
 						</script>
