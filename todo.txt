@@ -94,11 +94,15 @@ rails g devise:views
 [x] Add AWS to paperclip
 [x] Fill in dummy project data
 
-[] RewardsTiers form is only able to add projects[rewards_tier_attributes][1], can't have multiple
+[] RewardsTiers form and Goals form is only able to add projects[rewards_tier_attributes][1], can't have multiple
 
 [] Add functionality to 'Share' button
 
 [] Add functionality to Support project with Stripe
+
+[] Make section for Goals
+
+[] Rewards Tier column should only be written once, instead of on each tab
 
 [] Add Paypal integration
 
