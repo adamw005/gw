@@ -3,13 +3,11 @@
 
 <div class="tier-creation-div">
 
-		<label for="min_amount">Tier Amount</label>
-		<script>
-			document.getElementById("rewards-creation-div").lastElementChild.insertAdjacentHTML('beforeend','<input data-name="min_amount" class="w-input" id="min_amount" maxlength="256" placeholder="$1" required="required" autofocus="autofocus" size="256" type="text" name="project[rewards_tiers_attributes]['+rewards_tier_index+'][min_amount]">');
-		</script>
 
-		<label for="body">Tier Body</label>
 		<script>
+			document.getElementById("rewards-creation-div").lastElementChild.insertAdjacentHTML('beforeend','<label for="min_amount">Tier Amount</label>');
+			document.getElementById("rewards-creation-div").lastElementChild.insertAdjacentHTML('beforeend','<input data-name="min_amount" class="w-input" id="min_amount" maxlength="256" placeholder="$1" required="required" autofocus="autofocus" size="256" type="text" name="project[rewards_tiers_attributes]['+rewards_tier_index+'][min_amount]">');
+			document.getElementById("rewards-creation-div").lastElementChild.insertAdjacentHTML('beforeend','<label for="body">Tier Body</label>');
 			document.getElementById("rewards-creation-div").lastElementChild.insertAdjacentHTML('beforeend', '<textarea data-name="body" class="w-input" id="body" maxlength="5000" placeholder="We email you the show notes and links..." required="required" autofocus="autofocus" name="project[rewards_tiers_attributes]['+rewards_tier_index+'][body]"></textarea>');
 		</script>
 
