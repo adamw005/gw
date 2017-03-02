@@ -50,7 +50,7 @@
 						<a class="add-tier-button w-button" id="add-tier-button" href="#">+ Add tier</a>
 						<script type="text/javascript">
 							$('#add-tier-button').click(function() {
-								$("#rewards-creation-div").append('<%= escape_javascript("#{render 'rewards_tier_form', f: f}").html_safe %>');
+								$("#rewards-creation-div").append('<%= escape_javascript("#{render 'rewards_tier_form', f: f, child_index: @indx}").html_safe %>');
 							});
 						</script>
 					</div>
