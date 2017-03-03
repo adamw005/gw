@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
   def create
 		@user = User.new(params[:user].permit(:email, :username, :password, :password_confirmation))
 		if verify_recaptcha(model: @user) && @user.save
-		  redirect_to @user
+		  redirect_to root_path
 		else
 		  render 'new'
 		end
