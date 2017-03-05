@@ -1,0 +1,2 @@
+class MonthlyTransactionQueue < TransactionQueue
+end

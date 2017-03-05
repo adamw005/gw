@@ -1,0 +1,2 @@
+class ReleaseTransactionQueue < TransactionQueue
+end

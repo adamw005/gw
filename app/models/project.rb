@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
 	has_many :releases
 	has_many :past_transactions
 	delegate :monthly_subscriptions, :release_subscriptions, to: :subscriptions
+	delegate :monthly_transaction_queues, :release_transaction_queues, to: :transaction_queues
 	accepts_nested_attributes_for :rewards_tiers
 	accepts_nested_attributes_for :goals
 	has_attached_file :box_image, styles: { original: "300x300#", medium: "300x300#", thumb: "100x100#" }, default_url: "/assets/:style/missing.png"
