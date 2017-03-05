@@ -1,6 +1,8 @@
 class RewardsTier < ActiveRecord::Base
   belongs_to :project
 	has_many :subscriptions
+	has_many :transactoin_queues
+	has_many :past_transactions
 	before_create :set_title
 
 def set_title

@@ -154,6 +154,8 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
+    recaptcha (4.1.0)
+      json
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     sass (3.4.23)
@@ -209,6 +211,7 @@ DEPENDENCIES
   pg (~> 0.15)
   rails (= 4.2.6)
   react-rails
+  recaptcha
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   stripe

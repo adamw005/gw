@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  amount: 
+  project_id: 
+  user_id: 
+  reward_tier_id: 
+  release_id: 
+
+two:
+  type: 
+  amount: 
+  project_id: 
+  user_id: 
+  reward_tier_id: 
+  release_id: 

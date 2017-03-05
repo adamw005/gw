@@ -5,6 +5,9 @@ class Project < ActiveRecord::Base
 	has_many :comments,  dependent: :destroy
 	has_many :rewards_tiers,  dependent: :destroy
 	has_many :goals,  dependent: :destroy
+	has_many :transaction_queues
+	has_many :releases
+	has_many :past_transactions
 	accepts_nested_attributes_for :rewards_tiers
 	accepts_nested_attributes_for :goals
 	has_attached_file :box_image, styles: { original: "300x300#", medium: "300x300#", thumb: "100x100#" }, default_url: "/assets/:style/missing.png"

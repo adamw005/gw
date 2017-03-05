@@ -67,7 +67,19 @@ rails g devise:views
 
 # Create real Show view that uses model data
 
-# Create routes
+# Create Payment style Models
+rails g model Account user:references
+
+rails g model Balance account:references
+rails g model StripeInfo account:references
+rails g model BankInfo bank_num:string routing_num:string account:references
+
+rails g model Release project:references
+rails g migration add_columns_to_subscriptions type:string rewards_tier:references release:references
+rails g model TransactionQueue type:string amount:decimal project:references user:references rewards_tier:references release:references
+rails g model PastTransaction type:string amount:decimal project:references status:string user:references rewards_tier:references release:references
+
+
 
 [x] Create rewards_tier.title field from min_amount
 [x] Add 'Groundwork' home link to top left nav
@@ -93,12 +105,20 @@ rails g devise:views
 [x] Refreshing project#show page should stay on Comments/Posts tab
 [x] Add AWS to paperclip
 [x] Fill in dummy project data
-
-[] RewardsTiers form and Goals form is only able to add projects[rewards_tier_attributes][1], can't have multiple
+[x] Recaptcha
+[x] RewardsTiers form and Goals form is only able to add projects[rewards_tier_attributes][1], can't have multiple
 
 [] Add functionality to 'Share' button
 
-[] Add functionality to Support project with Stripe
+[] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
+
+[] Create Payment Structure
+	[] Write out User stories
+	[] Turn User stories into decision tree
+	[] List all Models and Attributes
+	[] Create the Models in rails
+	[] Create logic in rails
+	[] Add functionality to Support project with Stripe
 
 [] Make section for Goals
 
@@ -114,6 +134,12 @@ Manual changes done to css:
 
 
 
+
+
+Demog.io
+
+[] Make more mobile friendly
+[] Can we make the site generate a Twitter image for links?
 
 
 
