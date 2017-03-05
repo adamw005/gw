@@ -4,6 +4,7 @@ class RewardsTier < ActiveRecord::Base
 	has_many :transactoin_queues
 	has_many :past_transactions
 	before_create :set_title
+	delegate :monthly_subscriptions, :release_subscriptions, to: :subscriptions
 
 def set_title
 	if project.charge_occurrence == 'episodic' then occ = 'episode' else occ = 'month' end

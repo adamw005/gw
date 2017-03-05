@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
 	has_many :transaction_queues
 	has_many :past_transactions
+	delegate :monthly_subscriptions, :release_subscriptions, to: :subscriptions
 	before_create :create_avatar
 	# Virtual attribute for authenticating by either username or email
 	# This is in addition to a real persisted field like 'username'
