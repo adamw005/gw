@@ -4,7 +4,7 @@
 			<strong class="subscribe-close-button" data-ix="subscribe-modal-close">X</strong>
 		</a>
 		<h3 class="subscribe-modal-title">Subscribe</h3>
-		<p>Please enter your email and password to sign in.</p>
+		<p>Please choose your subscription.</p>
 		<div class="w-form">
 			<% if current_user %>
 				<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscriptions_create_path ) do |f| %>
