@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 	post 'projects/create'
 	post 'posts/create'
 	post 'comments/create'
+	post 'subscriptions/create'
 	root to: 'pages#landing'
 
 	resources :charges
