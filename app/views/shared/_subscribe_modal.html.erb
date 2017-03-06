@@ -6,7 +6,7 @@
 		<h3 class="subscribe-modal-title">Subscribe</h3>
 		<p>Please enter your email and password to sign in.</p>
 		<div class="w-form">
-			<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscription_path ) do |f| %>
+			<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscriptions_create_path ) do |f| %>
 				<%= f.hidden_field :user_id, value: current_user.id %>
 				<%= f.hidden_field :project_id, value: @project.id %>
 				<%= f.hidden_field :type, :value => @project.format %>
