@@ -6,19 +6,19 @@
 		<h3 class="subscribe-modal-title">Subscribe</h3>
 		<p>Please enter your email and password to sign in.</p>
 		<div class="w-form">
-			<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscriptions_create_path ) do |f| %>
-				<% if current_user %>
+			<% if current_user %>
+				<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscriptions_create_path ) do |f| %>
 					<%= f.hidden_field :user_id, value: current_user.id %>
+					<%= f.hidden_field :project_id, value: @project.id %>
+					<%= f.hidden_field :type, :value => @project.format %>
+					<label class="form-label" for="tier">Tier</label>
+					<%= collection_select(:project, :rewards_tiers_id, @project.rewards_tiers.all, :id, :title, prompt: true, data: {name: 'login'}, class: "w-input", id: "login", maxlength: "256", placeholder: "Login", required: "required", type:"login", autofocus: 'true') %>
+
+					<label class="form-label" for="amount">Amount</label>
+					<%= f.text_field :amount, data: {name: 'amount'}, class: "w-input", id: "amount", maxlength: "256", placeholder: "$1", required: "required" %>
+
+					<%= f.submit "Subscribe", class: 'subscribe-button w-button', data: {wait: 'Please wait...'} %>
 				<% end %>
-				<%= f.hidden_field :project_id, value: @project.id %>
-				<%= f.hidden_field :type, :value => @project.format %>
-				<label class="form-label" for="tier">Tier</label>
-				<%= collection_select(:project, :rewards_tiers_id, @project.rewards_tiers.all, :id, :title, prompt: true, data: {name: 'login'}, class: "w-input", id: "login", maxlength: "256", placeholder: "Login", required: "required", type:"login", autofocus: 'true') %>
-
-				<label class="form-label" for="amount">Amount</label>
-				<%= f.text_field :amount, data: {name: 'amount'}, class: "w-input", id: "amount", maxlength: "256", placeholder: "$1", required: "required" %>
-
-				<%= f.submit "Subscribe", class: 'subscribe-button w-button', data: {wait: 'Please wait...'} %>
 			<% end %>
 			<div class="w-form-done">
 				<div>Thank you! Your submission has been received!</div>
