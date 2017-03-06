@@ -16,7 +16,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new subscription_params
     if @subscription.save
-      redirect_to subscriptions_path(@subscription)
+      redirect_to projects_path(@subscription.project.id)
     else
       render :action => 'new'
     end
