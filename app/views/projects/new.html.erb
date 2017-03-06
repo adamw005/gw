@@ -31,7 +31,7 @@
 					<%= f.text_field :format, data: {name: 'format'}, class: "w-input", id: "format", maxlength: "256", placeholder: "e.g. Podcasts, Graphic Novels, etc", required: "required", type:"text" %>
 
           <label for="charge_occurrence">When to charge</label>
-					<%= f.select :charge_occurrence, [['Monthly', 'monthly'], ['Per Episode', 'episodic']], {include_blank: false}, {'data-name': 'charge_occurrence', class: "w-input", maxlength: "256", required: "required"} %>
+					<%= f.select :charge_occurrence, [['Monthly', 'MonthlySubscription'], ['Per Episode', 'ReleaseSubscription']], {include_blank: false}, {'data-name': 'charge_occurrence', class: "w-input", maxlength: "256", required: "required"} %>
 
           <label for="body">Body</label>
 					<%= f.trix_editor :body %>

@@ -10,7 +10,7 @@
 				<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscriptions_create_path ) do |f| %>
 					<%= f.hidden_field :user_id, value: current_user.id %>
 					<%= f.hidden_field :project_id, value: @project.id %>
-					<%= f.hidden_field :type, :value => @project.format %>
+					<%= f.hidden_field :type, :value => @project.charge_occurrence %>
 					<label class="form-label" for="tier">Tier</label>
 					<%= f.collection_select :rewards_tiers_id, @project.rewards_tiers.all, :id, :title, prompt: true, data: {name: 'login'}, class: "w-input", id: "login", maxlength: "256", placeholder: "Login", required: "required", type:"login", autofocus: 'true' %>
 
