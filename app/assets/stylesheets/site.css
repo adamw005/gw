@@ -637,7 +637,7 @@
 	text-decoration: none;
 }
 
-.subscription-modal {
+.subscribe-modal {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -652,7 +652,7 @@
   text-align: center;
 }
 
-.subscription-wrapper {
+.subscribe-wrapper {
   width: 450px;
   max-width: 100%;
   margin: auto;
@@ -660,24 +660,24 @@
   background-color: #fff;
 }
 
-.subscription-button {
+.subscribe-button {
   border-radius: 10px;
   background-color: #30a9de;
 }
 
-.subscription-close {
+.subscribe-close {
   display: block;
   margin-top: 0px;
   color: #999;
   text-align: right;
 }
 
-.subscription-close-button {
+.subscribe-close-button {
   font-size: 20px;
   cursor: pointer;
 }
 
-.subscription-close-button:hover {
+.subscribe-close-button:hover {
   background-color: transparent;
   color: #353535;
 }
@@ -698,7 +698,7 @@ html.w-mod-js *[data-ix="signup-modal"] {
   transform: scale(1.1, 1.1);
 }
 
-html.w-mod-js *[data-ix="subscription-modal"] {
+html.w-mod-js *[data-ix="subscribe-modal"] {
   display: none;
   opacity: 0;
   -webkit-transform: scale(1.1, 1.1);
