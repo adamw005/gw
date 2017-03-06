@@ -2,6 +2,7 @@ class Subscription < ActiveRecord::Base
   belongs_to :project
   belongs_to :user
 	belongs_to :rewards_tier
+	validates_uniqueness_of :user_id, scope: :project_id
 	scope :monthly_subscriptions, -> { where(type: 'MonthlySubscription') }
 	scope :release_subscriptions, -> { where(type: 'ReleaseSubscription') }
 
