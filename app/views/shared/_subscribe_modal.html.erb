@@ -12,7 +12,7 @@
 					<%= f.hidden_field :project_id, value: @project.id %>
 					<%= f.hidden_field :type, :value => @project.charge_occurrence %>
 					<label class="form-label" for="tier">Tier</label>
-					<%= f.collection_select :rewards_tier_id, @project.rewards_tiers.all, :id, :title, {}. data: {name: 'rewards-tier-id'}, html: {class: "w-input", id: "rewards-tier-id", maxlength: "256", required: "required"} %>
+					<%= f.collection_select :rewards_tier_id, @project.rewards_tiers.all, :id, :title, {}, 'data-name': 'rewards-tier-id', class: "w-input", id: "rewards-tier-id", maxlength: "256", required: "required"} %>
 
 					<label class="form-label" for="amount">Amount</label>
 					<%= f.text_field :amount, data: {name: 'amount'}, class: "w-input", id: "amount", maxlength: "256", placeholder: "$1", required: "required" %>
