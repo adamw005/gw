@@ -1,0 +1,29 @@
+<div class="subscribe-modal" data-ix="subscribe-modal">
+	<div class="subscribe-wrapper">
+		<a class="subscribe-close">
+			<strong class="subscribe-close-button" data-ix="subscribe-modal-close">X</strong>
+		</a>
+		<h3 class="subscribe-modal-title">Subscribe</h3>
+		<p>Please enter your email and password to sign in.</p>
+		<div class="w-form">
+			<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscription_path ) do |f| %>
+				<%= f.hidden_field :user_id, value: current_user.id %>
+				<%= f.hidden_field :project_id, value: @project.id %>
+				<%= f.hidden_field :type, :value => @project.format %>
+				<label class="form-label" for="tier">Tier</label>
+				<%= collection_select(:project, :rewards_tiers_id, @project.rewards_tiers.all, :id, :title, prompt: true, data: {name: 'login'}, class: "w-input", id: "login", maxlength: "256", placeholder: "Login", required: "required", type:"login", autofocus: 'true') %>
+
+				<label class="form-label" for="amount">Amount</label>
+				<%= f.text_field :amount, data: {name: 'amount'}, class: "w-input", id: "amount", maxlength: "256", placeholder: "$1", required: "required" %>
+
+				<%= f.submit "Subscribe", class: 'subscribe-button w-button', data: {wait: 'Please wait...'} %>
+			<% end %>
+			<div class="w-form-done">
+				<div>Thank you! Your submission has been received!</div>
+			</div>
+			<div class="w-form-fail">
+				<div>Oops! Something went wrong while submitting the form</div>
+			</div>
+		</div>
+	</div>
+</div>

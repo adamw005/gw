@@ -75,7 +75,7 @@ rails g model StripeInfo account:references
 rails g model BankInfo bank_num:string routing_num:string account:references
 
 rails g model Release project:references
-rails g migration add_columns_to_subscriptions type:string rewards_tier:references release:references
+rails g migration add_columns_to_subscriptions type:string rewards_tier:references
 rails g model TransactionQueue type:string amount:decimal project:references user:references rewards_tier:references release:references
 rails g model PastTransaction type:string amount:decimal project:references status:string user:references rewards_tier:references release:references
 

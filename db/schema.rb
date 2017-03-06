@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305205627) do
+ActiveRecord::Schema.define(version: 20170305215158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,11 +144,9 @@ ActiveRecord::Schema.define(version: 20170305205627) do
     t.datetime "updated_at",      null: false
     t.string   "type"
     t.integer  "rewards_tier_id"
-    t.integer  "release_id"
   end
 
   add_index "subscriptions", ["project_id"], name: "index_subscriptions_on_project_id", using: :btree
-  add_index "subscriptions", ["release_id"], name: "index_subscriptions_on_release_id", using: :btree
   add_index "subscriptions", ["rewards_tier_id"], name: "index_subscriptions_on_rewards_tier_id", using: :btree
   add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id", using: :btree
 
@@ -212,7 +210,6 @@ ActiveRecord::Schema.define(version: 20170305205627) do
   add_foreign_key "rewards_tiers", "projects"
   add_foreign_key "stripe_infos", "accounts"
   add_foreign_key "subscriptions", "projects"
-  add_foreign_key "subscriptions", "releases"
   add_foreign_key "subscriptions", "rewards_tiers"
   add_foreign_key "subscriptions", "users"
   add_foreign_key "transaction_queues", "projects"
