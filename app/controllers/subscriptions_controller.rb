@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
+	before_action :amount_matches_tier, only: [:new, :create]
 
   def show
 		# @subscription = Subscription.find(params[:id])
@@ -27,6 +28,12 @@ class SubscriptionsController < ApplicationController
 
 	def subscription_params
 		params.require(:subscription).permit(:type, :amount, :project_id, :user_id, :rewards_tier_id)
+	end
+
+	def amount_matches_tier
+		if subscription_params(:amount) >= RewardsTier.find(subscription_params(:rewards_tier_id)).amount
+			raise 'Error: Wrong Rewards Tier'
+		end
 	end
 
 end
