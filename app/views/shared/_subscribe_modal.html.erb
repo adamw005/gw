@@ -17,7 +17,7 @@
 
 					<select data-name="rewards-tier-id" class="w-input" id="rewards-tier-id" maxlength="256" required="required" name="subscription[rewards_tier_id]"><option value=""></option>
 						<% @project.rewards_tiers.all do |rt| %>
-							<option value="<%= rt.id %>"><%= rt.title %></option>
+							<option value="<%= rt.id %>" <%= 'disabled' if Subscription.exists?(user_id: current_user, project_id: @project.id, rewards_tier_id: r.id) %>><%= rt.title %></option>
 						<% end %>
 					</select>
 
