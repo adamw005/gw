@@ -682,6 +682,51 @@
   color: #353535;
 }
 
+.stripe-info-modal {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 9999;
+  display: none;
+  height: 100%;
+  margin-top: 0px;
+  padding-top: 80px;
+  background-color: rgba(0, 0, 0, .5);
+  text-align: center;
+}
+
+.stripe-info-wrapper {
+  width: 450px;
+  max-width: 100%;
+  margin: auto;
+  padding: 10px 20px 20px;
+  background-color: #fff;
+}
+
+.stripe-info-button {
+  border-radius: 10px;
+  background-color: #30a9de;
+}
+
+.stripe-info-close {
+  display: block;
+  margin-top: 0px;
+  color: #999;
+  text-align: right;
+}
+
+.stripe-info-close-button {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.stripe-info-close-button:hover {
+  background-color: transparent;
+  color: #353535;
+}
+
 html.w-mod-js *[data-ix="login-modal"] {
   display: none;
   opacity: 0;
@@ -699,6 +744,14 @@ html.w-mod-js *[data-ix="signup-modal"] {
 }
 
 html.w-mod-js *[data-ix="subscribe-modal"] {
+  display: none;
+  opacity: 0;
+  -webkit-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+
+html.w-mod-js *[data-ix="stripe-info-modal"] {
   display: none;
   opacity: 0;
   -webkit-transform: scale(1.1, 1.1);

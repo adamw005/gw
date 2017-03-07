@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	post 'posts/create'
 	post 'comments/create'
 	post 'subscriptions/create'
+	post 'stripe_infos/create'
 	root to: 'pages#landing'
 
 	resources :charges

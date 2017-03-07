@@ -18,9 +18,10 @@
 </head>
 <body class="body-class">
 	<%= render '/shared/signup_modal' %>
-	<%= render '/shared/subscribe_modal' %>
 	<%= render '/shared/login_modal' %>
 	<%= render '/shared/nav' %>
+	<%= render 'subscribe_modal' %>
+	<%= render 'add_card_modal' %>
   <div class="header-section">
     <div class="w-container">
       <h1 class="main-title">Contribute to <%= @project.title %></h1>
@@ -35,7 +36,7 @@
             <h5 class="summary-h6">backers</h5>
             <h1 class="summary-h1"><%= number_to_currency(@project.amount_sum, :unit => "$", precision: 0) %></h1>
             <h5 class="summary-h6">per episode</h5>
-            <div class="w-clearfix"><a class="support-button w-button" data-ix="subscribe-button" href="#">Support Project</a><a class="share-button w-button" href="#">Share</a>
+            <div class="w-clearfix"><a class="support-button w-button" data-ix="stripe-info-button" href="#">Support Project</a><a class="share-button w-button" href="#">Share</a>
             </div>
           </div>
         </div>

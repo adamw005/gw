@@ -4350,6 +4350,9 @@ Webflow.require('ix').init([
   {"slug":"login-button","name":"login-button","value":{"style":{},"triggers":[{"type":"click","selector":".login-modal","preserve3d":true,"stepsA":[{"display":"block","opacity":1,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1,"scaleY":1,"scaleZ":1}],"stepsB":[]}]}},
 	{"slug":"subscribe-modal","name":"subscribe-modal","value":{"style":{"display":"none","opacity":0,"scaleX":1.1,"scaleY":1.1,"scaleZ":1},"triggers":[]}},
   {"slug":"subscribe-modal-close","name":"subscribe-modal-close","value":{"style":{},"triggers":[{"type":"click","selector":".subscribe-modal","preserve3d":true,"stepsA":[{"display":"none","opacity":0,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1.1,"scaleY":1.1,"scaleZ":1}],"stepsB":[]}]}},
-	{"slug":"subscribe-button","name":"subscribe-button","value":{"style":{},"triggers":[{"type":"click","selector":".subscribe-modal","preserve3d":true,"stepsA":[{"display":"block","opacity":1,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1,"scaleY":1,"scaleZ":1}],"stepsB":[]}]}}
+	{"slug":"subscribe-button","name":"subscribe-button","value":{"style":{},"triggers":[{"type":"click","selector":".subscribe-modal","preserve3d":true,"stepsA":[{"display":"block","opacity":1,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1,"scaleY":1,"scaleZ":1}],"stepsB":[]}]}},
+	{"slug":"stripe-info-modal","name":"stripe-info-modal","value":{"style":{"display":"none","opacity":0,"scaleX":1.1,"scaleY":1.1,"scaleZ":1},"triggers":[]}},
+  {"slug":"stripe-info-modal-close","name":"stripe-info-modal-close","value":{"style":{},"triggers":[{"type":"click","selector":".stripe-info-modal","preserve3d":true,"stepsA":[{"display":"none","opacity":0,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1.1,"scaleY":1.1,"scaleZ":1}],"stepsB":[]}]}},
+	{"slug":"stripe-info-button","name":"stripe-info-button","value":{"style":{},"triggers":[{"type":"click","selector":".stripe-info-modal","preserve3d":true,"stepsA":[{"display":"block","opacity":1,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1,"scaleY":1,"scaleZ":1}],"stepsB":[]}]}}
 
 ]);
