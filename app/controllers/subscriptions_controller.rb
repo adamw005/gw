@@ -22,6 +22,9 @@ class SubscriptionsController < ApplicationController
 				# If it doesn't save, it's probably because use can only subscribe to project-rewards_tier once [	validates_uniqueness_of :user_id, scope: :rewards_tier_id ] in subscription.rb
 	      redirect_to projects_path(@subscription.project.id)
 	    end
+		else
+			# Amount entered was probably less than chosen tier
+			redirect_to projects_path(@subscription.project.id)
 		end
   end
 
