@@ -31,7 +31,7 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def amount_matches_tier
-		if subscription_params[:amount] >= RewardsTier.find(subscription_params[:rewards_tier_id]).min_amount
+		if subscription_params[:amount].to_i >= RewardsTier.find(subscription_params[:rewards_tier_id]).min_amount.to_i
 			raise 'Error: Wrong Rewards Tier'
 		end
 	end
