@@ -16,7 +16,7 @@
 					<%= f.select("rewards_tier_id", @project.rewards_tiers.all.collect {|rt| [ rt.title, rt.id ] }, { include_blank: true }, {'data-name': 'rewards-tier-id', class: "w-input", id: "rewards-tier-id", maxlength: "256", required: "required"}) %>
 
 					<select data-name="rewards-tier-id" class="w-input" id="rewards-tier-id" maxlength="256" required="required" name="subscription[rewards_tier_id]"><option value=""></option>
-						<% @project.rewards_tiers.all do |rt| %>
+						<% @project.rewards_tiers.each do |rt| %>
 							<option value="<%= rt.id %>" <%= 'disabled' if Subscription.exists?(user_id: current_user, project_id: @project.id, rewards_tier_id: r.id) %>><%= rt.title %></option>
 						<% end %>
 					</select>
