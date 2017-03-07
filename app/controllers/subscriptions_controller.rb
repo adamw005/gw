@@ -24,7 +24,7 @@ class SubscriptionsController < ApplicationController
 	    end
 		else
 			# Amount entered was probably less than chosen tier
-			redirect_to projects_path(@subscription.project.id)
+			redirect_to projects_path(subscription_params[:project_id])
 		end
   end
 
