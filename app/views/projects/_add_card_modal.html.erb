@@ -6,7 +6,7 @@
 		<h3 class="stripe-info-modal-title">Subscribe</h3>
 		<p>Please choose your subscription.</p>
 		<div class="w-form">
-			<%= form_tag stripe_infos_path do %>
+			<%= form_tag stripe_infos_create_path do %>
 			  <article>
 			    <% if flash[:error].present? %>
 			      <div id="error_explanation">
