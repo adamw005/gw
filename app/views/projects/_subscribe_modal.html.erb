@@ -1,5 +1,5 @@
 <!-- If the user has a card on file, let them subscribe. Else charge them for first time -->
-<% if current_user.accounts %>
+<% if current_user.accounts && current_user.accounts.stripe_infos %>
 	<div class="subscribe-modal" data-ix="subscribe-modal">
 		<div class="subscribe-wrapper">
 			<a class="subscribe-close">
