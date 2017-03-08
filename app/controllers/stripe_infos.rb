@@ -7,10 +7,10 @@ class StripeInfosController < ApplicationController
 	    :email => params[:stripeEmail],
 	    :source  => params[:stripeToken]
 	  )
-
-	rescue Stripe::CardError => e
-	  flash[:error] = e.message
-	  redirect_to new_charge_path
-
+		redirect_to :back
+		rescue Stripe::CardError => e
+		  flash[:error] = e.message
+		  redirect_to new_charge_path
 	end
+
 end
