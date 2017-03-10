@@ -6,7 +6,7 @@
 		<!-- If user is signed in and is subscribed at this rewards_tier level -->
 		<% if current_user && Subscription.exists?(user_id: current_user, project_id: @project.id, rewards_tier_id: r.id) %>
 			<a style="background-color:#c1c1c1;" class="pledge-button w-button" data-ix="subscribe-button" href="#">Pledge <%= number_to_currency(r.min_amount, :unit => "$", :precision => 0) %></a>
-			<%= link_to 'Cancel Subscription', subscriptions_destroy_path(Subscription.where(user_id: current_user, project_id: @project.id, rewards_tier_id: r.id).first.id), class: 'cancel-subscribe-text', :confirm => "Are you sure ?"" %>
+			<%= link_to 'Cancel Subscription', subscriptions_destroy_path(Subscription.where(user_id: current_user, project_id: @project.id, rewards_tier_id: r.id).first.id), class: 'cancel-subscribe-text', :confirm => "Are you sure ?" %>
 		<% else %>
 			<a class="pledge-button w-button" data-ix="subscribe-button" href="#">Pledge <%= number_to_currency(r.min_amount, :unit => "$", :precision => 0) %></a>
 		<% end %>
