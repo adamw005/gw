@@ -53,16 +53,11 @@
 				    <% end %>
 				  </article>
 
-					<form action="/your-server-side-code" method="POST">
-					<script
-					  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					  data-key="pk_test_PLdY3PPDgPuw7G6rmXJc9yMv"
-						data-email="<%= current_user.email %>"
-						data-zip-code="true"
-					  data-locale="auto">
-					</script>
-					</form>
-
+				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+				          data-email="<%= current_user.email %>"
+				          data-locale="auto"
+									data-zip-code="true"></script>
 				<% end %>
 				<div class="w-form-done">
 					<div>Thank you! Your submission has been received!</div>
