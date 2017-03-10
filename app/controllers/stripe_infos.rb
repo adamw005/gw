@@ -9,6 +9,7 @@ class StripeInfosController < ApplicationController
 	    :source  => params[:stripeToken]
 	  )
 		@stripe_info = StripeInfo.new customer_id: customer.id
+		@post.save
 		redirect_to :back
 		rescue Stripe::CardError => e
 		  flash[:error] = e.message

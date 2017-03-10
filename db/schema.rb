@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305215158) do
+ActiveRecord::Schema.define(version: 20170310194525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -130,8 +130,9 @@ ActiveRecord::Schema.define(version: 20170305215158) do
 
   create_table "stripe_infos", force: :cascade do |t|
     t.integer  "account_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "customer_id"
   end
 
   add_index "stripe_infos", ["account_id"], name: "index_stripe_infos_on_account_id", using: :btree
