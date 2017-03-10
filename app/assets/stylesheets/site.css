@@ -295,9 +295,10 @@
 .pledge-div {
   margin-top: 25px;
   margin-bottom: 75px;
-	.cancel-subscribe-text {
-		text: .7rem;
-	}
+}
+
+.cancel-subscribe-text {
+	font-size: .7rem;
 }
 
 .login-modal {
