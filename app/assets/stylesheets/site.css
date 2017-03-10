@@ -298,9 +298,10 @@
 }
 
 .cancel-subscribe-text {
-	font-size: .7rem;
+	font-size: .6rem;
 	text-decoration: none;
 	display: block;
+	color: #4c4c4c;
 }
 
 .login-modal {
