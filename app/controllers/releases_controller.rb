@@ -15,7 +15,8 @@ class ReleasesController < ApplicationController
   end
 
   def create
-		if !Project.releases.where(created_at: Time.now.beginning_of_day.utc..Time.now.end_of_day.utc)
+		@project = Project.find(release_params[:project_id])
+		unless @project.releases.where(created_at: Time.now.beginning_of_day.utc..Time.now.end_of_day.utc)
 	    @release = Release.new release_params
 	    if @release.save
 	      redirect_to :back
