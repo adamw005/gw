@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 	post 'comments/create'
 	post 'subscriptions/create'
 	post 'stripe_infos/create'
+	post 'releases/create'
 	delete 'subscriptions/destroy/:id', to: 'subscriptions#destroy', as: 'subscriptions_destroy'
 	root to: 'pages#landing'
 

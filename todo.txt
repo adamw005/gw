@@ -120,8 +120,9 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[] Create logic in rails
 	[] Add functionality to Support project with Stripe
 
-[] If user does not have Stripe info saved, force the credit card form, and then show Subscription form
-[] Project owner sees an additional 'Create Release' button that creates a Release record
+[x] If user does not have Stripe info saved, force the credit card form, and then show Subscription form
+	[x] Stripe form: remove Remember Me and add Zip Code
+[] Project owner sees an additional 'Create Release' button that creates a Release record, if ReleaseSub Project
 	[] When a Release record is created, create a snapshot of ReleaseSubscription for Project and copy to ReleaseTransactionQueue
 [] End of month triggers a snapshot of MonthlySubscription copied to MonthlyTransactionQueue
 	[] For each User in Transaction Queue
@@ -131,7 +132,6 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 			[] Credit balance for each Project Owner proportionally based on total after fees and out take
 [] Project Owners can refund Month/Release, or User for Month/Release
 
-[] Stripe form: remove Remember Me and add Zip Code
 
 [] Make section for Goals
 
