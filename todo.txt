@@ -124,6 +124,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[x] Stripe form: remove Remember Me and add Zip Code
 [] Project owner sees an additional 'Create Release' button that creates a Release record, if ReleaseSub Project
 	[] When a Release record is created, create a snapshot of ReleaseSubscription for Project and copy to ReleaseTransactionQueue
+	[] Fix 'monthly' and 'episodic'
 [] End of month triggers a snapshot of MonthlySubscription copied to MonthlyTransactionQueue
 	[] For each User in Transaction Queue
 		[] Sum all total debts
