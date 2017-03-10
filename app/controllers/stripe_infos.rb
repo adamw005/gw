@@ -12,6 +12,7 @@ class StripeInfosController < ApplicationController
 			@stripe_info = StripeInfo.new customer_id: customer.id, account_id: current_user.accounts.select(:id)
 		else
 			@account = Account.new user_id: current_user.id
+			@account.save
 			@stripe_info = StripeInfo.new customer_id: customer.id, account_id: @account.id
 		end
 		@stripe_info.save
