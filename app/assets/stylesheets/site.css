@@ -304,6 +304,14 @@
 	color: #4c4c4c;
 }
 
+.create-release-text {
+	font-size: 1.2rem;
+	text-decoration: none;
+	display: block;
+	color: #4c4c4c;
+
+}
+
 .login-modal {
   position: fixed;
   left: 0px;
