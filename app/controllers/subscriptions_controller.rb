@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:new, :create, :destroy]
 
   def show
 		# @subscription = Subscription.find(params[:id])
@@ -27,6 +27,12 @@ class SubscriptionsController < ApplicationController
 			redirect_to projects_path(subscription_params[:project_id])
 		end
   end
+
+	def destroy
+	    @subscription = Subscription.find(params[:id])
+	    @subscription.destroy
+	    redirect_to :back, :notice => "Your patient has been deleted"
+	end
 
 	private
 
