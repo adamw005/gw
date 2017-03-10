@@ -15,18 +15,20 @@ class ReleasesController < ApplicationController
   end
 
   def create
-    @release = Release.new release_params
-    if @release.save
-      redirect_to :back
-    else
-      render :action => 'new'
-    end
+		# if !Release.where(created_at: Time.now.beginning_of_day.utc..Time.now.end_of_day.utc)
+	    @release = Release.new release_params
+	    if @release.save
+	      redirect_to :back
+	    else
+	      render :action => 'new'
+	    end
+		# end
   end
 
 	private
 
 	def release_params
-		params.require(:project_id)
+		params.permit(:project_id)
 	end
 
 end
