@@ -41,8 +41,14 @@
 			<a class="stripe-info-close">
 				<strong class="stripe-info-close-button" data-ix="stripe-info-modal-close">X</strong>
 			</a>
-			<h3 class="stripe-info-modal-title">Subscribe</h3>
-			<p>Please choose your subscription.</p>
+			<h3 class="stripe-info-modal-title">Add Card</h3>
+			<p>Please add your card.</p>
+			<% if @project.occurrence = "MonthlySubscription" %>
+				<p>You will be changed at the end of every month.</p>
+			<% else %>
+				<p>You will be changed at the time of each project release.</p>
+			<% end %>
+
 			<div class="w-form">
 				<article>
 					<% if flash[:error].present? %>
