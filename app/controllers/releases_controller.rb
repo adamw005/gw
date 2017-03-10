@@ -26,7 +26,7 @@ class ReleasesController < ApplicationController
 	private
 
 	def release_params
-		params.require(:release).permit(:project_id)
+		params.require(:project_id)
 	end
 
 end
