@@ -26,6 +26,13 @@
 
 					<%= f.submit "Subscribe", class: 'subscribe-button w-button', data: {wait: 'Please wait...'} %>
 				<% end %>
+				<div class="w-form-done">
+					<div>Thank you! Your submission has been received!</div>
+				</div>
+				<div class="w-form-fail">
+					<div>Oops! Something went wrong while submitting the form</div>
+				</div>
+			</div>
 		<% else %>
 			<h3 class="stripe-info-modal-title">Add Card</h3>
 			<p>Please add your card.</p>
@@ -51,11 +58,6 @@
 				          data-locale="auto"
 									data-zip-code="true"></script>
 				<% end %>
-
-		<% end %>
-
-
-
 				<div class="w-form-done">
 					<div>Thank you! Your submission has been received!</div>
 				</div>
@@ -63,6 +65,9 @@
 					<div>Oops! Something went wrong while submitting the form</div>
 				</div>
 			</div>
-		</div>
+
+		<% end %>
+
+
 	</div>
 </div>
