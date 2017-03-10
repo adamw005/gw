@@ -23,6 +23,7 @@ class ReleasesController < ApplicationController
 	      render :action => 'new'
 	    end
 		end
+		redirect_to :back
   end
 
 	private
