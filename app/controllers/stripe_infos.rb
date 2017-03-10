@@ -8,7 +8,7 @@ class StripeInfosController < ApplicationController
 	    :email => params[:stripeEmail],
 	    :source  => params[:stripeToken]
 	  )
-		@stripe_info = StripeInfo.new customer_id: customer.id
+		@stripe_info = StripeInfo.new customer_id: customer.id, account_id: current_user.accounts.select(:id)
 		@stripe_info.save
 		redirect_to :back
 		rescue Stripe::CardError => e
