@@ -23,7 +23,7 @@ class ReleasesController < ApplicationController
 	      render :action => 'new'
 	    end
 		end
-		redirect_to 'release_params[:project_id]'
+		redirect_to release_params[:project_id]
   end
 
 	private
