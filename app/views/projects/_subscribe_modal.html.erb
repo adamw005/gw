@@ -1,5 +1,5 @@
 <!-- If the user has a card on file, let them subscribe. Else charge them for first time -->
-<% if StripeInfo.where(account_id: current_user.accounts.select(:id)) %>
+<% if StripeInfo.where(account_id: current_user.accounts.select(:id)).present? %>
 	<div class="subscribe-modal" data-ix="subscribe-modal">
 		<div class="subscribe-wrapper">
 			<a class="subscribe-close">
