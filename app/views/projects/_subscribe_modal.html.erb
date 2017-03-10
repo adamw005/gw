@@ -43,7 +43,7 @@
 			</a>
 			<h3 class="stripe-info-modal-title">Add Card</h3>
 			<p>Please add your card.</p>
-			<% if @project.occurrence = "MonthlySubscription" %>
+			<% if @project.charge_occurrence = "MonthlySubscription" %>
 				<p>You will be changed at the end of every month.</p>
 			<% else %>
 				<p>You will be changed at the time of each project release.</p>
