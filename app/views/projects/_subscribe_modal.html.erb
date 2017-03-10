@@ -1,6 +1,5 @@
 <!-- If the user has a card on file, let them subscribe. Else charge them for first time -->
 <% if StripeInfo.where(account_id: current_user.accounts.select(:id)) %>
-<!-- && current_user.accounts.stripe_info %> -->
 	<div class="subscribe-modal" data-ix="subscribe-modal">
 		<div class="subscribe-wrapper">
 			<a class="subscribe-close">
@@ -57,7 +56,8 @@
 				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 				          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 				          data-email=<%= current_user.email %>
-				          data-locale="auto"></script>
+				          data-locale="auto">
+									data-zip-code="true"</script>
 				<% end %>
 				<div class="w-form-done">
 					<div>Thank you! Your submission has been received!</div>
