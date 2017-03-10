@@ -17,19 +17,3 @@ class StripeInfosController < ApplicationController
 	end
 
 end
-
-
-
-
-def new
-	@post = Post.new
-end
-
-def create
-	@post = Post.new post_params
-	if @post.save
-		redirect_to projects_path(@post.project_id, anchor: "posts")
-	else
-		render :action => 'new'
-	end
-end
