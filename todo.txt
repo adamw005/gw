@@ -131,6 +131,8 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 			[] Credit balance for each Project Owner proportionally based on total after fees and out take
 [] Project Owners can refund Month/Release, or User for Month/Release
 
+[] Stripe form: remove Remember Me and add Zip Code
+
 [] Make section for Goals
 
 [] Rewards Tier column should only be written once, instead of on each tab
