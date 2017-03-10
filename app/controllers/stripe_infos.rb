@@ -8,7 +8,7 @@ class StripeInfosController < ApplicationController
 	    :email => params[:stripeEmail],
 	    :source  => params[:stripeToken]
 	  )
-		if current_user.accounts
+		if current_user.accounts.present?
 			@stripe_info = StripeInfo.new customer_id: customer.id, account_id: current_user.accounts.select(:id)
 		else
 			@account = Account.new user_id: current_user.id
