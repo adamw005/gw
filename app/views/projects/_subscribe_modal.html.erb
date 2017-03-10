@@ -1,11 +1,12 @@
 <!-- If the user has a card on file, let them subscribe. Else charge them for first time -->
-<% if true %>
-<!-- StripeInfo.where(account_id: current_user.accounts.select(:id)).present? %> -->
-	<div class="subscribe-modal" data-ix="subscribe-modal">
-		<div class="subscribe-wrapper">
-			<a class="subscribe-close">
-				<strong class="subscribe-close-button" data-ix="subscribe-modal-close">X</strong>
-			</a>
+<div class="subscribe-modal" data-ix="subscribe-modal">
+	<div class="subscribe-wrapper">
+		<a class="subscribe-close">
+			<strong class="subscribe-close-button" data-ix="subscribe-modal-close">X</strong>
+		</a>
+
+		<% if true %>
+		<!-- StripeInfo.where(account_id: current_user.accounts.select(:id)).present? %> -->
 			<h3 class="subscribe-modal-title">Subscribe</h3>
 			<p>Please choose your subscription.</p>
 			<div class="w-form">
@@ -25,21 +26,7 @@
 
 					<%= f.submit "Subscribe", class: 'subscribe-button w-button', data: {wait: 'Please wait...'} %>
 				<% end %>
-				<div class="w-form-done">
-					<div>Thank you! Your submission has been received!</div>
-				</div>
-				<div class="w-form-fail">
-					<div>Oops! Something went wrong while submitting the form</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<% else %>
-	<div class="stripe-info-modal" data-ix="stripe-info-modal">
-		<div class="stripe-info-wrapper">
-			<a class="stripe-info-close">
-				<strong class="stripe-info-close-button" data-ix="stripe-info-modal-close">X</strong>
-			</a>
+		<% else %>
 			<h3 class="stripe-info-modal-title">Add Card</h3>
 			<p>Please add your card.</p>
 			<% if @project.charge_occurrence = "MonthlySubscription" %>
@@ -65,13 +52,16 @@
 									data-zip-code="true"></script>
 				<% end %>
 
-				<div class="w-form-done">
-					<div>Thank you! Your submission has been received!</div>
-				</div>
-				<div class="w-form-fail">
-					<div>Oops! Something went wrong while submitting the form</div>
-				</div>
+		<% end %>
+
+
+
+			<div class="w-form-done">
+				<div>Thank you! Your submission has been received!</div>
+			</div>
+			<div class="w-form-fail">
+				<div>Oops! Something went wrong while submitting the form</div>
 			</div>
 		</div>
 	</div>
-<% end %>
+</div>
