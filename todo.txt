@@ -113,12 +113,23 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
 
 [] Create Payment Structure
-	[] Write out User stories
-	[] Turn User stories into decision tree
-	[] List all Models and Attributes
-	[] Create the Models in rails
+	[x] Write out User stories
+	[x] Turn User stories into decision tree
+	[x] List all Models and Attributes
+	[x] Create the Models in rails
 	[] Create logic in rails
 	[] Add functionality to Support project with Stripe
+
+[] If user does not have Stripe info saved, force the credit card form, and then show Subscription form
+[] Project owner sees an additional 'Create Release' button that creates a Release record
+	[] When a Release record is created, create a snapshot of ReleaseSubscription for Project and copy to ReleaseTransactionQueue
+[] End of month triggers a snapshot of MonthlySubscription copied to MonthlyTransactionQueue
+	[] For each User in Transaction Queue
+		[] Sum all total debts
+		[] If Account.balance > 0 then withdrawl up the total amount from Account.balance
+		[] For the remainder of debt create Stripe API call for amount
+			[] Credit balance for each Project Owner proportionally based on total after fees and out take
+[] Project Owners can refund Month/Release, or User for Month/Release
 
 [] Make section for Goals
 
