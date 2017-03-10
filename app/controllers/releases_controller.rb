@@ -15,7 +15,7 @@ class ReleasesController < ApplicationController
   end
 
   def create
-		if !Release.where(created_at: Time.now.beginning_of_day.utc..Time.now.end_of_day.utc).where(project_id: release_params[:project_id])
+		if !Release.where(created_at: Time.now.beginning_of_day.utc..Time.now.end_of_day.utc).where(project_id: release_params.project_id)
 	    @release = Release.new release_params
 	    if @release.save
 	      redirect_to :back
@@ -23,7 +23,7 @@ class ReleasesController < ApplicationController
 	      render :action => 'new'
 	    end
 		end
-		redirect_to release_params[:project_id]
+		redirect_to :back
   end
 
 	private
