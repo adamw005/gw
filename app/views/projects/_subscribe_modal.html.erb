@@ -9,23 +9,21 @@
 			<h3 class="subscribe-modal-title">Subscribe</h3>
 			<p>Please choose your subscription.</p>
 			<div class="w-form">
-				<% if current_user %>
-					<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscriptions_create_path ) do |f| %>
-						<%= f.hidden_field :user_id, value: current_user.id %>
-						<%= f.hidden_field :project_id, value: @project.id %>
-						<%= f.hidden_field :type, :value => @project.charge_occurrence %>
-						<label class="form-label" for="tier">Tier</label>
-						<select data-name="rewards-tier-id" class="w-input" id="rewards-tier-id" maxlength="256" required="required" name="subscription[rewards_tier_id]"><option value=""></option>
-							<% @project.rewards_tiers.each do |rt| %>
-								<option value="<%= rt.id %>" <%= 'disabled' if Subscription.exists?(user_id: current_user, project_id: @project.id, rewards_tier_id: rt.id) %>><%= rt.title %></option>
-							<% end %>
-						</select>
+				<%= form_for('subscription', data: {name: "subscription Form"}, html: {id: "subscription-form", name: "subscription-form"}, url: subscriptions_create_path ) do |f| %>
+					<%= f.hidden_field :user_id, value: current_user.id %>
+					<%= f.hidden_field :project_id, value: @project.id %>
+					<%= f.hidden_field :type, :value => @project.charge_occurrence %>
+					<label class="form-label" for="tier">Tier</label>
+					<select data-name="rewards-tier-id" class="w-input" id="rewards-tier-id" maxlength="256" required="required" name="subscription[rewards_tier_id]"><option value=""></option>
+						<% @project.rewards_tiers.each do |rt| %>
+							<option value="<%= rt.id %>" <%= 'disabled' if Subscription.exists?(user_id: current_user, project_id: @project.id, rewards_tier_id: rt.id) %>><%= rt.title %></option>
+						<% end %>
+					</select>
 
-						<label class="form-label" for="amount">Amount</label>
-						<%= f.text_field :amount, data: {name: 'amount'}, class: "w-input", id: "amount", maxlength: "256", placeholder: "$1", required: "required" %>
+					<label class="form-label" for="amount">Amount</label>
+					<%= f.text_field :amount, data: {name: 'amount'}, class: "w-input", id: "amount", maxlength: "256", placeholder: "$1", required: "required" %>
 
-						<%= f.submit "Subscribe", class: 'subscribe-button w-button', data: {wait: 'Please wait...'} %>
-					<% end %>
+					<%= f.submit "Subscribe", class: 'subscribe-button w-button', data: {wait: 'Please wait...'} %>
 				<% end %>
 				<div class="w-form-done">
 					<div>Thank you! Your submission has been received!</div>
