@@ -61,7 +61,7 @@
             <div class="w-row">
               <div class="w-col w-col-1"></div>
               <div class="w-col w-col-7">
-								<% if user_signed_in? && current_user.id == @project.user_id %>
+								<% if user_signed_in? && current_user.id == @project.user_id && @project.charge_occurrence = "MonthlySubscription" %>
 									<%= link_to 'Create Release', releases_create_path(project_id: @project.id), method: 'post', class: 'create-release-text', confirm: "Are you sure ?" %>
 								<% end %>
                 <%= @project.body.html_safe %>
