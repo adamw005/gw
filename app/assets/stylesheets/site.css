@@ -299,6 +299,8 @@
 
 .cancel-subscribe-text {
 	font-size: .7rem;
+	text-decoration: none;
+	display: block;
 }
 
 .login-modal {
