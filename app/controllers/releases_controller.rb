@@ -24,6 +24,7 @@ class ReleasesController < ApplicationController
 	      render :action => 'new'
 	    end
 		end
+	else
 		redirect_to :back
   end
 
