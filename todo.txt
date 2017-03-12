@@ -123,7 +123,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] If user does not have Stripe info saved, force the credit card form, and then show Subscription form
 	[x] Stripe form: remove Remember Me and add Zip Code
 [x] Project owner sees an additional 'Create Release' button that creates a Release record, if ReleaseSub Project
-	[] Fix 'monthly' and 'episodic'
+	[x] Fix 'monthly' and 'episodic'
 	[] When a Release record is created, create a snapshot of ReleaseSubscription for Project and copy to ReleaseTransactionQueue
 [] End of month triggers a snapshot of MonthlySubscription copied to MonthlyTransactionQueue
 	[] For each User in Transaction Queue
