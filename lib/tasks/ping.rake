@@ -7,7 +7,7 @@ namespace :ping do
 
     puts "Sending ping"
 
-    uri = 'http://groundwork-1.herokuapp.com/'
+    uri = http://groundwork-1.herokuapp.com/
     Net::HTTP.get_response(uri)
 
     puts "success..."
