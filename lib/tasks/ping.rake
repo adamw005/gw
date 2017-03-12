@@ -10,6 +10,8 @@ namespace :ping do
     uri = URI.parse('http://groundwork-1.herokuapp.com/')
     Net::HTTP.get_response(uri)
 
+		puts Project.first.title
+
     puts "success..."
 
   end
