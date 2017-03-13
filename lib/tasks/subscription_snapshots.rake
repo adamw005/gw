@@ -68,7 +68,3 @@ end
 			# Leave the User's records in TransactionQueue
 	# If it's the fifth of the month (after the above code has finished for the 5th day this month)
 		# # Copy all TransactionQueue records to PastTransaction with 'failed' status
-
-
-
-		.
