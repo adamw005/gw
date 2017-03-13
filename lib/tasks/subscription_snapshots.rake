@@ -25,18 +25,35 @@ namespace :monthly_sub_snapshot do
   	end
 
 		### Release Subscription snapshot ###
-	    puts "Attempting to snapshot MonthlyTransactionQueue"
+	    puts "Attempting to snapshot ReleaseTransactionQueue"
 
 			# Create a snapshot of ReleaseSubscription records with Release.released == false and copy to ReleaseTransactionQueue
 			ReleaseSubscription.find_each.where(released: false) do |s|
 			  ReleaseTransactionQueue.create(s)
 			end
 
-	    puts "Finished snapshot of MonthlyTransactionQueue"
+	    puts "Finished snapshot of ReleaseTransactionQueue"
 
 
 	end
 end
+
+#
+# Article.joins(comments: :guest)
+# ReleaseSubscription.joins(project: :releases)
+#
+# sql = "
+# insert into transaction_queues
+# select a.*, b.id as release_id
+#  from subscriptions a
+#  left join releases b
+#   on a.project_id = b.project_id
+#  where b.released = false
+#  and a.type = 'ReleaseSubscription'
+#  "
+#
+# sql = "select * from Subscription a left join releases b on a.project_id = b.project_id where b.released == false and a.type = 'ReleaseSubscription'"
+# records_array = ActiveRecord::Base.connection.execute(sql)
 
 # I though find_each was supposed to be a more efficient way
 # so just
