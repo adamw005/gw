@@ -15,7 +15,12 @@ namespace :charge_transactions do
 
 			# Loop through each grouped User in the TransactionQueue
 			@users_with_amounts.each do |u|
-				
+				total_amount_owed = u.amount
+				amount_in_balance = 0
+				# Withdrawl from Account.Balance first
+
+
+				# Charge the remaining amount to StripeInfo.customer_id
 			end
 
 	    puts "Finished charging transactions..."
