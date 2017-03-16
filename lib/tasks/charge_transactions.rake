@@ -41,7 +41,7 @@ namespace :charge_transactions do
 					:description => 'Groundwork Subscription Charge',
 					:currency    => 'usd',
 					# :application_fee => TODO (total_amount_owed*.05).round,
-					:transfer_group => 1# TODO unique order id
+					:transfer_group => 100 # TODO unique order id
 
 				)
 
@@ -63,7 +63,7 @@ namespace :charge_transactions do
 						  :amount => amount_to_transfer,
 						  :currency => "usd",
 						  :destination => StripeInfo.where(account_id: project_owners.accounts.first.id).first.stripe_id
-						  :transfer_group => # TODO unique order id,
+						  # :transfer_group => # TODO unique order id,
 						})
 					end
 

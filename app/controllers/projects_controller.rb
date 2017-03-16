@@ -37,7 +37,7 @@ class ProjectsController < ApplicationController
 			  }
 			)
 			stripe_info = StripeInfo.where(account_id: @account.id)
-			stripe_info.id = stripe_account.id
+			stripe_info.stripe_id = stripe_account.id
 			stripe_info.secret_key = stripe_account.keys.secret
 			stripe_info.publishable_key = stripe_account.keys.publishable
 			stripe_info.save
