@@ -40,8 +40,8 @@ namespace :charge_transactions do
 					:amount      => total_amount_owed,
 					:description => 'Groundwork Subscription Charge',
 					:currency    => 'usd',
-					:application_fee => (total_amount_owed*.05).round,
-					:transfer_group => # TODO unique order id
+					# :application_fee => TODO (total_amount_owed*.05).round,
+					:transfer_group => 1# TODO unique order id
 
 				)
 
