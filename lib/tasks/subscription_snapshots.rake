@@ -17,8 +17,8 @@ namespace :monthly_sub_snapshot do
 	    puts "Attempting to snapshot MonthlyTransactionQueue"
 
 			# Create a snapshot of MonthlySubscription and copy to MonthlyTransactionQueue
-			MonthlySubscription.find_each do |s|
-			  MonthlyTransactionQueue.create(s)
+			MonthlySubscription.find_each do |sub|
+			  MonthlyTransactionQueue.create(sub.attributes)
 			end
 
 	    puts "Finished snapshot of MonthlyTransactionQueue"
@@ -28,8 +28,10 @@ namespace :monthly_sub_snapshot do
 	    puts "Attempting to snapshot ReleaseTransactionQueue"
 
 			# Create a snapshot of ReleaseSubscription records with Release.released == false and copy to ReleaseTransactionQueue
-			ReleaseSubscription.find_each.where(released: false) do |s|
-			  ReleaseTransactionQueue.create(s)
+			ReleaseTransactionQueue.transaction do
+			  ReleaseSubscription.joins(project: :releases).where(releases: {released: false}).each do |sub|
+			   ReleaseTransactionQueue.create(sub.attributes)
+			 end
 			end
 
 	    puts "Finished snapshot of ReleaseTransactionQueue"
@@ -38,10 +40,18 @@ namespace :monthly_sub_snapshot do
 	end
 end
 
-#
+
 # Article.joins(comments: :guest)
 # ReleaseSubscription.joins(project: :releases)
-#
+
+# MonthlySubscription.joins(project: :releases).where(releases: {released: false})
+
+# old:
+# ReleaseSubscription.find_each.where(released: false) do |s|
+# 	ReleaseTransactionQueue.create(s)
+# end
+
+
 # sql = "
 # insert into transaction_queues
 # select a.*, b.id as release_id
