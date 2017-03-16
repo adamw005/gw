@@ -24,11 +24,11 @@ class ProjectsController < ApplicationController
 			# Create a User.Account
 			Account.create(user_id: current_user.id)
 		end
-		unless @account.exists? && StripeInfo.where(account_id: @account.id).first.exists?
+		unless @account && StripeInfo.where(account_id: @account.id).first
 			# Create StripeInfo record
 			StripeInfo.create(account_id: @account.id)
 		end
-		unless @account.exists? && StripeInfo.where(account_id: @account.id).first.stripe_id.exists?
+		unless @account && StripeInfo.where(account_id: @account.id).first.stripe_id
 			# Create Managed Stripe Account
 			stripe_account = Stripe::Account.create(
 			  {
