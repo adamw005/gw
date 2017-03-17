@@ -72,6 +72,8 @@ namespace :charge_transactions do
 					# loop through each Project.user to create a transfer for each Project Owner
 					proportions.each do |proj|
 						puts proj
+						puts proj[:proportion]
+						puts total_amount_owed
 						# Take the amount_charged and multiply it by User-Project.proportion
 						amount_to_transfer = (total_amount_owed * proj[:proportion]).round
 
