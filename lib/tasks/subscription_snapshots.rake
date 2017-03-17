@@ -12,21 +12,6 @@ namespace :subscription_snapshots do
   task :start => :environment do
 
 
-		### Monthly Subscription snapshot ###
-		if Time.now.day == 17
-	    puts "Attempting to snapshot MonthlyTransactionQueue"
-
-			# Create a snapshot of MonthlySubscription and copy to MonthlyTransactionQueue
-			MonthlySubscription.find_each do |sub|
-				sub = sub.attributes
-				sub.delete("type")
-				sub["type"] = 'MonthlyTransactionQueue'
-			  MonthlyTransactionQueue.create(sub)
-			end
-
-	    puts "Finished snapshot of MonthlyTransactionQueue"
-  	end
-
 		### Release Subscription snapshot ###
 	    puts "Attempting to snapshot ReleaseTransactionQueue"
 
@@ -34,6 +19,7 @@ namespace :subscription_snapshots do
 			ReleaseTransactionQueue.transaction do
 				ReleaseSubscription.joins(project: :releases).where(releases: {released: false}).each do |sub|
 					sub = sub.attributes
+					sub.delete("id")
 					sub.delete("type")
 					sub["type"] = 'ReleaseTransactionQueue'
 					TransactionQueue.create(sub)
@@ -41,6 +27,22 @@ namespace :subscription_snapshots do
 			end
 
 	    puts "Finished snapshot of ReleaseTransactionQueue"
+
+			### Monthly Subscription snapshot ###
+			if Time.now.day == 17
+		    puts "Attempting to snapshot MonthlyTransactionQueue"
+
+				# Create a snapshot of MonthlySubscription and copy to MonthlyTransactionQueue
+				MonthlySubscription.find_each do |sub|
+					sub = sub.attributes
+					sub.delete("id")
+					sub.delete("type")
+					sub["type"] = 'MonthlyTransactionQueue'
+				  MonthlyTransactionQueue.create(sub)
+				end
+
+		    puts "Finished snapshot of MonthlyTransactionQueue"
+	  	end
 
 
 	end
