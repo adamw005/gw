@@ -7,25 +7,25 @@ namespace :charge_transactions do
 		if (1..17).include?(Time.now.day)
 	    puts "Attempting to charge TransactionQueues"
 
-			# Group TransactionQueue by User with summed amounts
-			@users_with_amounts = TransactionQueue.group(:user).sum(:amount)
-
-			# Group TransactionQueue by User-Project with amounts owed to get proportions of debts per project
-			user_projects_with_amounts = TransactionQueue.where(user_id: u.id).group(:user_id).group(:project_id).sum(:amount)
-			user_sum = TransactionQueue.where(user_id: u.id).group(:user).sum(:amount).first[1]
-			@user_projects_with_proportions = []
-			user_projects_with_amounts.each do |up, s|
-				new_hash = {}
-				new_hash[:user] = up[0]
-				new_hash[:project] = up[1]
-				new_hash[:proportion] = s/user_sum
-				@user_projects_with_proportions << new_hash
-			end
-
 			# Loop through each grouped User in the TransactionQueue
 			@users_with_amounts.each do |u,amount|
 				total_amount_owed = amount
 				amount_in_balance = Balance.where(account_id: u.accounts).first.amount
+
+				# Group TransactionQueue by User with summed amounts
+				@users_with_amounts = TransactionQueue.where(user_id: u.id).group(:user).sum(:amount)
+
+				# Group TransactionQueue by User-Project with amounts owed to get proportions of debts per project
+				user_projects_with_amounts = TransactionQueue.where(user_id: u.id).group(:user_id).group(:project_id).sum(:amount)
+				user_sum = TransactionQueue.where(user_id: u.id).group(:user).sum(:amount).first[1]
+				@user_projects_with_proportions = []
+				user_projects_with_amounts.each do |up, s|
+					new_hash = {}
+					new_hash[:user] = up[0]
+					new_hash[:project] = up[1]
+					new_hash[:proportion] = s/user_sum
+					@user_projects_with_proportions << new_hash
+				end
 
 				# Create Invoice Number (Transfer Group) that doesn't exist yet
 				invoice_number = [*('a'..'z'),*('0'..'9')].shuffle[0,16].join
