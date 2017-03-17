@@ -18,12 +18,15 @@ namespace :subscription_snapshots do
 			# Create a snapshot of ReleaseSubscription records with Release.released == false and copy to ReleaseTransactionQueue
 			ReleaseTransactionQueue.transaction do
 				ReleaseSubscription.joins(project: :releases).where(releases: {released: false}).each do |sub|
-					sub = sub.attributes
-					sub.delete("id")
-					sub.delete("type")
-					sub["type"] = 'ReleaseTransactionQueue'
-					TransactionQueue.create(sub)
+					attributes = sub.attributes
+					attributes.delete("id")
+					attributes.delete("type")
+					attributes["type"] = 'ReleaseTransactionQueue'
+					TransactionQueue.create(attributes)
+					sub.released = true
+					sub.save
 				end
+
 			end
 
 	    puts "Finished snapshot of ReleaseTransactionQueue"
@@ -34,11 +37,11 @@ namespace :subscription_snapshots do
 
 				# Create a snapshot of MonthlySubscription and copy to MonthlyTransactionQueue
 				MonthlySubscription.find_each do |sub|
-					sub = sub.attributes
-					sub.delete("id")
-					sub.delete("type")
-					sub["type"] = 'MonthlyTransactionQueue'
-				  MonthlyTransactionQueue.create(sub)
+					attributes = sub.attributes
+					attributes.delete("id")
+					attributes.delete("type")
+					attributes["type"] = 'MonthlyTransactionQueue'
+				  MonthlyTransactionQueue.create(attributes)
 				end
 
 		    puts "Finished snapshot of MonthlyTransactionQueue"
