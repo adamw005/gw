@@ -14,7 +14,7 @@ namespace :charge_transactions do
 
 			# Loop through each grouped User in the TransactionQueue
 			@users_with_amounts.each do |u,amount|
-				total_amount_owed = amount
+				total_amount_owed = amount.to_i
 				# amount_in_balance = Balance.where(account_id: u.accounts).first.amount
 
 				# Group TransactionQueue by User-Project with amounts owed to get proportions of debts per project
