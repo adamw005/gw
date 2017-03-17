@@ -10,8 +10,6 @@ namespace :charge_transactions do
 			# Group TransactionQueue by User with summed amounts
 			@users_with_amounts = TransactionQueue.group(:user).sum(:amount)
 
-			puts @users_with_amounts
-
 			# Loop through each grouped User in the TransactionQueue
 			@users_with_amounts.each do |u,amount|
 				total_amount_owed = amount.to_i
@@ -72,12 +70,12 @@ namespace :charge_transactions do
 
 					# Round amounts and credit each Project.users.account.balance (Project Owner's account)
 					# loop through each Project.user to create a transfer for each Project Owner
-					proportions.each do |p|
+					proportions.each do |proj, prop|
 						# Take the amount_charged and multiply it by User-Project.proportion
-						amount_to_transfer = total_amount_owed * proportions.proportion.where(project_id: p[:project]).first
+						amount_to_transfer = total_amount_owed * prop
 
 						# Set project_owner variable for later
-						project_owner = User.find(p[:user])
+						project_owner = User.find(proj[:user])
 
 						# Create Stripe Transfer
 						transfer = Stripe::Transfer.create({
