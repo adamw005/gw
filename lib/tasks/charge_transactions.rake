@@ -4,7 +4,7 @@ namespace :charge_transactions do
   task :start => :environment do
 
 		### Charge Transactions ###
-		if (1..17).include?(Time.now.day)
+		if (1..5).include?(Time.now.day)
 	    puts "Attempting to charge TransactionQueues"
 
 			# Group TransactionQueue by User with summed amounts
@@ -72,13 +72,12 @@ namespace :charge_transactions do
 					# loop through each Project.user to create a transfer for each Project Owner
 					proportions.each do |proj|
 						puts proj
-						puts proj[:proportion]
-						puts total_amount_owed
 						# Take the amount_charged and multiply it by User-Project.proportion
 						amount_to_transfer = (total_amount_owed * proj[:proportion]).round
 
 						# Set project_owner variable for later
-						project_owner = User.find(proj[:user])
+						project_owner = Project.find(proj[:project]).user
+						puts project_owner
 
 						# Create Stripe Transfer
 						transfer = Stripe::Transfer.create({

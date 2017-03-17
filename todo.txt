@@ -163,6 +163,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 		[] Check Stripe balances, transfers, etc.
 		[] Remove all Account.balance code?
 	[] Do we even need Account.balance since Project Owners have Managed Stripe accounts?
+	[] Should we only Transfer the fund after day 5?
 	[] Create more subscription data and verify everything works as it should
 
 [] Make section for Goals
