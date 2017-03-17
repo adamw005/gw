@@ -33,7 +33,7 @@ namespace :subscription_snapshots do
 					sub = sub.attributes
 					sub.delete("type")
 					sub["type"] = 'ReleaseSubscription'
-					ReleaseTransactionQueue.create(sub.attributes)
+					ReleaseTransactionQueue.create(sub)
 				end
 			end
 
