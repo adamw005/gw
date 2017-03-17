@@ -18,15 +18,18 @@ namespace :subscription_snapshots do
 			# Create a snapshot of ReleaseSubscription records with Release.released == false and copy to ReleaseTransactionQueue
 			ReleaseTransactionQueue.transaction do
 				ReleaseSubscription.joins(project: :releases).where(releases: {released: false}).each do |sub|
+					# Copy to TransactionQueue
 					attributes = sub.attributes
 					attributes.delete("id")
 					attributes.delete("type")
 					attributes["type"] = 'ReleaseTransactionQueue'
 					TransactionQueue.create(attributes)
-					sub.released = true
-					sub.save
-				end
 
+					# Change Release.released to True
+					release = Release.where(project_id: sub.attributes["project_id"]).first
+					release.released = true
+					release.save
+				end
 			end
 
 	    puts "Finished snapshot of ReleaseTransactionQueue"
