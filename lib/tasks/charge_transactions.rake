@@ -70,10 +70,10 @@ namespace :charge_transactions do
 
 					# Round amounts and credit each Project.users.account.balance (Project Owner's account)
 					# loop through each Project.user to create a transfer for each Project Owner
-					proportions.each do |proj, prop|
-						puts proj, prop
+					proportions.each do |proj|
+						puts proj
 						# Take the amount_charged and multiply it by User-Project.proportion
-						amount_to_transfer = total_amount_owed * prop
+						amount_to_transfer = (total_amount_owed * proj[:proportion]).round
 
 						# Set project_owner variable for later
 						project_owner = User.find(proj[:user])
