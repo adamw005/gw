@@ -32,7 +32,7 @@ namespace :subscription_snapshots do
 				ReleaseSubscription.joins(project: :releases).where(releases: {released: false}).each do |sub|
 					sub = sub.attributes
 					sub.delete("type")
-					sub["type"] = 'ReleaseSubscription'
+					sub["type"] = 'ReleaseTransactionQueue'
 					TransactionQueue.create(sub)
 				end
 			end
