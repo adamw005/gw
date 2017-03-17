@@ -54,7 +54,7 @@ namespace :charge_transactions do
 				# end
 
 				# Charge the remaining amount to StripeInfo.customer_id
-				stripe_cust_id = StripeInfo.where(account_id: u.accounts).first
+				stripe_cust_id = StripeInfo.where(account_id: u.accounts).first.stripe_id
 
 				charge = Stripe::Charge.create(
 					:customer    => stripe_cust_id,
