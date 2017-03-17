@@ -78,7 +78,7 @@ namespace :charge_transactions do
 						transfer = Stripe::Transfer.create({
 						  :amount => amount_to_transfer,
 						  :currency => "usd",
-						  :destination => StripeInfo.where(account_id: project_owner.accounts.first.id).first.stripe_id
+						  :destination => StripeInfo.where(account_id: project_owner.accounts.first.id).first.stripe_id,
 						  :transfer_group => invoice_number
 						})
 					end
