@@ -156,12 +156,14 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 		[x] Transfer all Projects to 2 Users with Stripe.stripe_id (user_id: 13, 11)
 		[] Run charge_transactions and subscription_snapshots
 		[] Fix errors as they come up
-			[] chrage_transactions
+			[] charge_transactions
+				[] Check Subscription, Stripe accounts, etc
+			[x] subscription_snapshots
 				[] Check Subscription and Queue tables to verify contents
 		[] Check Stripe balances, transfers, etc.
 		[] Remove all Account.balance code?
 	[] Do we even need Account.balance since Project Owners have Managed Stripe accounts?
-
+	[] Create more subscription data and verify everything works as it should
 
 [] Make section for Goals
 

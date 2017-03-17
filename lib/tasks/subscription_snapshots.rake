@@ -35,7 +35,7 @@ namespace :subscription_snapshots do
 	    puts "Finished snapshot of ReleaseTransactionQueue"
 
 			### Monthly Subscription snapshot ###
-			if Time.now.day == 17
+			if Time.now.day == 1
 		    puts "Attempting to snapshot MonthlyTransactionQueue"
 
 				# Create a snapshot of MonthlySubscription and copy to MonthlyTransactionQueue
