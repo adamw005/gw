@@ -19,7 +19,9 @@ namespace :charge_transactions do
 				user_projects_with_amounts = TransactionQueue.where(user_id: u.id).group(:user_id).group(:project_id).sum(:amount)
 				user_sum = TransactionQueue.where(user_id: u.id).group(:user).sum(:amount).first[1]
 				@user_projects_with_proportions = []
+				puts "1"
 				user_projects_with_amounts.each do |up, s|
+					puts "2"
 					new_hash = {}
 					new_hash[:user] = up[0]
 					new_hash[:project] = up[1]
@@ -61,6 +63,8 @@ namespace :charge_transactions do
 					:transfer_group => invoice_number
 				)
 
+				puts "3"
+
 				# If charge was successful
 				if charge["paid"] == true
 					proportions = @user_projects_with_proportions
@@ -82,6 +86,7 @@ namespace :charge_transactions do
 						  :transfer_group => invoice_number
 						})
 					end
+					puts "4"
 
 					# Copy all of User's TransactionQueue records to PastTransaction with 'successful' status
 					TransactionQueue.transaction do # transaction ensures both actions below complete or none do
