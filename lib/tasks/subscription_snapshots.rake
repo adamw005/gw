@@ -13,12 +13,15 @@ namespace :subscription_snapshots do
 
 
 		### Monthly Subscription snapshot ###
-		if Time.now.day == 1
+		if Time.now.day == 17
 	    puts "Attempting to snapshot MonthlyTransactionQueue"
 
 			# Create a snapshot of MonthlySubscription and copy to MonthlyTransactionQueue
 			MonthlySubscription.find_each do |sub|
-			  MonthlyTransactionQueue.create(sub.attributes)
+				sub = sub.attributes
+				sub.delete("type")
+				sub["type"] = 'MonthlyTransactionQueue'
+			  MonthlyTransactionQueue.create(sub)
 			end
 
 	    puts "Finished snapshot of MonthlyTransactionQueue"
