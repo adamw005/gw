@@ -10,6 +10,8 @@ namespace :charge_transactions do
 			# Group TransactionQueue by User with summed amounts
 			@users_with_amounts = TransactionQueue.group(:user).sum(:amount)
 
+			puts @users_with_amounts
+
 			# Loop through each grouped User in the TransactionQueue
 			@users_with_amounts.each do |u,amount|
 				total_amount_owed = amount
