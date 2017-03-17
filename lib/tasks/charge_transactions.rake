@@ -7,13 +7,13 @@ namespace :charge_transactions do
 		if (1..17).include?(Time.now.day)
 	    puts "Attempting to charge TransactionQueues"
 
+			# Group TransactionQueue by User with summed amounts
+			@users_with_amounts = TransactionQueue.group(:user).sum(:amount)
+
 			# Loop through each grouped User in the TransactionQueue
 			@users_with_amounts.each do |u,amount|
 				total_amount_owed = amount
 				amount_in_balance = Balance.where(account_id: u.accounts).first.amount
-
-				# Group TransactionQueue by User with summed amounts
-				@users_with_amounts = TransactionQueue.where(user_id: u.id).group(:user).sum(:amount)
 
 				# Group TransactionQueue by User-Project with amounts owed to get proportions of debts per project
 				user_projects_with_amounts = TransactionQueue.where(user_id: u.id).group(:user_id).group(:project_id).sum(:amount)
