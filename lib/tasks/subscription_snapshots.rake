@@ -7,7 +7,7 @@
 # charge_transactions.rake =>			Go through TransactionQueue table, grouped by User, and charge Account.balance then Stripe API. Move records from
 	# TransactionQueue to PastTransaction once succesful. Repeat for 5 days or until all records are processed succesfully (moved to PastTransaction)
 
-namespace :monthly_sub_snapshot do
+namespace :subscription_snapshots do
   desc "Everyday create Release Snapshots and if it's the 1st of the month create Monthly Snapshots"
   task :start => :environment do
 

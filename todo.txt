@@ -107,6 +107,39 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Fill in dummy project data
 [x] Recaptcha
 [x] RewardsTiers form and Goals form is only able to add projects[rewards_tier_attributes][1], can't have multiple
+[x] Fill in the TODOs
+[x] When a User creates a Project, if StripeInfo.account_id is nil use Stripe::Account.create and store account_id, secret_key, shareable_key
+[x] Are we using Stripe Platform Account.Yes
+[x] Not Now: I need to create `Charges` Controller and Model to keep track of and issue charges
+[x] I need to get a Stripe Platform Account and see how that works. Do my Project Owners have to have Stripe accounts?
+[x] How do I determine the Stripe fee? It looks like I pass the amount I want the user to end up with instead of the amount I keep, can I pass in that I want to keep x amount?
+# How do we move transactions from Queue to Past? Grouped or no? No, same as in Queue + status
+# charge_transactions
+	# If it's the first-fifth of the month, after the snapshots have finished
+		# Group TransactionQueue table by User, sum(amount) as total_amount_owed
+		# Separately, group TransactionQueue table by User-Project and get proportion of each Project's amount for the User
+		# Next, if User.account.balance > 0 deduct upto total_amount_owed from balance
+		# Charge remaining total_amount_owed to StripeInfo.customer_id
+		# If charge is successful
+			# Take the amount_charged - 5% and multiply it by User-Project.proportion
+			# Round amounts and credit each Project.users.account.balance (Project Owner's account)
+			# Copy all of User's TransactionQueue records to PastTransaction with 'successful' status
+		# If charge is unsuccessful
+			# Leave the User's records in TransactionQueue
+	# If it's the fifth of the month (after the above code has finished for the 5th day this month)
+		# # Copy all TransactionQueue records to PastTransaction with 'failed' status
+[x] If user does not have Stripe info saved, force the credit card form, and then show Subscription form
+	[x] Stripe form: remove Remember Me and add Zip Code
+[x] Project owner sees an additional 'Create Release' button that creates a Release record, if ReleaseSub Project
+	[x] Fix 'monthly' and 'episodic'
+	[x] When a Release record is created, create a snapshot of ReleaseSubscription for Project and copy to ReleaseTransactionQueue
+[x] End of month triggers a snapshot of MonthlySubscription copied to MonthlyTransactionQueue
+	[x] For each User in Transaction Queue
+		[x] Sum all total debts
+		[] If Account.balance > 0 then withdrawl up the total amount from Account.balance
+		[x] For the remainder of debt create Stripe API call for amount
+			[x] Credit balance for each Project Owner proportionally based on total after fees and out take
+[x] Project Owners can refund Month/Release, or User for Month/Release
 
 [] Add functionality to 'Share' button
 
@@ -117,21 +150,15 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[x] Turn User stories into decision tree
 	[x] List all Models and Attributes
 	[x] Create the Models in rails
-	[] Create logic in rails
-	[] Add functionality to Support project with Stripe
-
-[x] If user does not have Stripe info saved, force the credit card form, and then show Subscription form
-	[x] Stripe form: remove Remember Me and add Zip Code
-[x] Project owner sees an additional 'Create Release' button that creates a Release record, if ReleaseSub Project
-	[x] Fix 'monthly' and 'episodic'
-	[] When a Release record is created, create a snapshot of ReleaseSubscription for Project and copy to ReleaseTransactionQueue
-[] End of month triggers a snapshot of MonthlySubscription copied to MonthlyTransactionQueue
-	[] For each User in Transaction Queue
-		[] Sum all total debts
-		[] If Account.balance > 0 then withdrawl up the total amount from Account.balance
-		[] For the remainder of debt create Stripe API call for amount
-			[] Credit balance for each Project Owner proportionally based on total after fees and out take
-[] Project Owners can refund Month/Release, or User for Month/Release
+	[x] Create logic in rails
+	[x] Add functionality to Support project with Stripe
+	[] Test Subscription Rake Tasks
+		[x] Transfer all Projects to 2 Users with Stripe.stripe_id (user_id: 13, 11)
+		[] Run charge_transactions and subscription_snapshots
+		[] Fix errors as they come up
+		[] Check Stripe balances, transfers, etc.
+		[] Remove all Account.balance code?
+	[] Do we even need Account.balance since Project Owners have Managed Stripe accounts?
 
 
 [] Make section for Goals
