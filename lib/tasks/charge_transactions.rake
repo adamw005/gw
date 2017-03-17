@@ -23,8 +23,8 @@ namespace :charge_transactions do
 			end
 
 			# Loop through each grouped User in the TransactionQueue
-			@users_with_amounts.each do |u|
-				total_amount_owed = u.amount
+			@users_with_amounts.each do |u,amount|
+				total_amount_owed = amount
 				amount_in_balance = Balance.where(account_id: u.accounts).first.amount
 
 				# Create Invoice Number (Transfer Group) that doesn't exist yet
