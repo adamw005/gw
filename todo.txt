@@ -145,6 +145,8 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 
 [] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
 
+[] Create Project Dashboard page for Project Owners
+
 [] Create Payment Structure
 	[x] Write out User stories
 	[x] Turn User stories into decision tree
@@ -159,11 +161,11 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 			[] charge_transactions
 				[] Check Subscription, Stripe accounts, etc
 			[x] subscription_snapshots
-				[] Check Subscription and Queue tables to verify contents
+				[x] Check Subscription and Queue tables to verify contents
 		[] Check Stripe balances, transfers, etc.
 		[] Remove all Account.balance code?
-	[] Do we even need Account.balance since Project Owners have Managed Stripe accounts?
-	[] Should we only Transfer the fund after day 5?
+	[] Do we even need Account.balance since Project Owners have Managed Stripe accounts? I don't think so
+	[] Should we only Transfer the funds after day 5?
 	[] Create more subscription data and verify everything works as it should
 
 [] Make section for Goals

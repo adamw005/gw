@@ -4,7 +4,7 @@ namespace :charge_transactions do
   task :start => :environment do
 
 		### Charge Transactions ###
-		if (1..5).include?(Time.now.day)
+		if (1..18).include?(Time.now.day)
 	    puts "Attempting to charge TransactionQueues"
 
 			# Group TransactionQueue by User with summed amounts
@@ -85,7 +85,8 @@ namespace :charge_transactions do
 						  :currency => "usd",
 						  :destination => StripeInfo.where(account_id: project_owner.accounts.first.id).first.stripe_id,
 							:application_fee => (amount_to_transfer*0.05).round,
-						  :transfer_group => invoice_number
+							:source_transaction => charge[:charge_id]
+						  # :transfer_group => invoice_number
 						})
 					end
 					puts "4"

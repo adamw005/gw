@@ -50,6 +50,9 @@ class ProjectsController < ApplicationController
     end
   end
 
+	def dashboard
+	end
+
 	private
 
 	def project_params
