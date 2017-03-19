@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 	post 'stripe_infos/create'
 	post 'releases/create'
 	delete 'subscriptions/destroy/:id', to: 'subscriptions#destroy', as: 'subscriptions_destroy'
-	get 'projects/dashboard'
+	get 'projects/dashboard/:id', to: 'projects#dashboard', as: 'dashboard'
 	root to: 'pages#landing'
 	resources :charges
 
