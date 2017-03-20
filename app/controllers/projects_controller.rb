@@ -53,14 +53,14 @@ class ProjectsController < ApplicationController
 	def dashboard
 		@project = Project.find(params[:id])
 		# Create variables to use as data in Dashboard charts
-		@earnings_over_time = PastTransaction.where(project_id: @project.id).group("date_part('month', created_at)").sum(:amount)
-		@subscriptions_over_time = PastTransaction.where(project_id: @project.id).group("date_part('month', created_at)").count
-		@posts_over_time = Post.where(project_id: @project.id).group("date_part('month', created_at)").count
-		@comments_over_time = Comment.where(project_id: @project.id).group("date_part('month', created_at)").count
-		@number_charges_declined = PastTransaction.where(project_id: @project.id, status: 'declined').group("date_part('month', created_at)").count
-		@number_charges_accepted = PastTransaction.where(project_id: @project.id, status: 'successful').group("date_part('month', created_at)").count
-		@amount_charges_declined = PastTransaction.where(project_id: @project.id, status: 'declined').group("date_part('month', created_at)").sum(:amount)
-		@amount_charges_accepted = PastTransaction.where(project_id: @project.id, status: 'successful').group("date_part('month', created_at)").sum(:amount)
+		@earnings_over_time = PastTransaction.where(project_id: @project.id, created_at < 6.months.ago).group("DATE_TRUNC('month', created_at)").sum(:amount)
+		@subscriptions_over_time = PastTransaction.where(project_id: @project.id, created_at < 6.months.ago).group("DATE_TRUNC('month', created_at)").count
+		@posts_over_time = Post.where(project_id: @project.id, created_at < 6.months.ago).group("DATE_TRUNC('month', created_at)").count
+		@comments_over_time = Comment.where(project_id: @project.id, created_at < 6.months.ago).group("DATE_TRUNC('month', created_at)").count
+		@number_charges_declined = PastTransaction.where(project_id: @project.id, created_at < 6.months.ago, status: 'declined').group("DATE_TRUNC('month', created_at)").count
+		@number_charges_accepted = PastTransaction.where(project_id: @project.id, created_at < 6.months.ago, status: 'successful').group("DATE_TRUNC('month', created_at)").count
+		@amount_charges_declined = PastTransaction.where(project_id: @project.id, created_at < 6.months.ago, status: 'declined').group("DATE_TRUNC('month', created_at)").sum(:amount)
+		@amount_charges_accepted = PastTransaction.where(project_id: @project.id, created_at < 6.months.ago, status: 'successful').group("DATE_TRUNC('month', created_at)").sum(:amount)
 	end
 
 	private
