@@ -13,9 +13,19 @@
 
 <%= line_chart @earnings_over_time %>
 <%= line_chart @subscriptions_over_time %>
-<%= line_chart @posts_over_time %>
-<%= line_chart @comments_over_time %>
-<%= line_chart @number_charges_declined %>
-<%= line_chart @number_charges_accepted %>
+
+<%= line_chart [
+	{name: "Posts", data: @posts_over_time },
+	{name: "Comments", data: @comments_over_time }
+	]
+%>
+
+<%= column_chart [
+	{name: "Accepted", data: @number_charges_accepted },
+	{name: "Declined", data: @number_charges_declined }
+	],
+	stacked: true
+%>
+
 <%= line_chart @amount_charges_declined %>
 <%= line_chart @amount_charges_accepted %>
