@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
+<%= line_chart User.group_by_day(:created_at).count %>
+
 
 <%= @earnings_over_time %>
 <%= @subscriptions_over_time %>
