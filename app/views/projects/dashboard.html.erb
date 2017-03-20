@@ -13,10 +13,12 @@
 
 
 
-<div class="ct-chart ct-golden-section"></div>
+<div class="ct-chart"></div>
+<div class="ct-chart2"></div>
+
 
 <script>
-new Chartist.Line('.ct-chart', <%= @subscriptions_over_time %>, {
+new Chartist.Line('.ct-chart2', <%= @subscriptions_over_time %>, {
   fullWidth: true,
   chartPadding: {
     right: 40
