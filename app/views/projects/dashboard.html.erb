@@ -3,6 +3,8 @@
 
 <%= line_chart @posts_over_time %>
 
+<%= line_chart Post.where(project_id: @project.id).group_by_month(:created_at, last: 6).count %>
+
 <%= line_chart [
   {name: "Users", data: User.group_by_day(:created_at).count},
   {name: "Comments", data: Comment.group_by_day(:created_at).count},
