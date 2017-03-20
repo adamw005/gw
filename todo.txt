@@ -167,6 +167,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[] Do we even need Account.balance since Project Owners have Managed Stripe accounts? I don't think so
 	[] Should we only Transfer the funds after day 5?
 	[] Create more subscription data and verify everything works as it should
+	[] Choose country on Project creation page
 
 [] Make section for Goals
 
