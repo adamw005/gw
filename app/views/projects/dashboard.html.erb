@@ -3,6 +3,12 @@
 
 <%= line_chart @subscriptions_over_time %>
 
+<%= line_chart [
+  {name: "Users", data: User.group_by_day(:created_at).count},
+  {name: "Comments", data: Comment.group_by_day(:created_at).count},
+	{name: "Posts", data: Post.group_by_day(:created_at).count}
+] %>
+
 <%= @earnings_over_time %>
 <%= @subscriptions_over_time %>
 <%= @posts_over_time %>
