@@ -11,11 +11,11 @@
 	{name: "Posts", data: Post.group_by_day(:created_at).count}
 ] %>
 
-<%= @earnings_over_time %>
-<%= @subscriptions_over_time %>
-<%= @posts_over_time %>
-<%= @comments_over_time %>
-<%= @number_charges_declined %>
-<%= @number_charges_accepted %>
-<%= @amount_charges_declined %>
-<%= @amount_charges_accepted %>
+<%= line_chart @earnings_over_time %>
+<%= line_chart @subscriptions_over_time %>
+<%= line_chart @posts_over_time %>
+<%= line_chart @comments_over_time %>
+<%= line_chart @number_charges_declined %>
+<%= line_chart @number_charges_accepted %>
+<%= line_chart @amount_charges_declined %>
+<%= line_chart @amount_charges_accepted %>
