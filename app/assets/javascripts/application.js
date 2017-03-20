@@ -17,3 +17,5 @@
 //= require 'Dante2.js'
 //= require trix
 //= require_tree .
+//= require Chart.bundle
+//= require chartkick
