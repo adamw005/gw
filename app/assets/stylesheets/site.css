@@ -742,6 +742,19 @@
   color: #353535;
 }
 
+.dashboard-section {
+  background-color: #f3f3f3;
+}
+
+.div-block {
+  background-color: #fff;
+}
+
+.dashboard-graph-block {
+  background-color: #fff;
+  box-shadow: 1px 1px 3px 0 #000;
+}
+
 html.w-mod-js *[data-ix="login-modal"] {
   display: none;
   opacity: 0;

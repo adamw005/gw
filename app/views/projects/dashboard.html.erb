@@ -1,16 +1,36 @@
 
-<%= line_chart @earnings_over_time %>
-<%= line_chart @subscriptions_over_time %>
-
-<%= line_chart [
-	{name: "Posts", data: @posts_over_time },
-	{name: "Comments", data: @comments_over_time }
-	]
-%>
-
-<%= column_chart [
-	{name: "Accepted", data: @number_charges_accepted },
-	{name: "Declined", data: @number_charges_declined }
-	],
-	stacked: true
-%>
+<div class="dashboard-section">
+	<div class="w-container">
+		<div class="w-row">
+			<div class="w-col w-col-3">
+				<div class="dashboard-graph-block">
+					<%= line_chart @earnings_over_time %>
+				</div>
+			</div>
+			<div class="w-col w-col-3">
+				<div class="dashboard-graph-block">
+					<%= line_chart @subscriptions_over_time %>
+				</div>
+			</div>
+			<div class="w-col w-col-3">
+				<div class="dashboard-graph-block">
+					<%= line_chart [
+						{name: "Posts", data: @posts_over_time },
+						{name: "Comments", data: @comments_over_time }
+						]
+					%>
+				</div>
+			</div>
+			<div class="w-col w-col-3">
+				<div class="dashboard-graph-block">
+					<%= column_chart [
+						{name: "Accepted", data: @number_charges_accepted },
+						{name: "Declined", data: @number_charges_declined }
+						],
+						stacked: true
+					%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
