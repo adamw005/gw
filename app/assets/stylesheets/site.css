@@ -756,6 +756,10 @@
   box-shadow: 1px 1px 3px 0 #000;
 }
 
+.dashboard-project-name {
+	color: #4b4b4b
+}
+
 html.w-mod-js *[data-ix="login-modal"] {
   display: none;
   opacity: 0;
