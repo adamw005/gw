@@ -307,8 +307,9 @@
 .create-release-text {
 	font-size: 1.2rem;
 	text-decoration: none;
-	display: block;
+	display: inline-block;
 	color: #4c4c4c;
+	padding-right: 10px;
 
 }
 
