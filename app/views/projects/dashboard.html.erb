@@ -11,7 +11,7 @@
 						<%= line_chart @earnings_over_time %>
           </div>
           <div class="dashboard-graph-block">
-						<%= line_chart @subscriptions_over_time %>
+						<%= line_chart @subscriptions_over_time, xtitle: "Date", ytitle: "Subscriptions" %>
           </div>
         </div>
         <div class="w-col w-col-6">
