@@ -750,11 +750,8 @@
   background-color: #f3f3f3;
 }
 
-.div-block {
-  background-color: #fff;
-}
-
 .dashboard-graph-block {
+  margin: 10px;
   background-color: #fff;
   box-shadow: 1px 1px 3px 0 #000;
 }

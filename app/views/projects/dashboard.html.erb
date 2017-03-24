@@ -3,39 +3,36 @@
 	<%= render '/shared/login_modal' %>
 	<%= render '/shared/nav' %>
 	<%= render 'subscribe_modal' %>
-	<div class="dashboard-section">
-		<div class="w-container">
-			<div class="w-row">
-				<div class="w-col w-col-3">
-					<div class="dashboard-graph-block">
+  <div class="dashboard-section">
+    <div class="w-container">
+      <h1>Dashboard</h1>
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <div class="dashboard-graph-block">
 						<%= line_chart @earnings_over_time %>
-					</div>
-				</div>
-				<div class="w-col w-col-3">
-					<div class="dashboard-graph-block">
+          </div>
+          <div class="dashboard-graph-block">
 						<%= line_chart @subscriptions_over_time %>
-					</div>
-				</div>
-				<div class="w-col w-col-3">
-					<div class="dashboard-graph-block">
+          </div>
+        </div>
+        <div class="w-col w-col-6">
+          <div class="dashboard-graph-block">
 						<%= line_chart [
 							{name: "Posts", data: @posts_over_time },
 							{name: "Comments", data: @comments_over_time }
 							]
 						%>
-					</div>
-				</div>
-				<div class="w-col w-col-3">
-					<div class="dashboard-graph-block">
+          </div>
+          <div class="dashboard-graph-block">
 						<%= column_chart [
 							{name: "Accepted", data: @number_charges_accepted },
 							{name: "Declined", data: @number_charges_declined }
 							],
 							stacked: true
 						%>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
