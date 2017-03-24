@@ -140,12 +140,11 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 		[x] For the remainder of debt create Stripe API call for amount
 			[x] Credit balance for each Project Owner proportionally based on total after fees and out take
 [x] Project Owners can refund Month/Release, or User for Month/Release
+[x] Create Project Dashboard page for Project Owners
 
 [] Add functionality to 'Share' button
 
 [] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
-
-[] Create Project Dashboard page for Project Owners
 
 [] Create Payment Structure
 	[x] Write out User stories
@@ -172,6 +171,10 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [] Make section for Goals
 
 [] Rewards Tier column should only be written once, instead of on each tab
+
+
+
+
 
 [] Add Paypal integration
 
