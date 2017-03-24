@@ -757,7 +757,8 @@
 }
 
 .dashboard-project-name {
-	color: #4b4b4b
+	color: #4b4b4b;
+	display: inline;
 }
 
 html.w-mod-js *[data-ix="login-modal"] {
