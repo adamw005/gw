@@ -761,6 +761,10 @@
 	display: inline;
 }
 
+.dashboard-h1 {
+	display: inline-block;
+}
+
 html.w-mod-js *[data-ix="login-modal"] {
   display: none;
   opacity: 0;
