@@ -2,39 +2,43 @@
 	<%= render '/shared/signup_modal' %>
 	<%= render '/shared/login_modal' %>
 	<%= render '/shared/nav' %>
-  <div class="dashboard-section">
-    <div class="w-container">
-      <h1 class="dashboard-h1">Dashboard</h1>
-			<h4 class="dashboard-project-name">for <%= @project.title %></h4>
-      <div class="w-row">
-        <div class="w-col w-col-6">
-          <div class="dashboard-graph-block">
-						<%= line_chart @earnings_over_time, xtitle: "Date", ytitle: "Earnings" %>
-          </div>
-          <div class="dashboard-graph-block">
-						<%= line_chart @subscriptions_over_time, xtitle: "Date", ytitle: "Subscriptions" %>
-          </div>
-        </div>
-        <div class="w-col w-col-6">
-          <div class="dashboard-graph-block">
-						<%= line_chart [
-							{name: "Posts", data: @posts_over_time },
-							{name: "Comments", data: @comments_over_time }
-							],
-							xtitle: "Date"
-						%>
-          </div>
-          <div class="dashboard-graph-block">
-						<%= column_chart [
-							{name: "Accepted", data: @number_charges_accepted },
-							{name: "Declined", data: @number_charges_declined }
-							],
-							stacked: true,
-							xtitle: "Date"
-						%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+	<% if current_user && current_user == @project.user %>
+	  <div class="dashboard-section">
+	    <div class="w-container">
+	      <h1 class="dashboard-h1">Dashboard</h1>
+				<h4 class="dashboard-project-name">for <%= @project.title %></h4>
+	      <div class="w-row">
+	        <div class="w-col w-col-6">
+	          <div class="dashboard-graph-block">
+							<%= line_chart @earnings_over_time, xtitle: "Date", ytitle: "Earnings" %>
+	          </div>
+	          <div class="dashboard-graph-block">
+							<%= line_chart @subscriptions_over_time, xtitle: "Date", ytitle: "Subscriptions" %>
+	          </div>
+	        </div>
+	        <div class="w-col w-col-6">
+	          <div class="dashboard-graph-block">
+							<%= line_chart [
+								{name: "Posts", data: @posts_over_time },
+								{name: "Comments", data: @comments_over_time }
+								],
+								xtitle: "Date"
+							%>
+	          </div>
+	          <div class="dashboard-graph-block">
+							<%= column_chart [
+								{name: "Accepted", data: @number_charges_accepted },
+								{name: "Declined", data: @number_charges_declined }
+								],
+								stacked: true,
+								xtitle: "Date"
+							%>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	<% else %>
+		You are not allowed to access this padding
+	<% end %>
 </body>
