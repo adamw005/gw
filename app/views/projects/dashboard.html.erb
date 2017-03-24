@@ -8,7 +8,7 @@
       <div class="w-row">
         <div class="w-col w-col-6">
           <div class="dashboard-graph-block">
-						<%= line_chart @earnings_over_time %>
+						<%= line_chart @earnings_over_time, xtitle: "Date", ytitle: "Earnings" %>
           </div>
           <div class="dashboard-graph-block">
 						<%= line_chart @subscriptions_over_time, xtitle: "Date", ytitle: "Subscriptions" %>
@@ -19,7 +19,8 @@
 						<%= line_chart [
 							{name: "Posts", data: @posts_over_time },
 							{name: "Comments", data: @comments_over_time }
-							]
+							],
+							xtitle: "Date"
 						%>
           </div>
           <div class="dashboard-graph-block">
@@ -27,7 +28,8 @@
 							{name: "Accepted", data: @number_charges_accepted },
 							{name: "Declined", data: @number_charges_declined }
 							],
-							stacked: true
+							stacked: true,
+							xtitle: "Date"
 						%>
           </div>
         </div>
