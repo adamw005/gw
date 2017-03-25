@@ -23,10 +23,10 @@ class ReleasesController < ApplicationController
 	    else
 	      render :action => 'new'
 	    end
-		end
-	else
-		redirect_to :back
-  end
+		else
+			redirect_to :back
+  	end
+	end
 
 	private
 

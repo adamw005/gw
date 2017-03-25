@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316213236) do
+ActiveRecord::Schema.define(version: 20170324211028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20170316213236) do
   add_index "goals", ["project_id"], name: "index_goals_on_project_id", using: :btree
 
   create_table "past_transactions", force: :cascade do |t|
-    t.string   "type"
+    t.string   "type_of"
     t.decimal  "amount"
     t.integer  "project_id"
     t.string   "status"

@@ -136,39 +136,44 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] End of month triggers a snapshot of MonthlySubscription copied to MonthlyTransactionQueue
 	[x] For each User in Transaction Queue
 		[x] Sum all total debts
-		[] If Account.balance > 0 then withdrawl up the total amount from Account.balance
+		[x] If Account.balance > 0 then withdrawl up the total amount from Account.balance
 		[x] For the remainder of debt create Stripe API call for amount
 			[x] Credit balance for each Project Owner proportionally based on total after fees and out take
 [x] Project Owners can refund Month/Release, or User for Month/Release
 [x] Create Project Dashboard page for Project Owners
-
-[] Add functionality to 'Share' button
-
-[] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
-
-[] Create Payment Structure
+[x] Create Payment Structure
 	[x] Write out User stories
 	[x] Turn User stories into decision tree
 	[x] List all Models and Attributes
 	[x] Create the Models in rails
 	[x] Create logic in rails
 	[x] Add functionality to Support project with Stripe
-	[] Test Subscription Rake Tasks
+	[x] Test Subscription Rake Tasks
 		[x] Transfer all Projects to 2 Users with Stripe.stripe_id (user_id: 13, 11)
-		[] Run charge_transactions and subscription_snapshots
-		[] Fix errors as they come up
-			[] charge_transactions
-				[] Check Subscription, Stripe accounts, etc
+		[x] Run charge_transactions and subscription_snapshots
+		[x] Fix errors as they come up
+			[x] charge_transactions
+				[x] Check Subscription, Stripe accounts, etc
 			[x] subscription_snapshots
 				[x] Check Subscription and Queue tables to verify contents
-		[] Check Stripe balances, transfers, etc.
-		[] Remove all Account.balance code?
-	[] Do we even need Account.balance since Project Owners have Managed Stripe accounts? I don't think so
-	[] Should we only Transfer the funds after day 5?
-	[] Create more subscription data and verify everything works as it should
-	[] Choose country on Project creation page
+		[x] Check Stripe balances, transfers, etc.
+		[x] Remove all Account.balance code?
+	[x] Do we even need Account.balance since Project Owners have Managed Stripe accounts? I don't think so
+	[x] Should we only Transfer the funds after day 5?
+
+[] Add functionality to 'Share' button
+
+[] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
+
+[] Create more subscription data and verify all Stripe API stuff works as it should
+
+[] Choose country on Project creation page
 
 [] Make section for Goals
+
+[] Create Account Balance/Profile page
+
+[] PastTransaction should be STI, I hacked it using 'type_of'
 
 [] Rewards Tier column should only be written once, instead of on each tab
 
