@@ -17,7 +17,7 @@
 				<%= f.password_field :password_confirmation, data: {name: 'password_confirmation'}, class: "w-input", id: "password_confirmation", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
 
 				<label class="form-label" for="username">Country</label>
-				<%= f.collection_select :country_id, Country.order(:name), :id, :name, class: "w-input", required: "required" %>
+				<%= f.collection_select :country_id, Country.order(:name), :id, :name, {}, { class: "w-input", required: "required" } %>
 
 				<%= recaptcha_tags %>
 
