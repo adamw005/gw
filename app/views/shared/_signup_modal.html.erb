@@ -20,7 +20,7 @@
 				<%= f.email_field :username, data: {name: 'username'}, class: "w-input", id: "username", maxlength: "256", placeholder: "Username", required: "required", type:"username", autofocus: 'true' %>
 
 				<label class="form-label" for="username">Country</label>
-				<%= f.collection_select :country_id, Country.order(:name),:id,:name, , class: "w-input", required: "required" %>
+				<%= f.collection_select :country_id, Country.order(:name),:id,:name, class: "w-input", required: "required" %>
 
 				<%= recaptcha_tags %>
 
