@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324211028) do
+ActiveRecord::Schema.define(version: 20170327194513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 20170324211028) do
 
   add_index "comments", ["project_id"], name: "index_comments_on_project_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "code"
+  end
 
   create_table "goals", force: :cascade do |t|
     t.string   "title"
@@ -194,8 +201,10 @@ ActiveRecord::Schema.define(version: 20170324211028) do
     t.string   "avatar"
     t.string   "full_name"
     t.string   "username"
+    t.integer  "country_id"
   end
 
+  add_index "users", ["country_id"], name: "index_users_on_country_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
@@ -222,4 +231,5 @@ ActiveRecord::Schema.define(version: 20170324211028) do
   add_foreign_key "transaction_queues", "releases"
   add_foreign_key "transaction_queues", "rewards_tiers"
   add_foreign_key "transaction_queues", "users"
+  add_foreign_key "users", "countries"
 end

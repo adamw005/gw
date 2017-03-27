@@ -167,17 +167,21 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 
 [] Create more subscription data and verify all Stripe API stuff works as it should
 
-[] Choose country on Project creation page
+[] Choose country on Project creation page. Add it to User table on Sign Up
+	[x] Add Country table
+	[x] Seed country list
+	[x] Add references to User
+	[] Add to singup form
 
 [] Make section for Goals
 
-[] Create Account Balance/Profile page
+[] Create Account Balance/User Profile page
 
 [] PastTransaction should be STI, I hacked it using 'type_of'
 
 [] Rewards Tier column should only be written once, instead of on each tab
 
-
+[] Create tests for everything
 
 
 
@@ -195,7 +199,7 @@ Manual changes done to css:
 
 Demog.io
 
-[] Make more mobile friendly
+[x] Make more mobile friendly
 [] Can we make the site generate a Twitter image for links?
 
 

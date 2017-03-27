@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 			# Create Managed Stripe Account
 			stripe_account = Stripe::Account.create(
 			  {
-			    :country => "US", # TODO Create country field in Project creation form
+			    :country => @project.user.country.code, #"US", # TODO Create country field in Project creation form
 			    :managed => true
 			  }
 			)
