@@ -160,6 +160,12 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 		[x] Remove all Account.balance code?
 	[x] Do we even need Account.balance since Project Owners have Managed Stripe accounts? I don't think so
 	[x] Should we only Transfer the funds after day 5?
+	[x] Choose country on Project creation page. Add it to User table on Sign Up
+		[x] Add Country table
+		[x] Seed country list
+		[x] Add references to User
+		[x] Add to singup form
+
 
 [] Add functionality to 'Share' button
 
@@ -167,17 +173,13 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 
 [] Create more subscription data and verify all Stripe API stuff works as it should
 
-[] Choose country on Project creation page. Add it to User table on Sign Up
-	[x] Add Country table
-	[x] Seed country list
-	[x] Add references to User
-	[] Add to singup form
-
-[] Make section for Goals
+[] Make section for Goals on Project page
 
 [] Create Account Balance/User Profile page
 
 [] PastTransaction should be STI, I hacked it using 'type_of'
+
+[] Add flash messages into controller and applicaiton.html.erb
 
 [] Rewards Tier column should only be written once, instead of on each tab
 

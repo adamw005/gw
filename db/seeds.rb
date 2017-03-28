@@ -16,7 +16,13 @@
 
 
 
-Country.create(name: 'United States', code: 'US')
+# Country.create(name: 'United States', code: 'US')
+
+
+
+
+
+
 # Country.create(name: 'Australia')
 # Country.create(name: 'Canada')
 # Country.create(name: 'Denmark')
