@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
 		unless @account
 			# Create a User.Account
 			Account.create(user_id: current_user.id)
+			@account = Account.where(user_id: @project.user.id).first
 		end
 		unless @account && StripeInfo.where(account_id: @account.id).first
 			# Create StripeInfo record
