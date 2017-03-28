@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 			# Create Managed Stripe Account
 			stripe_account = Stripe::Account.create(
 			  {
-			    :country => @project.user.country.code, #"US", # TODO Create country field in Project creation form
+			    :country => @project.user.country.code, #"US",
 			    :managed => true
 			  }
 			)
@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
 		end
 
     if @project.save
-      redirect_to projects_path(@project), notice: "Project succesfully created"
+      redirect_to projects_path(@project, notice: "Project succesfully created")
     else
       render :action => 'new'
     end
