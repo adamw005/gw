@@ -179,7 +179,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 
 [] PastTransaction should be STI, I hacked it using 'type_of'
 
-[x] Add flash messages into controller and applicaiton.html.erb
+[] Add flash messages into controller and applicaiton.html.erb
 	[] Create css in webflow for flash div
 
 [] Rewards Tier column should only be written once, instead of on each tab
