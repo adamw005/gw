@@ -39,8 +39,7 @@
 	    </div>
 	  </div>
 		Account Balance:
-		<%= @account_balance.available["currency"] %>
-		<%= @account_balance.available["amount"] %>
+		<%= @account_balance.available[0] %>
 	<% else %>
 		You are not allowed to access this page
 	<% end %>
