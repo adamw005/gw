@@ -38,9 +38,10 @@
 	      </div>
 	    </div>
 	  </div>
-		Account Balance: 
-		<%= @account_balance %>
+		Account Balance:
+		<%= @account_balance.available.currency %>
+		<%= @account_balance.available.amount %>
 	<% else %>
-		You are not allowed to access this padding
+		You are not allowed to access this page
 	<% end %>
 </body>
