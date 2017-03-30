@@ -52,8 +52,8 @@ class ProjectsController < ApplicationController
   end
 
 	def dashboard
-		@account = Account.where(user_id: @project.user.id).first
 		@project = Project.find(params[:id])
+		@account = Account.where(user_id: @project.user.id).first
 
 		# Create variables to use as data in Dashboard charts
 		@earnings_over_time = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).sum(:amount)
