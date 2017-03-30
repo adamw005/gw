@@ -66,7 +66,7 @@ class ProjectsController < ApplicationController
 		@amount_charges_accepted = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).sum(:amount)
 
 		# Find Stripe account balance
-		@account_balance = Stripe::Balance.retrieve(stripe_account: StripeInfo.where(account_id: @account.id).first)
+		@account_balance = Stripe::Balance.retrieve(stripe_account: StripeInfo.where(account_id: @account.id).first.stripe_id)
 
 	end
 
