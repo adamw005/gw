@@ -52,7 +52,9 @@ class ProjectsController < ApplicationController
   end
 
 	def dashboard
+		@account = Account.where(user_id: @project.user.id).first
 		@project = Project.find(params[:id])
+
 		# Create variables to use as data in Dashboard charts
 		@earnings_over_time = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).sum(:amount)
 		@subscriptions_over_time = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).count
@@ -62,6 +64,10 @@ class ProjectsController < ApplicationController
 		@number_charges_accepted = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).count
 		@amount_charges_declined = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).sum(:amount)
 		@amount_charges_accepted = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).sum(:amount)
+
+		# Find Stripe account balance
+		@account_balance = Stripe::Balance.retrieve(stripe_account: StripeInfo.where(account_id: @account.id).first)
+
 	end
 
 	private
