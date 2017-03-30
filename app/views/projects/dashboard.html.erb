@@ -40,6 +40,8 @@
 	  </div>
 		Account Balance:
 		<%= @account_balance.available[:currency] %>
+		<%= @account_balance.available[0] %>
+		<%= @account_balance.available[0].currency %>
 	<% else %>
 		You are not allowed to access this page
 	<% end %>
