@@ -5,7 +5,7 @@
 			<strong class="subscribe-close-button" data-ix="subscribe-modal-close">X</strong>
 		</a>
 
-		<% if StripeInfo.where(account_id: current_user.accounts.select(:id)).present? %>
+		<% if current_user && StripeInfo.where(account_id: current_user.accounts.select(:id)).present? %>
 			<h3 class="subscribe-modal-title">Subscribe</h3>
 			<p>Please choose your subscription.</p>
 			<div class="w-form">

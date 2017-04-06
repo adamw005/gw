@@ -165,26 +165,39 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 		[x] Seed country list
 		[x] Add references to User
 		[x] Add to singup form
+[x] Add Stripe Account Balance to Dashboard
 
 
-[] Add functionality to 'Share' button
 
-[] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
+[] Have a nice design created
+	[] Create a list/screenshot of each page
 
-[] Create more subscription data and verify all Stripe API stuff works as it should
+[] Write copy for landing page
+	[] Sections
+		Banner Image & Title
+		Benefits
+		Sample Projects (See the final product and social proof)
+		Specific Social Proof success
+		High level Social Proof
+
+[] Find a URL
+[] Create titles for pages
+
+[] Talk to Matt about funding
+
+[] Create tests for everything (only a priority once we have any traction at all?)
+	[] Create more subscription data and verify all Stripe API stuff works as it should
 
 [] Make section for Goals on Project page
 
-[] Create Account Balance/User Profile page
+
 
 [] PastTransaction should be STI, I hacked it using 'type_of'
-
 [] Add flash messages into controller and applicaiton.html.erb
 	[] Create css in webflow for flash div
-
 [] Rewards Tier column should only be written once, instead of on each tab
-
-[] Create tests for everything
+[] Add functionality to 'Share' button
+[] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
 
 
 
