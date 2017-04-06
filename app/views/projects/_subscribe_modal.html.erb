@@ -32,7 +32,7 @@
 					<div>Oops! Something went wrong while submitting the form</div>
 				</div>
 			</div>
-		<% else %>
+		<% elsif current_user %>
 			<h3 class="stripe-info-modal-title">Add Card</h3>
 			<p>Please add your card.</p>
 			<% if @project.charge_occurrence = "MonthlySubscription" %>
