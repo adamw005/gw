@@ -35,7 +35,7 @@
             <h5 class="summary-h6">backers</h5>
             <h1 class="summary-h1"><%= number_to_currency(@project.amount_sum, :unit => "$", precision: 0) %></h1>
             <h5 class="summary-h6">per episode</h5>
-            <div class="w-clearfix"><a class="support-button w-button" data-ix="subscribe-button" href="#">Support Project</a><a class="share-button w-button" href="#">Share</a>
+            <div class="w-clearfix"><a class="support-button w-button" data-ix="<%= if current_user then 'subscribe-button' else 'login-button' end %>" href="#">Support Project</a><a class="share-button w-button" href="#">Share</a>
             </div>
           </div>
         </div>
