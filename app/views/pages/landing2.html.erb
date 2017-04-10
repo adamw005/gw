@@ -47,13 +47,13 @@
     <div class="sample-container w-container">
       <div class="benefit-row w-row">
 				<% Project.all.limit(3).each do |p| %>
-        <div class="sample-col w-clearfix w-col w-col-4">
+        <a class="sample-col w-clearfix w-col w-col-4">
           <div class="sample-border"></div><img class="sample-image" src="<%= p.box_image.url(:medium) %>">
           <h3 class="sample-h3"><%= p.title %></h3>
           <p class="sample-p"><%= truncate(strip_tags(p.body), :length => 160) %></p>
           <p class="sample-amount"><%= number_to_currency(p.amount_sum, :unit => "$", precision: 0) %>/mo</p>
           <p class="sample-subscribers"><%= p.subscriptions.count %> Subscribers</p>
-        </div>
+        </a>
 			<% end %>
 
       </div>
