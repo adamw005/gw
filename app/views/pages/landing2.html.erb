@@ -1,0 +1,131 @@
+<head>
+  <meta charset="utf-8">
+  <title>Groundwork Landing Page</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+      }
+    });
+  </script>
+  <link href="https://daks2k3a4ib2z.cloudfront.net/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png" rel="apple-touch-icon">
+</head>
+<body class="body">
+	<%= render '/shared/signup_modal' %>
+	<%= render '/shared/login_modal' %>
+  <div class="nav-div">
+		<%= render '/shared/nav_landing' %>
+	</div>
+  <div class="banner-div">
+    <div class="title-div">
+      <h1 class="heading-2">Support your <br>favorite makers</h1>
+      <h2></h2>
+      <div class="button-div"><a class="browse-button w-button" href="#">Browse Projects</a><a class="button w-button" href="#">Start a Project</a>
+      </div>
+    </div>
+  </div>
+  <div class="benefits-section">
+    <div class="benefits-container w-container">
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <div class="fa-icon"></div>
+          <h2 class="benefits-h2">Get paid by <br>your audience</h2>
+          <p class="benefits-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+        </div>
+        <div class="w-col w-col-6">
+          <div class="fa-icon"></div>
+          <h2 class="benefits-h2">Find new<br>fans</h2>
+          <p class="benefits-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="projects-color sample-section">
+    <div class="sample-container w-container">
+      <div class="benefit-row w-row">
+        <div class="sample-col w-clearfix w-col w-col-4">
+          <div class="sample-border"></div><img class="sample-image" src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg">
+          <h3 class="sample-h3">Project Title</h3>
+          <p class="sample-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in...</p>
+          <p class="sample-amount">$504/mo</p>
+          <p class="sample-subscribers">395 Subscribers</p>
+        </div>
+        <div class="sample-col w-col w-col-4">
+          <div class="sample-border"></div><img class="sample-image" src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg">
+          <h3 class="sample-h3">Project Title</h3>
+          <p class="sample-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in...</p>
+          <p class="sample-amount">$504/mo</p>
+          <p class="sample-subscribers">395 Subscribers</p>
+        </div>
+        <div class="sample-col w-col w-col-4">
+          <div class="sample-border"></div><img class="sample-image" src="https://d3e54v103j8qbb.cloudfront.net/img/image-placeholder.svg">
+          <h3 class="sample-h3">Project Title</h3>
+          <p class="sample-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in...</p>
+          <p class="sample-amount">$504/mo</p>
+          <p class="sample-subscribers">395 Subscribers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="specific-section">
+    <div class="specific-container w-container">
+      <div class="specific-profile"></div>
+      <h4 class="specific-name">John Smith</h4>
+      <blockquote class="block-quote">Groundwork has changed my life. I now make enough money to do what I love!</blockquote>
+    </div>
+  </div>
+  <div class="proof-section">
+    <div class="proof-container w-container">
+      <div class="proof-row w-row">
+        <div class="proof-col w-col w-col-3">
+          <div class="proof-div">
+            <div class="proof-icon"></div>
+            <div class="proof-stats">
+              <h6 class="proof-title">Creators</h6>
+              <h6 class="proof-amount">754</h6>
+            </div>
+          </div>
+        </div>
+        <div class="proof-col w-col w-col-3">
+          <div class="proof-div">
+            <div class="projects-color proof-icon"></div>
+            <div class="proof-stats">
+              <h6 class="projects-color proof-title">Projects</h6>
+              <h6 class="projects-color proof-amount">1,015</h6>
+            </div>
+          </div>
+        </div>
+        <div class="proof-col w-col w-col-3">
+          <div class="proof-div">
+            <div class="proof-icon subscribers-color"></div>
+            <div class="proof-stats">
+              <h6 class="proof-title subscribers-color">Subscribers</h6>
+              <h6 class="proof-amount subscribers-color">17,986</h6>
+            </div>
+          </div>
+        </div>
+        <div class="proof-col w-col w-col-3">
+          <div class="proof-div">
+            <div class="pledges-color proof-icon"></div>
+            <div class="proof-stats">
+              <h6 class="pledges-color proof-title">Pledges</h6>
+              <h6 class="pledges-color proof-amount">$143,234</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-section">
+    <div class="cta-container w-container"><a class="cta-button w-button" href="#">Launch a Project Page Today!</a>
+    </div>
+  </div>
+  <div class="section">
+		<%= render '/projects/footer' %>
+	</div>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+</body>
+</html>

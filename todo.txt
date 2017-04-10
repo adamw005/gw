@@ -182,6 +182,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 
 [] Find a URL
 [] Create titles for pages
+[] SSL?
 
 [] Talk to Matt about funding
 

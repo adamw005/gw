@@ -1,0 +1,360 @@
+.banner-div {
+  overflow: visible;
+  height: 80vh;
+  background-image: url('/assets/images/rsz_beach_image.jpg');
+  background-position: 0px 50%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.nav-div {
+  height: 60px;
+}
+
+.title-div {
+  padding-top: 60px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.button {
+  width: 210px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #ff5f2e;
+  font-size: 22px;
+}
+
+.button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.browse-button {
+  width: 210px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: #30a9de;
+  font-size: 22px;
+}
+
+.browse-button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.button-div {
+  position: relative;
+  left: 0px;
+  top: 225px;
+  right: 0px;
+  bottom: 0px;
+  display: block;
+  padding-top: 0px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.sample-section {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 50px;
+  padding-bottom: 26px;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.sample-section.projects-color {
+  padding-bottom: 50px;
+  background-color: #efefef;
+  color: #000;
+}
+
+.sample-col {
+  padding-right: 10px;
+  padding-left: 10px;
+  border-top: 2px none #ff5f2e;
+  text-align: center;
+}
+
+.sample-image {
+  margin-top: 10px;
+  padding-top: 0px;
+}
+
+.benefit-row {
+  padding-top: 0px;
+}
+
+.heading {
+  margin-top: 10px;
+}
+
+.sample-h3 {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color: #000;
+}
+
+.sample-p {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.sample-amount {
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  float: right;
+  color: #0081b9;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sample-subscribers {
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  float: right;
+  color: #0081b9;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.sample-border {
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-bottom: 20px;
+  border-top: 2px solid #ff5f2e;
+}
+
+.section {
+  height: 20vh;
+  background-color: #d6d6d6;
+}
+
+.benefits-section {
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+}
+
+.fa-icon {
+  position: static;
+  left: 0px;
+  top: 5rem;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: visible;
+  height: 10rem;
+  margin-top: 10px;
+  clear: none;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Fontawesome, sans-serif;
+  color: #30a9de;
+  font-size: 8rem;
+  text-align: center;
+}
+
+.benefits-h2 {
+  margin-top: 0px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: 0px;
+}
+
+.body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.benefits-p {
+  margin-left: 40px;
+  padding-top: 10px;
+}
+
+.specific-section {
+  margin-top: 0px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.specific-container {
+  text-align: center;
+}
+
+.specific-profile {
+  display: inline-block;
+  float: none;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 180px;
+  background-image: url('/assets/images/128-4.jpg');
+  background-position: 0px 0px;
+  background-size: cover;
+  text-align: left;
+}
+
+.block-quote {
+  margin-right: 75px;
+  margin-left: 75px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.proof-section {
+  background-color: #494949;
+}
+
+.proof-div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.proof-icon {
+  position: static;
+  left: 0px;
+  bottom: 0px;
+  display: inline-block;
+  height: 4rem;
+  margin-top: 0rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: Fontawesome, sans-serif;
+  color: #fdd93a;
+  font-size: 4rem;
+}
+
+.proof-icon.projects-color {
+  color: #4ecdc4;
+}
+
+.proof-icon.subscribers-color {
+  color: #ff6b6b;
+}
+
+.proof-icon.pledges-color {
+  color: #c768ff;
+}
+
+.proof-title {
+  display: block;
+  float: none;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  color: #fdd93a;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.proof-title.projects-color {
+  color: #4ecdc4;
+}
+
+.proof-title.subscribers-color {
+  color: #ff6b6b;
+}
+
+.proof-title.pledges-color {
+  color: #c768ff;
+}
+
+.proof-amount {
+  display: block;
+  color: #fdd93a;
+}
+
+.proof-amount.projects-color {
+  color: #4ecdc4;
+}
+
+.proof-amount.subscribers-color {
+  color: #ff6b6b;
+}
+
+.proof-amount.pledges-color {
+  color: #c768ff;
+}
+
+.proof-stats {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
+  float: none;
+  color: #fdd93a;
+  text-align: right;
+}
+
+.proof-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cta-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cta-button {
+  border-radius: 5px;
+  background-color: #ff6b6b;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cta-container {
+  text-align: center;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  line-height: 68px;
+}
+
+@font-face {
+  font-family: 'Fontawesome';
+  src: url('/assets/font/FontAwesome.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
