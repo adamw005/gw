@@ -48,11 +48,11 @@
       <div class="benefit-row w-row">
 				<% Project.all.limit(3).each |p| %>
         <div class="sample-col w-clearfix w-col w-col-4">
-          <div class="sample-border"></div><img class="sample-image" src="<%= @p.box_image.url(:medium) %>">
+          <div class="sample-border"></div><img class="sample-image" src="<%= p.box_image.url(:medium) %>">
           <h3 class="sample-h3"><%= p.title %></h3>
           <p class="sample-p"><%= p.description %></p>
-          <p class="sample-amount"><%= number_to_currency(@p.amount_sum, :unit => "$", precision: 0) %>/mo</p>
-          <p class="sample-subscribers"><%= @p.subscriptions.count %> Subscribers</p>
+          <p class="sample-amount"><%= number_to_currency(p.amount_sum, :unit => "$", precision: 0) %>/mo</p>
+          <p class="sample-subscribers"><%= p.subscriptions.count %> Subscribers</p>
         </div>
 			<% end %>
 
