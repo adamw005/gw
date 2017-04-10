@@ -52,7 +52,7 @@
           <h3 class="sample-h3"><%= p.title %></h3>
           <p class="sample-p"><%= p.description %></p>
           <p class="sample-amount"><%= number_to_currency(@p.amount_sum, :unit => "$", precision: 0) %>/mo</p>
-          <p class="sample-subscribers"><%= @p.subscriptions.count %>< Subscribers</p>
+          <p class="sample-subscribers"><%= @p.subscriptions.count %> Subscribers</p>
         </div>
 			<% end %>
 
