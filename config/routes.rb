@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 	devise_for :users, :controllers => {:registrations => "registrations"}
   get 'pages/landing'
+	get 'pages/landing2'
   get 'projects/show/:id', to: 'projects#show', as: 'projects'
   get 'projects/index'
   get 'projects/new'
