@@ -170,6 +170,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 
 Tuesday:
 [] Setup web analytics
+[] Get url and setup Heroku ssl
 [] Setup Devise email integration
 [] Create Lean Canvas
 
