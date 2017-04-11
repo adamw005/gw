@@ -110,7 +110,6 @@ Rails.application.configure do
 	# Devise Mailer
 	ActionMailer::Base.delivery_method = :smtp
 	ActionMailer::Base.smtp_settings = {
-		:host => "Groundwork-1.herokuapp.com",
 		:tls => true,
 		:address => "smtp.gmail.com",
 		:port => "587",
@@ -119,6 +118,8 @@ Rails.application.configure do
 		:user_name => ENV['MAIL_USER'],
 		:password => ENV['MAIL_PASSWORD']
  }
+
+ config.action_mailer.default_url_options = { :host => 'Groundwork-1.herokuapp.com' }
 
 	# config.paperclip_defaults = { s3_host_name: "s3-us-west-1.amazonaws.com", }
 	# The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
