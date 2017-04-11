@@ -110,7 +110,7 @@ Rails.application.configure do
 	# Devise Mailer
 	ActionMailer::Base.delivery_method = :smtp
 	ActionMailer::Base.smtp_settings = {
-		:host => "Groundwork-1.herokuapp.com"
+		:host => "Groundwork-1.herokuapp.com",
 		:tls => true,
 		:address => "smtp.gmail.com",
 		:port => "587",
