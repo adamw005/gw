@@ -110,13 +110,14 @@ Rails.application.configure do
 	# Devise Mailer
 	ActionMailer::Base.delivery_method = :smtp
 	ActionMailer::Base.smtp_settings = {
-   :tls => true,
-   :address => "smtp.gmail.com",
-   :port => "587",
-   :domain => "gmail.com",
-   :authentication => :login,
-   :user_name => ENV['MAIL_USER'],
-   :password => ENV['MAIL_PASSWORD']
+		:host => "Groundwork-1.herokuapp.com"
+		:tls => true,
+		:address => "smtp.gmail.com",
+		:port => "587",
+		:domain => "gmail.com",
+		:authentication => :login,
+		:user_name => ENV['MAIL_USER'],
+		:password => ENV['MAIL_PASSWORD']
  }
 
 	# config.paperclip_defaults = { s3_host_name: "s3-us-west-1.amazonaws.com", }
