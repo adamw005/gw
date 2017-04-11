@@ -9,9 +9,11 @@
 </head>
 <body>
 
-	<% flash.each do |name, msg| %>
-		<%= content_tag :div, msg, class: 'flash ' + name %>
-	<% end %>
+<% flash.each do |name, msg| %>
+	<%= content_tag :div, msg, class: 'flash ' + name %>
+<% end %>
+
+<%= render google_analytics %>
 
 <%= yield %>
 
