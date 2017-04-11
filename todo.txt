@@ -168,6 +168,14 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Add Stripe Account Balance to Dashboard
 
 
+Tuesday:
+[] Setup web analytics
+[] Setup Devise email integration
+[] Create Lean Canvas
+
+Wednesday:
+[] Email 3 people about interview
+
 
 [] Have a nice design created
 	[] Create a list/screenshot of each page
