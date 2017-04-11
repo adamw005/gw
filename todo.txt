@@ -182,6 +182,9 @@ Wednesday:
 [] Edit User(Account) page
 
 
+[] Turn off 'show errors'
+
+
 [] Have a nice design created
 	[] Create a list/screenshot of each page
 
