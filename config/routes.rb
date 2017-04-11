@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 	post 'releases/create'
 	delete 'subscriptions/destroy/:id', to: 'subscriptions#destroy', as: 'subscriptions_destroy'
 	get 'projects/dashboard/:id', to: 'projects#dashboard', as: 'dashboard'
-	root to: 'pages#landing'
+	root to: 'pages#landing2'
 	resources :charges
 
 end
