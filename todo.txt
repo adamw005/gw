@@ -181,8 +181,9 @@ Wednesday:
 [] Add Stripe withdrawl ability
 [] Edit User(Account) page
 
-
 [] Turn off 'show errors'
+[] Add contact options
+
 
 
 [] Have a nice design created
