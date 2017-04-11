@@ -119,7 +119,7 @@ Rails.application.configure do
 		:password => ENV['MAIL_PASSWORD']
  }
 
- config.action_mailer.default_url_options = { :host => 'groundwork-1.herokudns.com' }
+ config.action_mailer.default_url_options = { :host => 'groundwork-1.herokuapp.com' }
 
 	# config.paperclip_defaults = { s3_host_name: "s3-us-west-1.amazonaws.com", }
 	# The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future requests to this endpoint.
