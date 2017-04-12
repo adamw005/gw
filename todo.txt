@@ -171,7 +171,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 Goal: Launchable by end of the week
 Tuesday:
 [x] Setup web analytics
-[] Get url and setup Heroku ssl
+[x] Get url and setup Heroku ssl
 [x] Setup Devise email integration
 [] Create Lean Canvas
 
@@ -186,6 +186,7 @@ Wednesday:
 [] Customize Devise Email views
 [] Change Devise email address
 [] Vanity urls
+[] Pagination on Browse
 
 [] Read
 [] Apply to Jobs
