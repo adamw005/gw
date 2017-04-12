@@ -24,7 +24,7 @@
   <div class="section-class">
     <div class="w-container">
 			<% @projects.each do |p| %>
-	      <a class="listing-div w-inline-block" href="<%= projects_path(p.id) %>">
+	      <a class="listing-div w-inline-block" href="<%= projects_slug_path(p.slug) %>">
 	        <div class="w-row">
 	          <div class="listing-profile w-col w-col-3"><img src="<%= p.box_image.url(:thumb) %>" width="128">
 	          </div>
