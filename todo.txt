@@ -179,13 +179,19 @@ Wednesday:
 [] Email 3 people about interview
 [] Finish a dashboard page
 [] Add Stripe withdrawl ability
-[] Edit User(Account) page
+[] Create 'Edit User(Account)' page
+[] Apply to 5 jobs
+[] Write job interview responses
+[] Write GW interview script
+[] Play baseball
+[] Fix bed
 
 [] Turn off 'show errors'
 [] Add contact options
 [] Customize Devise Email views
 [] Change Devise email address
 [] Vanity urls
+	[] Project Creation error on duplicate slug
 [] Pagination on Browse
 
 [] Read
