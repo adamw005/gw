@@ -16,7 +16,7 @@ class Project < ActiveRecord::Base
  	validates_attachment_content_type :box_image, content_type: /\Aimage\/.*\z/
 	# URL Slug creation
 	after_create :assign_slug
-	after_update :assign_slug
+	before_update :assign_slug
 
 	def amount_sum
 		Subscription.where(project_id: self.id).sum(:amount)
@@ -27,7 +27,6 @@ class Project < ActiveRecord::Base
 	# Create url slug
 	def assign_slug
 		self.slug = title.parameterize
-		self.save
 	end
 
 end
