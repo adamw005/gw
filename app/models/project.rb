@@ -14,10 +14,22 @@ class Project < ActiveRecord::Base
 	accepts_nested_attributes_for :goals
 	has_attached_file :box_image, styles: { original: "300x300#", medium: "300x300#", thumb: "100x100#" }, default_url: "/assets/:style/missing.png"
  	validates_attachment_content_type :box_image, content_type: /\Aimage\/.*\z/
+	# URL Slug creation
+	after_create :update_slug
+	before_update :assign_slug
 
 	def amount_sum
 		Subscription.where(project_id: self.id).sum(:amount)
 	end
 
+	private
+
+	# Create url slug
+	def assign_slug
+		self.slug = parameterize(self.title, separator: '')
+	end
+	def update_slug
+		update_attributes slug: assign_slug
+	end
 
 end
