@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 	delete 'subscriptions/destroy/:id', to: 'subscriptions#destroy', as: 'subscriptions_destroy'
 	get 'projects/dashboard/:id', to: 'projects#dashboard', as: 'dashboard'
 	root to: 'pages#landing2'
+	get '/:slug', to: 'projects#show'
+
 	resources :charges
 
 end
