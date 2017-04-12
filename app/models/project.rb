@@ -26,7 +26,7 @@ class Project < ActiveRecord::Base
 
 	# Create url slug
 	def assign_slug
-		self.slug = parameterize(self.title, separator: '')
+		self.slug = parameterize(title, separator: '')
 	end
 	def update_slug
 		update_attributes slug: assign_slug
