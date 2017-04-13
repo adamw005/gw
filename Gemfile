@@ -42,6 +42,7 @@ gem 'stripe'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'groupdate'
 gem "chartkick"
+gem 'route_downcaser'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
