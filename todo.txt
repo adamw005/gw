@@ -176,11 +176,10 @@ Tuesday:
 [] Create Lean Canvas
 
 [] Email 3 people about GW interview
-[] Finish a dashboard page
-[] Add Stripe withdrawl ability
-[] Create 'Edit User(Account)' page
-[x] Apply to 5 jobs
 [] Write GW interview script
+[] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention
+
+
 [x] Fix bed
 [x] Refund from Freelancer
 [x] Apply to 5 jobs
@@ -193,6 +192,10 @@ Tuesday:
 [] Vanity urls
 	[] Project Creation error on duplicate slug
 [] Pagination on Browse
+[] Finish a dashboard page
+[] Add Stripe withdrawl ability
+[] Create 'Edit User(Account)' page
+[] Add recommendation engine (predictor gem?)
 
 [] Read
 [] Apply to Jobs

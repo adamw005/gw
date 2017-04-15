@@ -62,7 +62,7 @@
               <div class="w-col w-col-1"></div>
               <div class="w-col w-col-7">
 								<% if user_signed_in? && current_user.id == @project.user_id %>
-									<%= link_to 'View Dashboard', dashboard_path(), class: 'create-release-text' %>
+									<%= link_to 'View Dashboard', dashboard_path(@project.id), class: 'create-release-text' %>
 									<% if @project.charge_occurrence == "ReleaseSubscription" %>
 										<%= link_to 'Create Release', releases_create_path(project_id: @project.id), method: 'post', class: 'create-release-text', confirm: "Are you sure ?" %>
 									<% end %>

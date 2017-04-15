@@ -161,6 +161,8 @@ GEM
       json
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    route_downcaser (1.2.0)
+      activesupport (>= 3.2, < 5.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -217,6 +219,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   react-rails
   recaptcha
+  route_downcaser
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   stripe
