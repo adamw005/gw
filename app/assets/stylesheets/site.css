@@ -780,13 +780,10 @@
 	display: none;
 }
 
-.pagination-container {
-	margin: 0 auto;
-}
-
 .pagination {
   background: white;
   cursor: default;
+	display: inline-block;
   /* self-clearing method: */
 }
 .pagination a, .pagination span, .pagination em {
