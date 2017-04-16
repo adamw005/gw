@@ -175,10 +175,16 @@ Tuesday:
 [x] Setup Devise email integration
 [] Create Lean Canvas
 
+Sunday:
+[] Pagination on Browse
+[] Finish a dashboard page
+[] Add Stripe withdraw ability
+[] Add simple Search functionality
+[] Why is Stripe charging every day?
+
 [] Email 3 people about GW interview
 [] Write GW interview script
 [] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention
-
 
 [x] Fix bed
 [x] Refund from Freelancer
@@ -191,9 +197,6 @@ Tuesday:
 [] Change Devise email address
 [] Vanity urls
 	[] Project Creation error on duplicate slug
-[] Pagination on Browse
-[] Finish a dashboard page
-[] Add Stripe withdrawl ability
 [] Create 'Edit User(Account)' page
 [] Add recommendation engine (predictor gem?)
 

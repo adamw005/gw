@@ -23,29 +23,33 @@
 	<%= render '/shared/nav' %>
   <div class="section-class">
     <div class="w-container">
-			<% @projects.each do |p| %>
-	      <a class="listing-div w-inline-block" href="<%= projects_slug_path(p.slug) %>">
-	        <div class="w-row">
-	          <div class="listing-profile w-col w-col-3"><img src="<%= p.box_image.url(:thumb) %>" width="128">
-	          </div>
-	          <div class="w-col w-col-9">
-	            <h4 class="listing-title"><%= p.title %></h4>
-	            <p><%= truncate(strip_tags(p.body), :length => 160) %></p>
-	            <div class="w-clearfix">
-	              <div class="listing-summary">
-	                <p class="backers-count"><strong><%= p.subscriptions.count %></strong>
-	                </p>
-	                <p class="backers-p">backers</p>
-	              </div>
-	              <div class="listing-summary">
-	                <p class="funded-amount"><strong><%= number_to_currency(p.amount_sum, :unit => "$") %></strong>
-	                </p>
-	                <p class="perepisode-p"><%= if p.charge_occurrence == 'episodic' then 'per episode' else 'per month' end %></p>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	      </a>
+			<% if @recipes.blank? %>
+			  <h4>There are no projects containing the term <%= params[:search] %>.</h4>
+			<% else %>
+				<% @projects.each do |p| %>
+		      <a class="listing-div w-inline-block" href="<%= projects_slug_path(p.slug) %>">
+		        <div class="w-row">
+		          <div class="listing-profile w-col w-col-3"><img src="<%= p.box_image.url(:thumb) %>" width="128">
+		          </div>
+		          <div class="w-col w-col-9">
+		            <h4 class="listing-title"><%= p.title %></h4>
+		            <p><%= truncate(strip_tags(p.body), :length => 160) %></p>
+		            <div class="w-clearfix">
+		              <div class="listing-summary">
+		                <p class="backers-count"><strong><%= p.subscriptions.count %></strong>
+		                </p>
+		                <p class="backers-p">backers</p>
+		              </div>
+		              <div class="listing-summary">
+		                <p class="funded-amount"><strong><%= number_to_currency(p.amount_sum, :unit => "$") %></strong>
+		                </p>
+		                <p class="perepisode-p"><%= if p.charge_occurrence == 'episodic' then 'per episode' else 'per month' end %></p>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </a>
+				<% end %>
 			<% end %>
     </div>
   </div>

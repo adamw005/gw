@@ -9,6 +9,12 @@
 				<a class="landing-nav-link w-nav-link" data-ix="login-button" href="#">Sign in</a>
 			<% end %>
 			<a class="landing-nav-link w-nav-link" href="/projects/index">Browse</a>
+			<a class="landing-nav-link w-nav-link">
+				<%= form_tag(projects_path, :method => "get", id: "search-form") do %>
+				    <%= text_field_tag :search, params[:search], placeholder: "Search Projects" %>
+				    <%= submit_tag "Search", :name => nil %>
+				<% end %>
+			</a>
 			<a class="nav-start-button w-button" href="/projects/new">Start a Project</a>
 		</nav>
 		<div class="w-nav-button">

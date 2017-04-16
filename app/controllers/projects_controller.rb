@@ -11,7 +11,11 @@ class ProjectsController < ApplicationController
   end
 
   def index
-		@projects = Project.all.order(created_at: :desc)
+		if params[:search]
+			@projects = Project.search(params[:search]).order("created_at DESC")
+		else
+			@projects = Project.all.order(created_at: :desc)
+		end
   end
 
 	def new

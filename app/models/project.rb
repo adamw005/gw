@@ -22,6 +22,10 @@ class Project < ActiveRecord::Base
 		Subscription.where(project_id: self.id).sum(:amount)
 	end
 
+	def self.search(search)
+  	where("title LIKE ? OR body LIKE ?", "%#{search}%", "%#{search}%") 
+	end
+
 	private
 
 	# Create url slug
