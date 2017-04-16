@@ -771,6 +771,14 @@
 	/*padding-bottom: 5rem;*/
 }
 
+.search-form {
+	color: black;
+}
+
+.search-button {
+	display: none;
+}
+
 html.w-mod-js *[data-ix="login-modal"] {
   display: none;
   opacity: 0;

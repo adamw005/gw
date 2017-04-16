@@ -10,9 +10,9 @@
 			<% end %>
 			<a class="landing-nav-link w-nav-link" href="/projects/index">Browse</a>
 			<a class="landing-nav-link w-nav-link">
-				<%= form_tag(projects_index_path, :method => "get", id: "search-form") do %>
+				<%= form_tag(projects_index_path, :method => "get", class: "search-form") do %>
 				    <%= text_field_tag :search, params[:search], placeholder: "Search Projects" %>
-				    <%= submit_tag "Search", :name => nil %>
+				    <%= submit_tag "Search", :name => nil, class: "search-button" %>
 				<% end %>
 			</a>
 			<a class="nav-start-button w-button" href="/projects/new">Start a Project</a>
