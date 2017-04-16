@@ -771,11 +771,8 @@
 	/*padding-bottom: 5rem;*/
 }
 
-.search-form {
-	color: black;
-}
-
 .search-text-field {
+	color: black;
 	width: 7rem;
 }
 
