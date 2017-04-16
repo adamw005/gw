@@ -10,7 +10,7 @@
 			<% end %>
 			<a class="w-nav-link" href="/projects/index">Browse</a>
 			<a class="landing-nav-link w-nav-link">
-				<%= form_tag(projects_index_path(), :method => "get", class: "search-form") do %>
+				<%= form_tag(projects_index_path(), :method => "get", class: "search-form", enforce_utf8: false) do %>
 						<%= text_field_tag :search, params[:search], placeholder: "Search Projects", class: "search-text-field" %>
 						<%= submit_tag "Search", :name => nil, class: "search-button" %>
 				<% end %>
