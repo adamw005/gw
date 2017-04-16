@@ -51,7 +51,9 @@
 		      </a>
 				<% end %>
 			<% end %>
-			<%= will_paginate @posts, class: 'pagination' %>
+			<div class="pagination-container">
+				<%= will_paginate @posts, class: 'pagination' %>
+			</div>
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
