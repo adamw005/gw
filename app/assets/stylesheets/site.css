@@ -780,6 +780,10 @@
 	display: none;
 }
 
+.pagination-wrapper {
+	text-align: center;
+}
+
 .pagination {
   background: white;
   cursor: default;
