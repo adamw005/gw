@@ -12,9 +12,9 @@ class ProjectsController < ApplicationController
 
   def index
 		if params[:search]
-			@projects = Project.search(params[:search]).order("created_at DESC")
+			@projects = Project.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 		else
-			@projects = Project.all.order(created_at: :desc)
+			@projects = Project.all.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
 		end
   end
 
