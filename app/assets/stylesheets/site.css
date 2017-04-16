@@ -780,6 +780,10 @@
 	display: none;
 }
 
+.pagination-container {
+	margin: 0 auto;
+}
+
 .pagination {
   background: white;
   cursor: default;
