@@ -31,7 +31,11 @@
 								{name: "Declined", data: @number_charges_declined }
 								],
 								stacked: true,
-								xtitle: "Date"
+								xtitle: "Date",
+								library: {
+									hAxis: { format: 'MM/dd' },
+									title: {text: 'title', x: -20}
+								}
 							%>
 	          </div>
 	        </div>
