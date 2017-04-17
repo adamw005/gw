@@ -22,7 +22,8 @@
 								{name: "Posts", data: @posts_over_time },
 								{name: "Comments", data: @comments_over_time }
 								],
-								xtitle: "Date"
+								xtitle: "Date",
+								ytitle: "Engagement"
 							%>
 	          </div>
 	          <div class="dashboard-graph-block">
@@ -32,9 +33,10 @@
 								],
 								stacked: true,
 								xtitle: "Date",
+								ytitle: "Transactions",
 								library: {
 									hAxis: { format: 'MM/dd' },
-									title: {text: 'title', x: -20}
+									title: {text: 'title'}
 								}
 							%>
 	          </div>
