@@ -30,7 +30,7 @@ class Project < ActiveRecord::Base
 
 	# Create url slug
 	def assign_slug
-		if Project.where(slug: title.parameterize(''))
+		if Project.where(slug: title.parameterize('')).exists?
 			self.slug = title.parameterize('') + Random.rand(99).to_s
 		else
 			self.slug = title.parameterize('')
