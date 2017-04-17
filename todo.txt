@@ -176,9 +176,11 @@ Tuesday:
 [] Create Lean Canvas
 
 Sunday:
-[] Pagination on Browse
+[x] Pagination on Browse
 [] Finish a dashboard page
-[] Add Stripe withdraw ability
+	[] Add Stripe withdraw ability
+	[] Fix x-axis on bottom right graph
+	[] Make the page layout better with graph labels
 [x] Add simple Search functionality
 [] Why is Stripe charging every day?
 

@@ -23,14 +23,18 @@ class Project < ActiveRecord::Base
 	end
 
 	def self.search(search)
-  	where("title ILIKE ? OR body ILIKE ?", "%#{search}%", "%#{search}%") 
+  	where("title ILIKE ? OR body ILIKE ?", "%#{search}%", "%#{search}%")
 	end
 
 	private
 
 	# Create url slug
 	def assign_slug
-		self.slug = title.parameterize('')
+		if Project.where(slug: title.parameterize(''))
+			self.slug = title.parameterize('') + Random.rand(99).to_s
+		else
+			self.slug = title.parameterize('')
+		end
 	end
 
 end
