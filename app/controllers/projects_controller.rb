@@ -68,10 +68,10 @@ class ProjectsController < ApplicationController
 		@subscriptions_over_time = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).count
 		@posts_over_time = Post.where(project_id: @project.id).group_by_month(:created_at, last: 6).count
 		@comments_over_time = Comment.where(project_id: @project.id).group_by_month(:created_at, last: 6).count
-		@number_charges_declined = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).count
-		@number_charges_accepted = PastTransaction.where(project_id: @project.id).group_by_month(:created_at, last: 6).count
-		@amount_charges_declined = PastTransaction.where(project_id: @project.id).where(status: 'failed').group_by_month(:created_at, last: 6).sum(:amount)
-		@amount_charges_accepted = PastTransaction.where(project_id: @project.id).where(status: 'succesful').group_by_month(:created_at, last: 6).sum(:amount)
+		@number_charges_declined = PastTransaction.where(project_id: @project.id).where(status: 'failed').group_by_month(:created_at, last: 6).count
+		@number_charges_accepted = PastTransaction.where(project_id: @project.id).where(status: 'successful').group_by_month(:created_at, last: 6).count
+		# @amount_charges_declined = PastTransaction.where(project_id: @project.id).where(status: 'failed').group_by_month(:created_at, last: 6).sum(:amount)
+		# @amount_charges_accepted = PastTransaction.where(project_id: @project.id).where(status: 'successful').group_by_month(:created_at, last: 6).sum(:amount)
 
 		# Find Stripe account balance
 		@account_balance = Stripe::Balance.retrieve(stripe_account: StripeInfo.where(account_id: @account.id).first.stripe_id)
