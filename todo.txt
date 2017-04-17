@@ -166,6 +166,8 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 		[x] Add references to User
 		[x] Add to singup form
 [x] Add Stripe Account Balance to Dashboard
+[x] Vanity urls
+	[x] Project Creation error on duplicate slug
 
 
 Goal: Launchable by end of the week
@@ -197,8 +199,6 @@ Sunday:
 [] Add contact options
 [] Customize Devise Email views
 [] Change Devise email address
-[] Vanity urls
-	[] Project Creation error on duplicate slug
 [] Create 'Edit User(Account)' page
 [] Add recommendation engine (predictor gem?)
 
