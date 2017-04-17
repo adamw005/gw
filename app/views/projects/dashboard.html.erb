@@ -28,8 +28,8 @@
 	          </div>
 	          <div class="dashboard-graph-block">
 							<%= column_chart [
-								{name: "Accepted", data: @number_charges_accepted },
-								{name: "Declined", data: @number_charges_declined }
+								{name: "Accepted", data: @posts_over_time },
+								{name: "Declined", data: @comments_over_time }
 								],
 								stacked: true,
 								xtitle: "Date",
