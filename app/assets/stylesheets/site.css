@@ -768,8 +768,41 @@
 	display: inline-block;
 }
 
+.dashboard-cust-table  {
+	border-collapse:collapse;
+	border-spacing:0;
+	border-color:#999;
+	width:100%;
+}
+
+.dashboard-cust-table td {
+	padding:10px 5px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:#999;
+	color:#444;
+	background-color:#F7FDFA;
+}
+.dashboard-cust-table th {
+	padding:10px 5px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:#999;
+	color:#fff;
+	background-color:#26ADE4;
+}
+.dashboard-cust-table .dashboard-cust-table-th {
+	vertical-align:top;
+}
+
+
 .w-row {
-	/*padding-bottom: 5rem;*/
+	/*padding-bottom: 5rem;
+	*/
 }
 
 .search-text-field {

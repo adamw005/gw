@@ -7,6 +7,12 @@
 	    <div class="w-container">
 	      <h1 class="dashboard-h1">Dashboard</h1>
 				<h4 class="dashboard-project-name">for <%= @project.title %></h4>
+				<div class="dashboard-div-account-balance">
+					<h6 class="dashboard-account-balance">Account Balance:
+						<%= @account_balance.available[0].amount / 100.0 %>
+						<%= @account_balance.available[0].currency %>
+					</h6><a class="button w-button" href="#">Withdraw</a>
+				</div>
 	      <div class="w-row">
 	        <div class="w-col w-col-6">
 	          <div class="dashboard-graph-block">
@@ -42,9 +48,25 @@
 	          </div>
 	        </div>
 	      </div>
-				Account Balance:
-				<%= @account_balance.available[0].amount / 100.0 %>
-				<%= @account_balance.available[0].currency %>
+				<div class="w-embed">
+					<table class="dashboard-cust-table">
+						<tr>
+							<th class="dashboard-cust-table-th">Customer</th>
+							<th class="dashboard-cust-table-th">Pledge</th>
+							<th class="dashboard-cust-table-th">Rewards Tier</th>
+						</tr>
+						<tr>
+							<td class="dashboard-cust-table-th">Adam</td>
+							<td class="dashboard-cust-table-th">$3</td>
+							<td class="dashboard-cust-table-th">1</td>
+						</tr>
+						<tr>
+							<td class="dashboard-cust-table-th">Bob</td>
+							<td class="dashboard-cust-table-th">$4</td>
+							<td class="dashboard-cust-table-th">2</td>
+						</tr>
+					</table>
+				</div>
 	    </div>
 	  </div>
 	<% else %>
