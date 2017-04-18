@@ -794,7 +794,7 @@
 	word-break:normal;
 	border-color:#999;
 	color:#fff;
-	background-color:#26ADE4;
+	background-color:#30a9de;
 }
 
 .dashboard-cust-table .dashboard-cust-table-th {
@@ -813,6 +813,7 @@
 
 .dashboard-withdraw-button {
   padding: 2px 3px;
+	color: #30a9de;
 }
 
 .w-row {
