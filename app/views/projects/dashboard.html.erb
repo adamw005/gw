@@ -16,15 +16,17 @@
 	      <div class="w-row">
 	        <div class="w-col w-col-6">
 	          <div class="dashboard-graph-block">
-							<h6>Title<h6>
+							<h5 class="dashboard-graph-title">Earnings over Time<h5>
 							<%= line_chart @earnings_over_time, xtitle: "Date", ytitle: "Earnings" %>
 	          </div>
 	          <div class="dashboard-graph-block">
+							<h5 class="dashboard-graph-title">Subscriptions over Time<h5>
 							<%= line_chart @subscriptions_over_time, xtitle: "Date", ytitle: "Subscriptions" %>
 	          </div>
 	        </div>
 	        <div class="w-col w-col-6">
 	          <div class="dashboard-graph-block">
+							<h5 class="dashboard-graph-title">Post over Time<h5>
 							<%= line_chart [
 								{name: "Posts", data: @posts_over_time },
 								{name: "Comments", data: @comments_over_time }
@@ -34,6 +36,7 @@
 							%>
 	          </div>
 	          <div class="dashboard-graph-block">
+							<h5 class="dashboard-graph-title">Charges over Time<h5>
 							<%= column_chart [
 								{name: "Accepted", data: @number_charges_accepted },
 								{name: "Declined", data: @number_charges_declined }

@@ -819,6 +819,12 @@
 	margin-bottom: 50px;
 }
 
+.dashboard-graph-title {
+	text-align: center;
+	margin-top: 0px;
+	color: #4b4b4b;	
+}
+
 .w-row {
 	/*padding-bottom: 5rem;
 	*/
