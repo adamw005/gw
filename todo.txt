@@ -186,6 +186,8 @@ Sunday:
 [x] Add simple Search functionality
 [] Why is Stripe charging every day?
 
+[] Blazer gem
+
 [] Email 3 people about GW interview
 [] Write GW interview script
 [] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention

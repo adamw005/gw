@@ -75,8 +75,10 @@ namespace :charge_transactions do
 					end
 
 					# Copy all of User's TransactionQueue records to PastTransaction with 'successful' status
+					puts "Move from TransactionQueue to PastTransaction with successful status"
 					TransactionQueue.transaction do # transaction ensures both actions below complete or none do
 						TransactionQueue.where(user_id: u.id).each do |t| # loop through a user's TransactionQueue records
+							puts t
 							attributes = t.attributes
 							attributes.delete("id")
 							attributes["type_of"] = attributes["type"]
