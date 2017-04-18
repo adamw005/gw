@@ -1,75 +1,73 @@
-<body class="body-class">
-	<%= render '/shared/signup_modal' %>
-	<%= render '/shared/login_modal' %>
-	<%= render '/shared/nav' %>
-	<% if current_user && current_user == @project.user %>
-	  <div class="dashboard-section">
-	    <div class="w-container">
-	      <h1 class="dashboard-h1">Dashboard</h1>
-				<h4 class="dashboard-project-name">for <%= @project.title %></h4>
-				<div class="dashboard-div-account-balance">
-					<h6 class="dashboard-account-balance">Account Balance:
-						<%= @account_balance.available[0].amount / 100.0 %>
-						<%= @account_balance.available[0].currency %>
-					</h6><a class="dashboard-withdraw-button w-button" href="#">Withdraw</a>
-				</div>
-	      <div class="w-row">
-	        <div class="w-col w-col-6">
-	          <div class="dashboard-graph-block">
-							<%= line_chart @earnings_over_time, xtitle: "Date", ytitle: "Earnings" %>
-	          </div>
-	          <div class="dashboard-graph-block">
-							<%= line_chart @subscriptions_over_time, xtitle: "Date", ytitle: "Subscriptions" %>
-	          </div>
-	        </div>
-	        <div class="w-col w-col-6">
-	          <div class="dashboard-graph-block">
-							<%= line_chart [
-								{name: "Posts", data: @posts_over_time },
-								{name: "Comments", data: @comments_over_time }
-								],
-								xtitle: "Date",
-								ytitle: "Engagement"
-							%>
-	          </div>
-	          <div class="dashboard-graph-block">
-							<%= column_chart [
-								{name: "Accepted", data: @number_charges_accepted },
-								{name: "Declined", data: @number_charges_declined }
-								],
-								stacked: true,
-								xtitle: "Date",
-								ytitle: "Transactions",
-								library: {
-									format: 'MM/YY'
-								},
-								discrete: true
-							%>
-	          </div>
-	        </div>
-	      </div>
-				<div class="w-embed dashboard-cust-div">
-					<table class="dashboard-cust-table">
-						<tr>
-							<th class="dashboard-cust-table-th">Customer</th>
-							<th class="dashboard-cust-table-th">Pledge</th>
-							<th class="dashboard-cust-table-th">Rewards Tier</th>
-						</tr>
-						<tr>
-							<td class="dashboard-cust-table-th">Adam</td>
-							<td class="dashboard-cust-table-th">$3</td>
-							<td class="dashboard-cust-table-th">1</td>
-						</tr>
-						<tr>
-							<td class="dashboard-cust-table-th">Bob</td>
-							<td class="dashboard-cust-table-th">$4</td>
-							<td class="dashboard-cust-table-th">2</td>
-						</tr>
-					</table>
-				</div>
-	    </div>
-	  </div>
-	<% else %>
-		You are not allowed to access this page
-	<% end %>
-</body>
+<%= render '/shared/signup_modal' %>
+<%= render '/shared/login_modal' %>
+<%= render '/shared/nav' %>
+<% if current_user && current_user == @project.user %>
+  <div class="dashboard-section">
+    <div class="w-container">
+      <h1 class="dashboard-h1">Dashboard</h1>
+			<h4 class="dashboard-project-name">for <%= @project.title %></h4>
+			<div class="dashboard-div-account-balance">
+				<h6 class="dashboard-account-balance">Account Balance:
+					<%= @account_balance.available[0].amount / 100.0 %>
+					<%= @account_balance.available[0].currency %>
+				</h6><a class="dashboard-withdraw-button w-button" href="#">Withdraw</a>
+			</div>
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <div class="dashboard-graph-block">
+						<%= line_chart @earnings_over_time, xtitle: "Date", ytitle: "Earnings" %>
+          </div>
+          <div class="dashboard-graph-block">
+						<%= line_chart @subscriptions_over_time, xtitle: "Date", ytitle: "Subscriptions" %>
+          </div>
+        </div>
+        <div class="w-col w-col-6">
+          <div class="dashboard-graph-block">
+						<%= line_chart [
+							{name: "Posts", data: @posts_over_time },
+							{name: "Comments", data: @comments_over_time }
+							],
+							xtitle: "Date",
+							ytitle: "Engagement"
+						%>
+          </div>
+          <div class="dashboard-graph-block">
+						<%= column_chart [
+							{name: "Accepted", data: @number_charges_accepted },
+							{name: "Declined", data: @number_charges_declined }
+							],
+							stacked: true,
+							xtitle: "Date",
+							ytitle: "Transactions",
+							library: {
+								format: 'MM/YY'
+							},
+							discrete: true
+						%>
+          </div>
+        </div>
+      </div>
+			<div class="w-embed dashboard-cust-div">
+				<table class="dashboard-cust-table">
+					<tr>
+						<th class="dashboard-cust-table-th">Customer</th>
+						<th class="dashboard-cust-table-th">Pledge</th>
+						<th class="dashboard-cust-table-th">Rewards Tier</th>
+					</tr>
+					<tr>
+						<td class="dashboard-cust-table-th">Adam</td>
+						<td class="dashboard-cust-table-th">$3</td>
+						<td class="dashboard-cust-table-th">1</td>
+					</tr>
+					<tr>
+						<td class="dashboard-cust-table-th">Bob</td>
+						<td class="dashboard-cust-table-th">$4</td>
+						<td class="dashboard-cust-table-th">2</td>
+					</tr>
+				</table>
+			</div>
+    </div>
+  </div>
+<% else %>
+	You are not allowed to access this page
+<% end %>
