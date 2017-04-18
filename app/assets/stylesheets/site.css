@@ -814,6 +814,7 @@
 .dashboard-withdraw-button {
   padding: 2px 3px;
 	background-color: #30a9de;
+	border-radius: 3px;
 }
 
 .dashboard-cust-div {
