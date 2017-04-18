@@ -24,9 +24,9 @@ namespace :subscription_snapshots do
 					attributes.delete("type")
 					attributes["type"] = 'ReleaseTransactionQueue'
 					TransactionQueue.create(attributes)
-
-					# Change Release.released to True
-					release = Release.where(project_id: sub.attributes["project_id"]).first
+				end
+				# Change Release.released to True
+				Release.where(released: false).each do |release|
 					release.released = true
 					release.save
 				end
