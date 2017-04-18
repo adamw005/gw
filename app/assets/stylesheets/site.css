@@ -785,6 +785,7 @@
 	color:#444;
 	background-color:#F7FDFA;
 }
+
 .dashboard-cust-table th {
 	padding:10px 5px;
 	border-style:solid;
@@ -795,10 +796,24 @@
 	color:#fff;
 	background-color:#26ADE4;
 }
+
 .dashboard-cust-table .dashboard-cust-table-th {
 	vertical-align:top;
 }
 
+.dashboard-account-balance {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.dashboard-div-account-balance {
+  padding-right: 10px;
+  text-align: right;
+}
+
+.dashboard-withdraw-button {
+  padding: 2px 3px;
+}
 
 .w-row {
 	/*padding-bottom: 5rem;
