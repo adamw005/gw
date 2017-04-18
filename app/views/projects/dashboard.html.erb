@@ -55,16 +55,13 @@
 							<th class="dashboard-cust-table-th">Pledge</th>
 							<th class="dashboard-cust-table-th">Rewards Tier</th>
 						</tr>
+						<% Subscription.where(project_id: @project.id).each do |s| %>
 						<tr>
-							<td class="dashboard-cust-table-th">Adam</td>
-							<td class="dashboard-cust-table-th">$3</td>
-							<td class="dashboard-cust-table-th">1</td>
+							<td class="dashboard-cust-table-th"><%= s.user.username %></td>
+							<td class="dashboard-cust-table-th">$<%= s.amount.to_i %></td>
+							<td class="dashboard-cust-table-th"><%= s.rewards_tier.title %></td>
 						</tr>
-						<tr>
-							<td class="dashboard-cust-table-th">Bob</td>
-							<td class="dashboard-cust-table-th">$4</td>
-							<td class="dashboard-cust-table-th">2</td>
-						</tr>
+					<% end %>
 					</table>
 				</div>
 	    </div>
