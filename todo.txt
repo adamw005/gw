@@ -168,23 +168,22 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Add Stripe Account Balance to Dashboard
 [x] Vanity urls
 	[x] Project Creation error on duplicate slug
+[x] Add simple Search functionality
+[x] Why is Stripe charging every day?
+[x] Setup web analytics
+[x] Get url and setup Heroku ssl
+[x] Setup Devise email integration
+[x] Pagination on Browse
 
 
 Goal: Launchable by end of the week
 Tuesday:
-[x] Setup web analytics
-[x] Get url and setup Heroku ssl
-[x] Setup Devise email integration
 [] Create Lean Canvas
 
-Sunday:
-[x] Pagination on Browse
 [] Finish a dashboard page
 	[] Add Stripe withdraw ability
 	[] Fix x-axis on bottom right graph
 	[] Make the page layout better with graph labels
-[x] Add simple Search functionality
-[] Why is Stripe charging every day?
 
 [] Blazer gem
 
@@ -192,9 +191,9 @@ Sunday:
 [] Write GW interview script
 [] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention
 
-[x] Fix bed
-[x] Refund from Freelancer
-[x] Apply to 5 jobs
+Every day:
+[] Read
+[] Apply to 5 jobs
 [] Write job interview responses
 
 [] Turn off 'show errors' in Rails
@@ -204,9 +203,6 @@ Sunday:
 [] Create 'Edit User(Account)' page
 [] Add recommendation engine (predictor gem?)
 
-[] Read
-[] Apply to Jobs
-[] Write interview responses
 
 
 
