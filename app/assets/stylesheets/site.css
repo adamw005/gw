@@ -922,6 +922,7 @@
 	border-collapse:collapse;
 	border-spacing:0;
 	border-color:#999;
+	width:100%;
 }
 
 .wd-history-table td{
@@ -954,6 +955,7 @@
 	border-collapse:collapse;
 	border-spacing:0;
 	border-color:#999;
+	width:100%;
 }
 
 .wd-account-table td {
