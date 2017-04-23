@@ -1,3 +1,5 @@
+# Stripe API, using Connect with Managed accounts
+# https://stripe.com/docs/connect
 namespace :charge_transactions do
 
   desc "Everyday check to see if it's the 1st of the month and attemp transaction charges"

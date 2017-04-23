@@ -181,15 +181,27 @@ Tuesday:
 [] Create Lean Canvas
 
 [] Finish a dashboard page
-	[] Add Stripe withdraw ability
+	[] Add Stripe withdraw page
+		[] Simple page Mockup
+		[] Draft page in Webflow
+		[] Create ability to add/remove bank accounts
+		[] Choose bank account and amount to withdraw
+		[] Show status of pending withdraws
+		[] Show history of withdraws
 	[] Fix x-axis on bottom right graph
-	[] Make the page layout better with graph labels
+	[x] Make the page layout better with graph labels
+[] Read all of Managed Accounts Stripe docs and below
+[] Are Stripe charges being copied to TransactionQueue every time?
 
 [] Blazer gem
 
 [] Email 3 people about GW interview
 [] Write GW interview script
 [] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention
+[] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
+	[] Write outline
+	[] Get images
+	[] Write post
 
 Every day:
 [] Read

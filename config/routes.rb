@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 	get 'projects/dashboard/:id', to: 'projects#dashboard', as: 'dashboard'
 	root to: 'pages#landing2'
 	get '/:slug', to: 'projects#show', as: 'projects_slug'
+	get 'users/withdraw/:id', to: 'users#withdraw', as: 'withdraw'
 
 	resources :charges
 
