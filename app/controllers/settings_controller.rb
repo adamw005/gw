@@ -1,7 +1,7 @@
 class SettingsController < ApplicationController
 
 	def withdraw
-		@user = user_params
+		@user = User.find(params[:id])
 
 	end
 

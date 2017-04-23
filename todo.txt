@@ -192,6 +192,7 @@ Tuesday:
 	[x] Make the page layout better with graph labels
 [] Read all of Managed Accounts Stripe docs and below
 [] Are Stripe charges being copied to TransactionQueue every time?
+[] Strong Params in every controller
 
 [] Blazer gem
 
