@@ -950,6 +950,37 @@
 	vertical-align:top
 }
 
+.wd-account  {
+	border-collapse:collapse;
+	border-spacing:0;
+	border-color:#999;
+}
+
+.wd-account td {
+	padding:10px 5px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:#999;
+	color:#444;
+	background-color:#F7FDFA;
+}
+
+.wd-account th {
+	padding:10px 5px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:#999;
+	color:#fff;
+	background-color:#26ADE4;
+}
+
+.wd-account .wd-account-tr {
+	vertical-align:top
+}
 
 
 
