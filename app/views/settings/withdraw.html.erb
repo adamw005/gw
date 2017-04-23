@@ -2,7 +2,6 @@
 	<%= render '/shared/signup_modal' %>
 	<%= render '/shared/login_modal' %>
 	<%= render '/shared/nav' %>
-	<%= @user %>
 	<% if current_user && current_user == @user %>
 	<div class="wd-withdraw-section">
 		<div class="w-container wd-withdraw-container">
@@ -34,22 +33,14 @@
 	      <h2 class="wd-accounts-title">Accounts</h2>
 					<table class="wd-account">
 					  <tr>
-					    <th class="wd-account-tr">Customer</th>
-					    <th class="wd-account-tr">Pledge</th>
-					    <th class="wd-account-tr">Rewards Tier</th>
-					    <th class="wd-account-tr"></th>
+					    <td class="wd-account-tr">***8576 Chase</td>
+					    <td class="wd-account-tr">Set Default</td>
+					    <td class="wd-account-tr">Remove</td>
 					  </tr>
 					  <tr>
-					    <td class="wd-account-tr">Adam</td>
-					    <td class="wd-account-tr">$3</td>
-					    <td class="wd-account-tr">1</td>
-					    <td class="wd-account-tr"></td>
-					  </tr>
-					  <tr>
-					    <td class="wd-account-tr">Bob</td>
-					    <td class="wd-account-tr">$4</td>
-					    <td class="wd-account-tr">2</td>
-					    <td class="wd-account-tr"></td>
+					    <td class="wd-account-tr">***1001 BoA</td>
+					    <td class="wd-account-tr">Default</td>
+					    <td class="wd-account-tr">Remove</td>
 					  </tr>
 					</table>
 	    </div>
