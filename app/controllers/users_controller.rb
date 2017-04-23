@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	def withdraw
-
+		@user = user_params
 
 	end
 
