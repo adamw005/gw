@@ -918,7 +918,37 @@
   border-radius: 5px;
 }
 
+.wd-history-table  {
+	border-collapse:collapse;
+	border-spacing:0;
+	border-color:#999;
+}
 
+.wd-history-table td{
+	padding:10px 5px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:#999;
+	color:#444;
+	background-color:#F7FDFA;
+}
+
+.wd-history-table th {
+	padding:10px 5px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:#999;
+	color:#fff;
+	background-color:#26ADE4;
+}
+
+.wd-history-table .wd-history-table-tr {
+	vertical-align:top
+}
 
 
 
