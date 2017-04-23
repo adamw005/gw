@@ -1,4 +1,3 @@
-
 .nav-bar.landing {
   background-color: hsla(0, 0%, 100%, .1);
 }
@@ -822,7 +821,7 @@
 .dashboard-graph-title {
 	text-align: center;
 	margin-top: 0px;
-	color: #4b4b4b;	
+	color: #4b4b4b;
 }
 
 .w-row {
@@ -901,6 +900,35 @@
 *:first-child + html .pagination {
     overflow: hidden;
 }
+
+.wd-withdraw-label {
+  display: inline-block;
+}
+
+.wd-withdraw-dropdown {
+  display: block;
+}
+
+.wd-withdraw-textbox {
+  display: block;
+}
+
+.wd-withdraw-button {
+  float: right;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 html.w-mod-js *[data-ix="login-modal"] {
