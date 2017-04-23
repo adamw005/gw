@@ -2,8 +2,95 @@
 	<%= render '/shared/signup_modal' %>
 	<%= render '/shared/login_modal' %>
 	<%= render '/shared/nav' %>
+	<%= @user %>
 	<% if current_user && current_user == @user %>
-
+	<div class="wd-withdraw-section">
+		<div class="w-container wd-withdraw-container">
+	      <h2 class="wd-withdraw-title">Withdraw</h2>
+	      <div class="w-form">
+	        <form class="w-clearfix" data-name="Email Form" id="email-form" name="email-form">
+	          <label class="wd-withdraw-label" for="account">Account:</label>
+	          <select class="w-select wd-withdraw-dropdown" data-name="account" id="account" name="account">
+	            <option value="">Select one...</option>
+	            <option value="First">First Choice</option>
+	            <option value="Second">Second Choice</option>
+	            <option value="Third">Third Choice</option>
+	          </select>
+	          <label class="wd-withdraw-label" for="amount">Amount:</label>
+	          <input class="w-input wd-withdraw-textbox" data-name="amount" id="amount" maxlength="256" name="amount" placeholder="$0.00" required="required" type="text">
+	          <input class="w-button wd-withdraw-button" data-wait="Please wait..." type="submit" value="Withdraw">
+	        </form>
+	        <div class="w-form-done">
+	          <div>Thank you! Your submission has been received!</div>
+	        </div>
+	        <div class="w-form-fail">
+	          <div>Oops! Something went wrong while submitting the form</div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="wd-accounts-section">
+	    <div class="w-container wd-accounts-container">
+	      <h2 class="wd-accounts-title">Accounts</h2>
+				<style type="text/css">
+					.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+					.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+					.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+					.tg .tg-yw4l{vertical-align:top}
+					</style>
+					<table class="tg">
+					  <tr>
+					    <th class="tg-yw4l">Customer</th>
+					    <th class="tg-yw4l">Pledge</th>
+					    <th class="tg-yw4l">Rewards Tier</th>
+					    <th class="tg-yw4l"></th>
+					  </tr>
+					  <tr>
+					    <td class="tg-yw4l">Adam</td>
+					    <td class="tg-yw4l">$3</td>
+					    <td class="tg-yw4l">1</td>
+					    <td class="tg-yw4l"></td>
+					  </tr>
+					  <tr>
+					    <td class="tg-yw4l">Bob</td>
+					    <td class="tg-yw4l">$4</td>
+					    <td class="tg-yw4l">2</td>
+					    <td class="tg-yw4l"></td>
+					  </tr>
+					</table>
+	    </div>
+	  </div>
+	  <div class="wd-history-section">
+	    <div class="w-container wd-history-container">
+	      <h2 class="wd-history-title">Withdraw History</h2>
+				<style type="text/css">
+					.tg  {border-collapse:collapse;border-spacing:0;border-color:#999;}
+					.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+					.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+					.tg .tg-yw4l{vertical-align:top}
+					</style>
+					<table class="tg">
+					  <tr>
+					    <th class="tg-yw4l">Customer</th>
+					    <th class="tg-yw4l">Pledge</th>
+					    <th class="tg-yw4l">Rewards Tier</th>
+					    <th class="tg-yw4l"></th>
+					  </tr>
+					  <tr>
+					    <td class="tg-yw4l">Adam</td>
+					    <td class="tg-yw4l">$3</td>
+					    <td class="tg-yw4l">1</td>
+					    <td class="tg-yw4l"></td>
+					  </tr>
+					  <tr>
+					    <td class="tg-yw4l">Bob</td>
+					    <td class="tg-yw4l">$4</td>
+					    <td class="tg-yw4l">2</td>
+					    <td class="tg-yw4l"></td>
+					  </tr>
+					</table>
+	    </div>
+	  </div>
 	<% else %>
 		You are not allowed to access this page
 	<% end %>
