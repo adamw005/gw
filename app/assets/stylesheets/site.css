@@ -901,6 +901,19 @@
     overflow: hidden;
 }
 
+.wd-withdraw-section {
+	margin: 20px;
+}
+
+.wd-withdraw-container {
+	background: white;
+	padding: 20px;
+}
+
+.wd-withdraw-title {
+	margin: 0px 0px 15px 0px;
+}
+
 .wd-withdraw-label {
   display: inline-block;
 }
@@ -916,6 +929,19 @@
 .wd-withdraw-button {
   float: right;
   border-radius: 5px;
+}
+
+.wd-history-section {
+	margin: 20px;
+}
+
+.wd-history-container {
+	background: white;
+	padding: 20px;
+}
+
+.wd-history-title {
+	margin: 0px 0px 15px 0px;
 }
 
 .wd-history-table  {
@@ -948,7 +974,21 @@
 }
 
 .wd-history-table .wd-history-table-tr {
-	vertical-align:top
+	vertical-align:top;
+	text-align: left;
+}
+
+.wd-account-section {
+	margin: 20px;
+}
+
+.wd-account-container {
+	background: white;
+	padding: 20px;
+}
+
+.wd-account-title {
+	margin: 0px 0px 15px 0px;
 }
 
 .wd-account-table  {
