@@ -978,27 +978,27 @@
 	text-align: left;
 }
 
-.wd-account-section {
+.wd-accounts-section {
 	margin: 20px;
 }
 
-.wd-account-container {
+.wd-accounts-container {
 	background: white;
 	padding: 20px;
 }
 
-.wd-account-title {
+.wd-accounts-title {
 	margin: 0px 0px 15px 0px;
 }
 
-.wd-account-table  {
+.wd-accounts-table  {
 	border-collapse:collapse;
 	border-spacing:0;
 	border-color:#999;
 	width:100%;
 }
 
-.wd-account-table td {
+.wd-accounts-table td {
 	padding:10px 5px;
 	border-style:solid;
 	border-width:1px;
@@ -1009,7 +1009,7 @@
 	background-color:#F7FDFA;
 }
 
-.wd-account-table th {
+.wd-accounts-table th {
 	padding:10px 5px;
 	border-style:solid;
 	border-width:1px;
@@ -1020,7 +1020,7 @@
 	background-color:#26ADE4;
 }
 
-.wd-account-table .wd-account-table-tr {
+.wd-account-tables .wd-account-tables-tr {
 	vertical-align:top
 }
 
