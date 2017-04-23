@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class SettingsController < ApplicationController
 
 	def withdraw
 		@user = user_params

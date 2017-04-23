@@ -1,0 +1,9 @@
+<body class="body-class">
+	<%= render '/shared/signup_modal' %>
+	<%= render '/shared/login_modal' %>
+	<%= render '/shared/nav' %>
+	<% if current_user && current_user == @user %>
+
+	<% else %>
+		You are not allowed to access this page
+	<% end %>
