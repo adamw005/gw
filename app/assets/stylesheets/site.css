@@ -950,13 +950,13 @@
 	vertical-align:top
 }
 
-.wd-account  {
+.wd-account-table  {
 	border-collapse:collapse;
 	border-spacing:0;
 	border-color:#999;
 }
 
-.wd-account td {
+.wd-account-table td {
 	padding:10px 5px;
 	border-style:solid;
 	border-width:1px;
@@ -967,7 +967,7 @@
 	background-color:#F7FDFA;
 }
 
-.wd-account th {
+.wd-account-table th {
 	padding:10px 5px;
 	border-style:solid;
 	border-width:1px;
@@ -978,7 +978,7 @@
 	background-color:#26ADE4;
 }
 
-.wd-account .wd-account-tr {
+.wd-account-table .wd-account-table-tr {
 	vertical-align:top
 }
 
