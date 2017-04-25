@@ -1069,7 +1069,10 @@
 	margin-top: 15px;
 }
 
-
+.link-to {
+	text-decoration: none;
+	color: #fff
+}
 
 
 
