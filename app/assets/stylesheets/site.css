@@ -1069,3 +1069,11 @@ html.w-mod-js *[data-ix="stripe-info-modal"] {
   -ms-transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);
 }
+
+html.w-mod-js *[data-ix="add-bank-modal"] {
+  display: none;
+  opacity: 0;
+  -webkit-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
