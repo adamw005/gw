@@ -49,7 +49,7 @@
 
 
 <script>
-	Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+	Stripe.setPublishableKey('<%=  Rails.configuration.stripe[:publishable_key] %>');
 
 	function stripeResponseHandler(status, response) {
 	    if (response.error) {
