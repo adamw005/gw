@@ -49,6 +49,8 @@
 
 
 <script>
+	Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+
 	function stripeResponseHandler(status, response) {
 	    if (response.error) {
 	        // re-enable the submit button
