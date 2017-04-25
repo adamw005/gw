@@ -7,7 +7,7 @@
 		<p>Please submit your bank account details.</p>
 		<div class="w-form">
 			<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-			<form action="" method="POST" id="bank-account-form">
+			<form action="/stripe_infos/add_bank_account" method="POST" id="bank-account-form">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
         <label class="form-label" for="routing-number">Routing Number</label>
@@ -93,7 +93,7 @@
 	        }
 	        // createToken returns immediately - the supplied callback submits the form if there are no errors
 	        Stripe.bankAccount.createToken(bankAccountParams, stripeResponseHandler);
-	        // return false; // submit from callback
+	        return false; // submit from callback
 	    });
 	});
 </script>
