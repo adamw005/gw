@@ -42,10 +42,10 @@
 							<% if b.default_for_currency == true %>
 								<%= 'Default' %>
 							<% else %>
-								<%= link_to 'Set Default', stripe_infos_default_bank_account_path(id: b.id), method: :post %>
+								<%= link_to 'Set Default', stripe_infos_default_bank_account_path(id: b.id), method: :post, class: "link-to" %>
 							<% end %>
 						</td>
-						<td class="wd-accounts-table-tr"><%= link_to 'Remove', stripe_infos_remove_bank_account_path(id: b.id), method: :post %></td>
+						<td class="wd-accounts-table-tr"><%= link_to 'Remove', stripe_infos_remove_bank_account_path(id: b.id), method: :post, class: "link-to" %></td>
 					</tr>
 					<% end %>
 				</table>
