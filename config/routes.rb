@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 	post 'subscriptions/create'
 	post 'stripe_infos/create'
 	post 'stripe_infos/add_bank_account'
-	post 'stripe_infos/remove_bank_account/:id', to: 'stripe_infos#remove_bank_account', as: 'stripe_infos_remove_bank_account'
+	post 'stripe_infos/remove_bank_account', to: 'stripe_infos#remove_bank_account', as: 'stripe_infos_remove_bank_account'
 	post 'releases/create'
 	delete 'subscriptions/destroy/:id', to: 'subscriptions#destroy', as: 'subscriptions_destroy'
 	get 'projects/dashboard/:id', to: 'projects#dashboard', as: 'dashboard'
