@@ -49,7 +49,7 @@
 
 
 <script>
-	Stripe.setPublishableKey('<%=  Rails.configuration.stripe[:publishable_key] %>');
+	Stripe.setPublishableKey('<%=  current_user.accounts.first.stripe_infos.first.stripe_id %>');
 
 	function stripeResponseHandler(status, response) {
 	    if (response.error) {
