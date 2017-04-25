@@ -8,6 +8,7 @@
 		<div class="w-form">
 			<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 			<form action="/stripe_infos/add_bank_account" method="POST" id="bank-account-form">
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
         <label class="form-label" for="routing-number">Routing Number</label>
         <input type="text" class="w-input" value="110000000" />
