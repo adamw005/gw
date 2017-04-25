@@ -32,17 +32,16 @@
 		<div class="wd-accounts-section">
 			<div class="w-container wd-accounts-container">
 				<h3 class="wd-accounts-title">Accounts</h3>
+				<% @stripe_id = current_user.accounts.first.stripe_infos.first.stripe_id %>
+				<% @bank_accounts = Stripe::Account.retrieve(@stripe_id).external_accounts.data %>
 				<table class="wd-accounts-table">
+					<% @bank_accounts.each do |b| %>
 					<tr>
-						<td class="wd-accounts-table-tr">***8576 Chase</td>
-						<td class="wd-accounts-table-tr">Set Default</td>
+						<td class="wd-accounts-table-tr"><%= '***' + b.last4 + ' ' + b.bank_name %></td>
+						<td class="wd-accounts-table-tr"><%= if b.default_for_currency == true then 'Default' else 'Set Default' end %></td>
 						<td class="wd-accounts-table-tr">Remove</td>
 					</tr>
-					<tr>
-						<td class="wd-accounts-table-tr">***1001 BoA</td>
-						<td class="wd-accounts-table-tr">Default</td>
-						<td class="wd-accounts-table-tr">Remove</td>
-					</tr>
+					<% end %>
 				</table>
 				<a class="w-button wd-accounts-button" data-ix="add-bank-button" href="#">Add Account</a>
 			</div>
