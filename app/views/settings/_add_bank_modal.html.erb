@@ -48,8 +48,6 @@
 
 
 <script>
-	Stripe.setPublishableKey('<%= Rails.configuration.stripe.publishable_key %>');
-
 	function stripeResponseHandler(status, response) {
 	    if (response.error) {
 	        // re-enable the submit button
