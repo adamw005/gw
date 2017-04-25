@@ -400,6 +400,45 @@
   color: #272727;
 }
 
+.add-bank-modal {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 9999;
+  display: none;
+  height: 100%;
+  padding-top: 80px;
+  background-color: rgba(0, 0, 0, .5);
+  text-align: center;
+}
+
+.add-bank-wrapper {
+  width: 450px;
+  max-width: 100%;
+  margin: auto;
+  padding: 10px 20px 20px;
+  background-color: #fff;
+}
+
+.add-bank-close {
+  display: block;
+  text-align: right;
+}
+
+.add-bank-close-button {
+  display: inline;
+  color: #999;
+  font-size: 20px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.add-bank-close-button:hover {
+  color: #272727;
+}
+
 .project-post-title {
 	margin-bottom: 0px;
 }
