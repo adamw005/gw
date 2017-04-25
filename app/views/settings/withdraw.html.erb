@@ -4,6 +4,8 @@
 	<%= render '/shared/nav' %>
 	<%= render '/settings/add_bank_modal' %>
 	<% if current_user && current_user == @user %>
+		<% @stripe_id = current_user.accounts.first.stripe_infos.first.stripe_id %>
+		<% @bank_accounts = Stripe::Account.retrieve(@stripe_id).external_accounts.data %>
 		<div class="wd-withdraw-section">
 			<div class="w-container wd-withdraw-container">
 				<h3 class="wd-withdraw-title">Withdraw</h3>
@@ -11,10 +13,9 @@
 					<form class="w-clearfix" data-name="Email Form" id="email-form" name="email-form">
 						<label class="wd-withdraw-label" for="account">Account:</label>
 						<select class="w-select wd-withdraw-dropdown" data-name="account" id="account" name="account">
-							<option value="">Select one...</option>
-							<option value="First">First Choice</option>
-							<option value="Second">Second Choice</option>
-							<option value="Third">Third Choice</option>
+							<% @bank_accounts.each do |b| %>
+								<option value="<%= b.id %>"><%= '***' + b.last4 + ' ' + b.bank_name %></option>
+							<% end %>
 						</select>
 						<label class="wd-withdraw-label" for="amount">Amount:</label>
 						<input class="w-input wd-withdraw-textbox" data-name="amount" id="amount" maxlength="256" name="amount" placeholder="$0.00" required="required" type="text">
@@ -32,8 +33,6 @@
 		<div class="wd-accounts-section">
 			<div class="w-container wd-accounts-container">
 				<h3 class="wd-accounts-title">Accounts</h3>
-				<% @stripe_id = current_user.accounts.first.stripe_infos.first.stripe_id %>
-				<% @bank_accounts = Stripe::Account.retrieve(@stripe_id).external_accounts.data %>
 				<table class="wd-accounts-table">
 					<% @bank_accounts.each do |b| %>
 					<tr>
