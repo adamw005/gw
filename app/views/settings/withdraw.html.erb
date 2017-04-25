@@ -39,7 +39,7 @@
 					<tr>
 						<td class="wd-accounts-table-tr"><%= '***' + b.last4 + ' ' + b.bank_name %></td>
 						<td class="wd-accounts-table-tr"><%= if b.default_for_currency == true then 'Default' else 'Set Default' end %></td>
-						<td class="wd-accounts-table-tr"><%= link_to stripe_infos_remove_bank_account_path(id: b.id), 'Remove' %></td>
+						<td class="wd-accounts-table-tr"><%= link_to 'Remove', stripe_infos_remove_bank_account_path(id: b.id) %></td>
 					</tr>
 					<% end %>
 				</table>
