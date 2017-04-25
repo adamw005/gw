@@ -28,4 +28,11 @@ class StripeInfosController < ApplicationController
 		redirect_to :back
 	end
 
+
+	def remove_bank_account
+		account = Stripe::Account.retrieve(current_user.accounts.first.stripe_infos.first.stripe_id)
+		account.external_accounts.retrieve(params[:id]).delete()
+		redirect_to :back
+	end
+
 end
