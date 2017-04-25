@@ -22,4 +22,8 @@ class StripeInfosController < ApplicationController
 		  redirect_to new_charge_path
 	end
 
+	def add_bank_account
+		
+	end
+
 end

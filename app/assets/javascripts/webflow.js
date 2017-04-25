@@ -4354,5 +4354,8 @@ Webflow.require('ix').init([
 	{"slug":"stripe-info-modal","name":"stripe-info-modal","value":{"style":{"display":"none","opacity":0,"scaleX":1.1,"scaleY":1.1,"scaleZ":1},"triggers":[]}},
   {"slug":"stripe-info-modal-close","name":"stripe-info-modal-close","value":{"style":{},"triggers":[{"type":"click","selector":".stripe-info-modal","preserve3d":true,"stepsA":[{"display":"none","opacity":0,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1.1,"scaleY":1.1,"scaleZ":1}],"stepsB":[]}]}},
 	{"slug":"stripe-info-button","name":"stripe-info-button","value":{"style":{},"triggers":[{"type":"click","selector":".stripe-info-modal","preserve3d":true,"stepsA":[{"display":"block","opacity":1,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1,"scaleY":1,"scaleZ":1}],"stepsB":[]}]}}
+	{"slug":"add-bank-modal","name":"add-bank-modal","value":{"style":{"display":"none","opacity":0,"scaleX":1.1,"scaleY":1.1,"scaleZ":1},"triggers":[]}},
+  {"slug":"add-bank-modal-close","name":"add-bank-modal-close","value":{"style":{},"triggers":[{"type":"click","selector":".add-bank-modal","preserve3d":true,"stepsA":[{"display":"none","opacity":0,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1.1,"scaleY":1.1,"scaleZ":1}],"stepsB":[]}]}},
+	{"slug":"add-bank-button","name":"add-bank-button","value":{"style":{},"triggers":[{"type":"click","selector":".add-bank-modal","preserve3d":true,"stepsA":[{"display":"block","opacity":1,"transition":"transform 200 ease 0, opacity 200 ease 0","scaleX":1,"scaleY":1,"scaleZ":1}],"stepsB":[]}]}}
 
 ]);

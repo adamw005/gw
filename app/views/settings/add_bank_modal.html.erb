@@ -1,0 +1,98 @@
+<div class="add-bank-modal" data-ix="add-bank-modal">
+	<div class="add-bank-wrapper">
+		<a class="add-bank-close">
+			<strong class="add-bank-close-button" data-ix="add-bank-modal-close">X</strong>
+		</a>
+		<h3 class="add-bank-modal-title">Add Bank Account</h3>
+		<p>Please submit your bank account details.</p>
+		<div class="w-form">
+			<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+			<form action="" method="POST" id="bank-account-form">
+
+        <label class="form-label" for="routing-number">Routing Number</label>
+        <input type="text" class="w-input" value="110000000" />
+
+        <label class="form-label" for="account-number">Account Number</label>
+        <input type="text" class="w-input" value="000123456789" />
+
+        <label class="form-label" for="account-holder-name">Account Holder Name</label>
+        <input type="text" class="w-input" value="Jane Austen" />
+
+        <label class="form-label" for="account-holder-type">Account Holder Type</label>
+        <select class="w-input">
+            <option value="individual">Individual</option>
+            <option value="company">Company</option>
+        </select>
+
+		    <button type="submit" class="submit-button">Submit</button>
+
+			</form>
+			<span class="payment-errors"></span>
+			<span class="payment-success"></span>
+
+			<div class="w-form-done">
+				<div>Thank you! Your submission has been received!</div>
+			</div>
+			<div class="w-form-fail">
+				<div>Oops! Something went wrong while submitting the form</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+	Stripe.setPublishableKey('<%= Rails.configuration.stripe.publishable_key %>');
+
+	function stripeResponseHandler(status, response) {
+	    if (response.error) {
+	        // re-enable the submit button
+	        $('.submit-button').removeAttr("disabled");
+	        // show the errors on the form
+	        console.log(response.error);
+	        $(".payment-success").html("");
+	        $(".payment-errors").html(response.error.message);
+	    } else {
+	        var $form = $("#bank-account-form");
+	        // token contains id, last4, and card type
+	        var token = response['id'];
+	        // insert the token into the form so it gets submitted to the server
+	        $form.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
+	        // and submit
+	        //$form.get(0).submit();
+	        // just for this example:
+	        console.log(response);
+	        $(".payment-success").html(token);
+	        $(".payment-errors").html("");
+	        $('.submit-button').removeAttr("disabled");
+	    }
+	}
+
+	$(document).ready(function () {
+	    $("#bank-account-form").submit(function (event) {
+	        // disable the submit button to prevent repeated clicks
+	        $('.submit-button').attr("disabled", "disabled");
+	        // bank account parameters
+	        var bankAccountParams = {
+	            country: 'US',	//Fixed-value for now
+	            currency: 'USD',	//Fixed-value for now
+	            //routing_number: $('.routing-number').val(),
+	            account_number: $('.account-number').val(),
+	        		account_holder_name: $('.account-holder-name').val(),
+	            account_holder_type: $('.account-holder-type').val()
+	        }
+	        if ($('.routing-number').val() != '') {
+	        	bankAccountParams['routing_number'] = $('.routing-number').val();
+	        }
+	        // createToken returns immediately - the supplied callback submits the form if there are no errors
+	        Stripe.bankAccount.createToken(bankAccountParams, stripeResponseHandler);
+	        return false; // submit from callback
+	    });
+	});
+</script>

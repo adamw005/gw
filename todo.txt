@@ -182,8 +182,9 @@ Tuesday:
 
 [] Finish a dashboard page
 	[] Add Stripe withdraw page
-		[] Simple page Mockup
-		[] Draft page in Webflow
+		[x] Simple page Mockup
+		[x] Draft page in Webflow
+		[] Section for `fields_needed`
 		[] Create ability to add/remove bank accounts
 		[] Choose bank account and amount to withdraw
 		[] Show status of pending withdraws
@@ -193,6 +194,12 @@ Tuesday:
 [] Read all of Managed Accounts Stripe docs and below
 [] Are Stripe charges being copied to TransactionQueue every time?
 [] Strong Params in every controller
+[] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
+[] Collect necessary fields before withdrawal https://stripe.com/docs/connect/required-verification-information
+	[] Use `fields_needed` to see which are needed. Also `payouts_endabled`, `disabled_reason`, and `due_by` https://stripe.com/docs/connect/updating-accounts
+[] Setup Stripe API Webhooks
+[] Add TOS and Stripe TOS at Sign Up
+
 
 [] Blazer gem
 
