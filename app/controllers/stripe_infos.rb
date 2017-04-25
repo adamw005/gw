@@ -24,7 +24,7 @@ class StripeInfosController < ApplicationController
 
 	def add_bank_account
 		account = Stripe::Account.retrieve(current_user.accounts.first.stripe_infos.first.stripe_id)
-		account.external_accounts.create(:external_account => params[:token_id])
+		account.external_accounts.create(:external_account => params[:stripeToken])
 	end
 
 end
