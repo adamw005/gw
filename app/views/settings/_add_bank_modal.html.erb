@@ -66,12 +66,12 @@
 	        // insert the token into the form so it gets submitted to the server
 	        $form.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
 	        // and submit
-	        //$form.get(0).submit();
+	        $form.get(0).submit();
 	        // just for this example:
 	        console.log(response);
-	        $(".payment-success").html(token);
-	        $(".payment-errors").html("");
-	        $('.submit-button').removeAttr("disabled");
+	        // $(".payment-success").html(token);
+	        // $(".payment-errors").html("");
+	        // $('.submit-button').removeAttr("disabled");
 	    }
 	}
 
