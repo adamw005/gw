@@ -1247,6 +1247,7 @@
     };
 
     function init() {
+			return;	// Adam added this: https://github.com/poetic/webflow-tricks
       siteId = $('html').attr('data-wf-site');
 
       $forms = $(namespace + ' form');
