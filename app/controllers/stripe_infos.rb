@@ -57,6 +57,28 @@ class StripeInfosController < ApplicationController
 	end
 
 	def submit_fields_needed
+		account = Stripe::Account.retrieve(current_user.accounts.first.stripe_infos.first.stripe_id)
+
+		if params.has_key?(:dob)
+			account.legal_entity.dob.year = params[:dob].split('-')[0].strip
+			account.legal_entity.dob.month = params[:dob].split('-')[1].strip
+			account.legal_entity.dob.day = params[:dob].split('-')[2].strip
+		end
+		if params.has_key?(:first_name)
+			account.legal_entity.first_name = params[:first_name]
+		end
+		if params.has_key?(:last_name)
+			account.legal_entity.last_name = params[:last_name]
+		end
+		if params.has_key?(:entity_type)
+			account.legal_entity.type = params[:entity_type]
+		end
+		if params.has_key?(:tos) && params[:tos] == 'on'
+			account.tos_acceptance.date = Time.now.to_i
+			account.tos_acceptance.ip = request.remote_ip # Assumes you're not using a proxy
+		end
+
+		account.save
 
 	end
 
