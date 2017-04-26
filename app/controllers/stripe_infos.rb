@@ -50,7 +50,7 @@ class StripeInfosController < ApplicationController
 		    :currency => "usd",
 				:destination => params[:bank_id]
 		  },
-		  {:stripe_account => account}
+		  {:stripe_account => account.id}
 		)
 		redirect_to :back
 	end
