@@ -6,8 +6,12 @@
 	<% if current_user && current_user == @user %>
 		<% @stripe_id = current_user.accounts.first.stripe_infos.first.stripe_id %>
 		<% @bank_accounts = Stripe::Account.retrieve(@stripe_id).external_accounts.data %>
-		<%= render '/settings/withdraw_section' %>
-		
+		<% if account.verification.fields_needed %>
+			<%= render '/settings/fields_needed' %>
+		<% else %>
+			<%= render '/settings/withdraw_section' %>
+		<% end %>
+
 		<div class="wd-accounts-section">
 			<div class="w-container wd-accounts-container">
 				<h3 class="wd-accounts-title">Accounts</h3>
