@@ -4,7 +4,6 @@
 		<div class="w-form">
 			<form action="/stripe_infos/submit_fields_needed" method="POST">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-
 				<% @account.verification.fields_needed.each do |f| %>
 					<% if f == 'legal_entity.dob.day' %>
 						<label class="wd-withdraw-label" for="dob">Date of Birth:</label>
@@ -29,6 +28,8 @@
 					<% elsif f == 'MORE' %>
 						<!-- Put MORE forms -->
 					<% end %>
+
+					<input class="w-button wd-withdraw-button" data-wait="Please wait..." type="submit" value="Submit">
 
 				<% end %>
 			</form>
