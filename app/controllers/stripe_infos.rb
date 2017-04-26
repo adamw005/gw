@@ -42,4 +42,17 @@ class StripeInfosController < ApplicationController
 		redirect_to :back
 	end
 
+	def create_payout
+		account = Stripe::Account.retrieve(current_user.accounts.first.stripe_infos.first.stripe_id)
+		Stripe::Payout.create(
+		  {
+		    :amount => params[:amount],
+		    :currency => "usd",
+				:destination => params[:bank_id]
+		  },
+		  {:stripe_account => account}
+		)
+		redirect_to :back
+	end
+
 end

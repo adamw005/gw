@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 	post 'stripe_infos/add_bank_account'
 	post 'stripe_infos/remove_bank_account', to: 'stripe_infos#remove_bank_account', as: 'stripe_infos_remove_bank_account'
 	post 'stripe_infos/default_bank_account', to: 'stripe_infos#default_bank_account', as: 'stripe_infos_default_bank_account'
+	post 'stripe_infos/create_payout', to: 'stripe_infos#create_payout', as: 'stripe_infos_create_payout'
 	post 'releases/create'
 	delete 'subscriptions/destroy/:id', to: 'subscriptions#destroy', as: 'subscriptions_destroy'
 	get 'projects/dashboard/:id', to: 'projects#dashboard', as: 'dashboard'

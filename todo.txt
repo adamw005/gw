@@ -185,7 +185,7 @@ Tuesday:
 		[x] Simple page Mockup
 		[x] Draft page in Webflow
 		[] Section for `fields_needed`
-		[] Create ability to add/remove bank accounts
+		[x] Create ability to add/remove bank accounts
 		[] Choose bank account and amount to withdraw
 		[] Show status of pending withdraws
 		[] Show history of withdraws

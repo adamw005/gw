@@ -10,7 +10,9 @@
 			<div class="w-container wd-withdraw-container">
 				<h3 class="wd-withdraw-title">Withdraw</h3>
 				<div class="w-form">
-					<form class="w-clearfix" data-name="Email Form" id="email-form" name="email-form">
+					<form action="/stripe_infos/create_payout" method="POST">
+						<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
 						<label class="wd-withdraw-label" for="account">Account:</label>
 						<select class="w-select wd-withdraw-dropdown" data-name="account" id="account" name="account">
 							<% @bank_accounts.each do |b| %>
