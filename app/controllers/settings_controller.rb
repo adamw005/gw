@@ -7,6 +7,8 @@ class SettingsController < ApplicationController
 		@bank_accounts = Stripe::Account.retrieve(@stripe_id).external_accounts.data
 		@account_balance = Stripe::Balance.retrieve(stripe_account: @account.id)
 
+		@payout_list = Stripe::Payout.list({}, {:stripe_account => @account.id})
+
 	end
 
 

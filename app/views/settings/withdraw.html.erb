@@ -42,20 +42,16 @@
 						<th class="wd-history-table-tr">Amount</th>
 						<th class="wd-history-table-tr">Status</th>
 					</tr>
-					<tr>
-						<td class="wd-history-table-tr">4/23/2017</td>
-						<td class="wd-history-table-tr">---</td>
-						<td class="wd-history-table-tr">BoA</td>
-						<td class="wd-history-table-tr">$450.00</td>
-						<td class="wd-history-table-tr">Pending</td>
-					</tr>
-					<tr>
-						<td class="wd-history-table-tr">3/23/2017</td>
-						<td class="wd-history-table-tr">3/28/2017</td>
-						<td class="wd-history-table-tr">Chase</td>
-						<td class="wd-history-table-tr">$400.00</td>
-						<td class="wd-history-table-tr">Completed</td>
-					</tr>
+					<%= @payout_list.each do |p| %>
+						<tr>
+							<td class="wd-history-table-tr"><%= p.created %></td>
+							<td class="wd-history-table-tr"><%= p.arrival_date %></td>
+							<td class="wd-history-table-tr"><%= p.destination #TODO: Fix this %></td> 
+							<td class="wd-history-table-tr"><%= p.amount %></td>
+							<td class="wd-history-table-tr"><%= p.status %></td>
+						</tr>
+					<% end %>
+
 				</table>
 			</div>
 		</div>
