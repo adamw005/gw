@@ -42,11 +42,11 @@
 						<th class="wd-history-table-tr">Amount</th>
 						<th class="wd-history-table-tr">Status</th>
 					</tr>
-					<%= @payout_list.each do |p| %>
+					<% @payout_list.each do |p| %>
 						<tr>
 							<td class="wd-history-table-tr"><%= p.created %></td>
 							<td class="wd-history-table-tr"><%= p.arrival_date %></td>
-							<td class="wd-history-table-tr"><%= p.destination %></td> 
+							<td class="wd-history-table-tr"><%= p.destination %></td> <% # TODO: Fix this to lookup BankAccount info using p.destination %>
 							<td class="wd-history-table-tr"><%= p.amount %></td>
 							<td class="wd-history-table-tr"><%= p.status %></td>
 						</tr>
