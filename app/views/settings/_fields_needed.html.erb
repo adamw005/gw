@@ -8,7 +8,7 @@
 				<% @account.verification.fields_needed.each do |f| %>
 					<% if f == 'legal_entity.dob.day' %>
 						<label class="wd-withdraw-label" for="dob">Date of Birth:</label>
-						<input type="date" name="dob" placeholder="mm/dd/yyyy">
+						<input type="date" name="dob" placeholder="mm/dd/yyyy" class="w-input wd-withdraw-textbox" data-name="dob" id="dob" required="required">
 					<% elsif f == 'legal_entity.first_name' %>
 						<!-- Put First Name form -->
 					<% elsif f == 'legal_entity.last_name' %>
