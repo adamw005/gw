@@ -10,13 +10,20 @@
 						<label class="wd-withdraw-label" for="dob">Date of Birth:</label>
 						<input type="date" name="dob" placeholder="mm/dd/yyyy" class="w-input wd-withdraw-textbox" data-name="dob" id="dob" required="required">
 					<% elsif f == 'legal_entity.first_name' %>
-						<!-- Put First Name form -->
+						<label class="wd-withdraw-label" for="first_name">First Name:</label>
+						<input type="text" name="first_name" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="first_name" id="first_name" required="required">
 					<% elsif f == 'legal_entity.last_name' %>
-						<!-- Put First Name form -->
+						<label class="wd-withdraw-label" for="last_name">First Name:</label>
+						<input type="text" name="last_name" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="last_name" id="last_name" required="required">
 					<% elsif f == 'legal_entity.type' %>
-						<!-- Put Type form -->
+						<select class="w-select wd-withdraw-dropdown" data-name="entity_type" id="entity_type" name="entity_type" required="required">
+								<option value="individual">Individual</option>
+								<option value="business">Business</option>
+						</select>
 					<% elsif f == 'tos_acceptance.date' %>
-						<!-- Put TOS form -->
+						<label class="wd-withdraw-label" for="tos">Terms of Service:</label>
+						<input type="checkbox" name="tos" class="w-input wd-withdraw-textbox" data-name="tos" id="tos" required="required">
+						<p>By registering your account, you agree to our Services Agreement and the <a href="https://stripe.com/connect-account/legal">Stripe Connected Account Agreement.</a></p>
 					<% elsif f == 'MORE' %>
 						<!-- Put MORE forms -->
 					<% end %>
