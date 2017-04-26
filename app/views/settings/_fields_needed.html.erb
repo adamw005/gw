@@ -31,16 +31,6 @@
 					<% end %>
 
 				<% end %>
-
-				<label class="wd-withdraw-label" for="account">Account:</label>
-				<select class="w-select wd-withdraw-dropdown" data-name="account" id="account" name="account">
-					<% @bank_accounts.each do |b| %>
-						<option value="<%= b.id %>"><%= '***' + b.last4 + ' ' + b.bank_name %></option>
-					<% end %>
-				</select>
-				<label class="wd-withdraw-label" for="amount">Amount:</label>
-				<input class="w-input wd-withdraw-textbox" data-name="amount" id="amount" maxlength="256" name="amount" placeholder="$0.00" required="required" type="text">
-				<input class="w-button wd-withdraw-button" data-wait="Please wait..." type="submit" value="Withdraw">
 			</form>
 			<div class="w-form-done">
 				<div>Thank you! Your submission has been received!</div>
