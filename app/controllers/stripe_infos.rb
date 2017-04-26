@@ -44,7 +44,6 @@ class StripeInfosController < ApplicationController
 
 	def create_payout
 		account = Stripe::Account.retrieve(current_user.accounts.first.stripe_infos.first.stripe_id)
-		@account_balance = Stripe::Balance.retrieve(stripe_account: account.id)
 		Stripe::Payout.create(
 		  {
 		    :amount => params[:amount],
