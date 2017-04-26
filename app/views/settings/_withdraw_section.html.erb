@@ -1,7 +1,7 @@
 <div class="wd-withdraw-section">
 	<div class="w-container wd-withdraw-container">
 		<h3 class="wd-withdraw-title">Withdraw</h3>
-		<p><%= @account_balance %></p>
+		<p><%= @account_balance.balance.amount %> <%= @account_balance.balance.currency %></p>
 		<div class="w-form">
 			<form action="/stripe_infos/create_payout" method="POST">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
