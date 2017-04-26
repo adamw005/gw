@@ -79,6 +79,7 @@ class StripeInfosController < ApplicationController
 		end
 
 		account.save
+		redirect_to :back
 
 	end
 
