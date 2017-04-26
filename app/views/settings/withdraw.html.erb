@@ -4,7 +4,7 @@
 	<%= render '/shared/nav' %>
 	<%= render '/settings/add_bank_modal' %>
 	<% if current_user && current_user == @user %>
-		<% if @account.verification.fields_needed.disabled_reason == "fields_needed" %>
+		<% if @account.verification.disabled_reason == "fields_needed" %>
 			<%= render '/settings/fields_needed' %>
 		<% else %>
 			<%= render '/settings/withdraw_section' %>
