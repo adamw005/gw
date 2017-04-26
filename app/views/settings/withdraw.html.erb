@@ -44,8 +44,8 @@
 					</tr>
 					<% @payout_list.each do |p| %>
 						<tr>
-							<td class="wd-history-table-tr"><%= p.created %></td>
-							<td class="wd-history-table-tr"><%= p.arrival_date %></td>
+							<td class="wd-history-table-tr"><%= Time.zone.at(p.created).strftime("%d/%m/%Y") %></td>
+							<td class="wd-history-table-tr"><%= Time.zone.at(p.arrival_date).strftime("%d/%m/%Y") %></td>
 							<td class="wd-history-table-tr"><%= p.destination %></td> <% # TODO: Fix this to lookup BankAccount info using p.destination %>
 							<td class="wd-history-table-tr"><%= p.amount %></td>
 							<td class="wd-history-table-tr"><%= p.status %></td>
