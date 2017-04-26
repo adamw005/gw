@@ -1,6 +1,6 @@
 <div class="wd-withdraw-section">
 	<div class="w-container wd-withdraw-container">
-		<h3 class="wd-withdraw-title">Required Fields before withdraw</h3>
+		<h3 class="wd-withdraw-title">Required Fields before withdrawal</h3>
 		<div class="w-form">
 			<form action="/stripe_infos/submit_fields_needed" method="POST">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -22,8 +22,10 @@
 						</select>
 					<% elsif f == 'tos_acceptance.date' %>
 						<label class="wd-withdraw-label" for="tos">Terms of Service:</label>
-						<input type="checkbox" name="tos" class="w-input wd-withdraw-textbox" data-name="tos" id="tos" required="required">
-						<p>By registering your account, you agree to our Services Agreement and the <a href="https://stripe.com/connect-account/legal">Stripe Connected Account Agreement.</a></p>
+						<div>
+							<input type="checkbox" name="tos" data-name="tos" id="tos" required="required">
+							<p style="display:inline-block;">By registering your account, you agree to our Services Agreement and the <a href="https://stripe.com/connect-account/legal">Stripe Connected Account Agreement.</a></p>
+						</div>
 					<% elsif f == 'MORE' %>
 						<!-- Put MORE forms -->
 					<% end %>

@@ -56,4 +56,8 @@ class StripeInfosController < ApplicationController
 		redirect_to :back
 	end
 
+	def submit_fields_needed
+
+	end
+
 end
