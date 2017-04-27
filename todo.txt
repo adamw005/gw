@@ -201,6 +201,7 @@ Tuesday:
 [] Create Lean Canvas
 
 [] Setup Stripe API Webhooks
+	[] Create charge to test webhooks
 
 [] Are Stripe charges being copied to TransactionQueue every time?
 [] Strong Params in every controller

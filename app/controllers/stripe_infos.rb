@@ -88,7 +88,7 @@ class StripeInfosController < ApplicationController
 		head 200
   	event_json = JSON.parse(request.body.read)
 	  # Verify the event by fetching it from Stripe
-	  # event = Stripe::Event.retrieve(event_json["id"])
+	  event = Stripe::Event.retrieve(event_json["id"])
 	  # Do something with event
 	end
 
