@@ -20,7 +20,7 @@
 				<%= f.collection_select :country_id, Country.order(:name), :id, :name, {}, { class: "w-input", required: "required" } %>
 
 				<label class="form-label" for="tos">Terms of Service</label>
-				<%= check_box_tag :tos, "1", false, {}, { class: "w-input", required: "required" } %>
+				<%= check_box_tag :tos, false, {}, { class: "w-input", required: "required" } %>
 
 				<%= recaptcha_tags %>
 
