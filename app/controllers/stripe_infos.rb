@@ -1,5 +1,5 @@
 class StripeInfosController < ApplicationController
-	# protect_from_forgery :except => :stripe_webhooks
+	protect_from_forgery :except => :stripe_webhooks
 
 	def new
 		StripeInfo.new
@@ -84,28 +84,13 @@ class StripeInfosController < ApplicationController
 		redirect_to :back
 	end
 
-	# def stripe_webhooks
-	# 	require "json"
-  # 	event_json = JSON.parse(params)
-	#   # Verify the event by fetching it from Stripe
-	#   event = Stripe::Event.retrieve(event_json["id"])
-	#   # Do something with event
-	#   status 200
-	# end
+	def stripe_webhooks
+		require "json"
+  	event_json = JSON.parse(params)
+	  # Verify the event by fetching it from Stripe
+	  event = Stripe::Event.retrieve(event_json["id"])
+	  # Do something with event
+	  status 200
+	end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-x
