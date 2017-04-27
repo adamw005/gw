@@ -52,9 +52,9 @@ class ProjectsController < ApplicationController
 			stripe_info.save
 
 			# Accept TOS (accepted on sign_up)
-			# stripe_account.tos_acceptance.date	= Time.now.to_i
-			# stripe_account.tos_acceptance.ip = request.remote_ip
-			# stripe_account.save
+			stripe_account.tos_acceptance.date = Time.now.to_i
+			stripe_account.tos_acceptance.ip = request.remote_ip
+			stripe_account.save
 
 		end
 
