@@ -15,8 +15,7 @@ class Project < ActiveRecord::Base
 	has_attached_file :box_image, styles: { original: "300x300#", medium: "300x300#", thumb: "100x100#" }, default_url: "/assets/:style/missing.png"
  	validates_attachment_content_type :box_image, content_type: /\Aimage\/.*\z/
 	# URL Slug creation
-	after_create :assign_slug
-	before_update :assign_slug
+	before_save :assign_slug
 
 	def amount_sum
 		Subscription.where(project_id: self.id).sum(:amount)
@@ -34,7 +33,7 @@ class Project < ActiveRecord::Base
 		# 	self.slug = title.parameterize('') + Random.rand(999).to_s
 		# else
 			self.slug = title.parameterize('')
-		# end
+ 		# end
 	end
 
 end
