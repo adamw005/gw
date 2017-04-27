@@ -20,8 +20,8 @@
 				<%= f.collection_select :country_id, Country.order(:name), :id, :name, {}, { class: "w-input", required: "required" } %>
 
 				<label class="form-label" for="tos">Terms of Service</label>
-				<div>
-					<%= check_box_tag :tos, {}, { required: "required" } %>
+				<div style="text-align:left;">
+					<%= check_box_tag :tos, {}, { value: "false", required: "required" } %>
 					<p style="display:inline-block;">By registering your account, you agree to our Services Agreement and the <a href="https://stripe.com/connect-account/legal">Stripe Connected Account Agreement.</a></p>
 				</div>
 
