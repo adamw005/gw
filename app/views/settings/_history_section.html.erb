@@ -1,0 +1,24 @@
+<div class="wd-history-section">
+	<div class="w-container wd-history-container">
+		<h3 class="wd-history-title">Withdrawal History</h3>
+		<table class="wd-history-table">
+			<tr>
+				<th class="wd-history-table-tr">Withdrawal Date</th>
+				<th class="wd-history-table-tr">Completion Date</th>
+				<th class="wd-history-table-tr">Account</th>
+				<th class="wd-history-table-tr">Amount</th>
+				<th class="wd-history-table-tr">Status</th>
+			</tr>
+			<% @payout_list.each do |p| %>
+				<tr>
+					<td class="wd-history-table-tr"><%= Time.zone.at(p.created).strftime("%B %d, %Y") %></td>
+					<td class="wd-history-table-tr"><%= Time.zone.at(p.arrival_date).strftime("%B %d, %Y") %></td>
+					<td class="wd-history-table-tr"><%= p.destination %></td><!-- TODO: Fix this to lookup BankAccount info using p.destination -->
+					<td class="wd-history-table-tr">$<%= '%.2f' % (p.amount / 100.0) %> USD</td>
+					<td class="wd-history-table-tr"><%= p.status %></td>
+				</tr>
+			<% end %>
+
+		</table>
+	</div>
+</div>
