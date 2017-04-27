@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
 		self.avatar = 'https://api.adorable.io/avatars/64/' + (0...8).map { (65 + rand(26)).chr }.join
 	end
 
-
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
 		conditions[:email].downcase! if conditions[:email]
