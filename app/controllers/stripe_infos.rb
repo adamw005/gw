@@ -86,8 +86,7 @@ class StripeInfosController < ApplicationController
 
 	def stripe_webhooks
 		head 200
-		require "json"
-  	event_json = JSON.parse(params)
+  	event_json = JSON.parse(request.body.read)
 	  # Verify the event by fetching it from Stripe
 	  event = Stripe::Event.retrieve(event_json["id"])
 	  # Do something with event
