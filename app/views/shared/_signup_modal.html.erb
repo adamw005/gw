@@ -19,6 +19,9 @@
 				<label class="form-label" for="username">Country</label>
 				<%= f.collection_select :country_id, Country.order(:name), :id, :name, {}, { class: "w-input", required: "required" } %>
 
+				<label class="form-label" for="tos">Terms of Service</label>
+				<%= f.check_box_tag :tos, "1", false, {}, { class: "w-input", required: "required" } %>
+
 				<%= recaptcha_tags %>
 
 			  <%= f.submit "Sign up", class: 'login-button w-button', data: {wait: 'Please wait...'} %>
