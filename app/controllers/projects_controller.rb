@@ -45,16 +45,17 @@ class ProjectsController < ApplicationController
 			    :managed => true
 			  }
 			)
-			# Accept TOS (accepted on sign_up)
-			stripe_account.tos_acceptance.date	= Time.now.to_i
-			stripe_account.tos_acceptance.ip = request.remote_ip
-			stripe_account.save
-			
 			stripe_info = StripeInfo.where(account_id: @account.id).first
 			stripe_info.stripe_id = stripe_account.id
 			stripe_info.secret_key = stripe_account.keys.secret
 			stripe_info.publishable_key = stripe_account.keys.publishable
 			stripe_info.save
+
+			# Accept TOS (accepted on sign_up)
+			stripe_account.tos_acceptance.date	= Time.now.to_i
+			stripe_account.tos_acceptance.ip = request.remote_ip
+			stripe_account.save
+
 		end
 
     if @project.save
