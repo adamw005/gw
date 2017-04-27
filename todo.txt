@@ -183,24 +183,27 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[x] Show status of pending withdraws
 	[x] Show history of withdraws
 [x] Read all of Managed Accounts Stripe docs and below
+[x] Finish a dashboard page
+	[] Fix x-axis on bottom right graph
+	[x] Make the page layout better with graph labels
+	[x] Link to `withdraw` page
+[x] Collect necessary fields before withdrawal https://stripe.com/docs/connect/required-verification-information
+	[x] Use `fields_needed` to see which are needed. Also `payouts_endabled`, `disabled_reason`, and `due_by` https://stripe.com/docs/connect/updating-accounts
+
 
 
 Goal: Launchable by end of the week
 Tuesday:
 [] Create Lean Canvas
 
-[] Finish a dashboard page
-	[] Fix x-axis on bottom right graph
-	[x] Make the page layout better with graph labels
-	[x] Link to `withdraw` page
-[] Are Stripe charges being copied to TransactionQueue every time?
-[] Strong Params in every controller
-[] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
-[] Collect necessary fields before withdrawal https://stripe.com/docs/connect/required-verification-information
-	[] Use `fields_needed` to see which are needed. Also `payouts_endabled`, `disabled_reason`, and `due_by` https://stripe.com/docs/connect/updating-accounts
+
 [] Setup Stripe API Webhooks
 [] Add TOS and Stripe TOS at Sign Up
 
+[] Are Stripe charges being copied to TransactionQueue every time?
+[] Strong Params in every controller
+[] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
+[] Should we show `fields_needed` before the account is disabled? Yes
 
 [] Blazer gem
 
