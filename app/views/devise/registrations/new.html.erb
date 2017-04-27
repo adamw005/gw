@@ -19,6 +19,13 @@
 			<label class="form-label" for="password_confirmation">Confirm Password</label>
 			<%= f.password_field :password_confirmation, data: {name: 'password_confirmation'}, class: "w-input", id: "password_confirmation", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
 
+			<label class="form-label" for="tos">Terms of Service</label>
+			<div style="text-align:left;">
+				<%= check_box :tos, {}, { required: "required" } %>
+				<p style="display:inline-block;">By registering your account, you agree to our Services Agreement and the <a href="https://stripe.com/connect-account/legal">Stripe Connected Account Agreement.</a></p>
+			</div>
+
+
 			<%= recaptcha_tags %>
 
 			<%= f.submit "Sign up", class: 'login-button w-button', data: {wait: 'Please wait...'} %>
