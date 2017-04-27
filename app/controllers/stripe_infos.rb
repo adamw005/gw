@@ -86,6 +86,7 @@ class StripeInfosController < ApplicationController
 	end
 
 	def stripe_webhooks
+		head 200
 		# render status: 200
 		# require "json"
   	# event_json = JSON.parse(params)
