@@ -73,6 +73,8 @@ class ProjectsController < ApplicationController
 		# Format dates for column_chart
 		@number_charges_declined = @number_charges_declined.transform_keys{ |key| key.strftime("%b %Y") }
 		@number_charges_accepted = @number_charges_accepted.transform_keys{ |key| key.strftime("%b %Y") }
+		@number_charges_declined = @number_charges_declined.transform_keys.with_index{ |key, i| if i % 2 == 0 then key.strftime("%b %Y") else "" end }
+		@number_charges_accepted = @number_charges_accepted.transform_keys.with_index{ |key, i| if i % 2 == 0 then key.strftime("%b %Y") else "" end }
 
 		# @amount_charges_declined = PastTransaction.where(project_id: @project.id).where(status: 'failed').group_by_month(:created_at, last: 6).sum(:amount)
 		# @amount_charges_accepted = PastTransaction.where(project_id: @project.id).where(status: 'successful').group_by_month(:created_at, last: 6).sum(:amount)
