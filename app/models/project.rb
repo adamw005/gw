@@ -33,7 +33,7 @@ class Project < ActiveRecord::Base
 		if Project.where(slug: title.parameterize('')).exists?
 			self.slug = title.parameterize('') + Random.rand(999).to_s
 		else
-			self.slug = self.title.parameterize('')
+			self.slug = title.parameterize('')
 		end
 	end
 
