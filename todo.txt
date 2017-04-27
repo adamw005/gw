@@ -193,6 +193,8 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[x] Display on Signup screen
 	[x] Require it checked to signup
 	[x] Just assume that on account creation, they were required to accept TOS and send the Stripe update for TOS
+[x] Setup Stripe API Webhooks
+	[x] Create charge to test webhooks
 
 
 
@@ -200,8 +202,6 @@ Goal: Launchable by end of the week
 Tuesday:
 [] Create Lean Canvas
 
-[] Setup Stripe API Webhooks
-	[] Create charge to test webhooks
 
 [] Are Stripe charges being copied to TransactionQueue every time?
 [] Strong Params in every controller
