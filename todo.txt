@@ -182,6 +182,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[x] Choose bank account and amount to withdraw
 	[x] Show status of pending withdraws
 	[x] Show history of withdraws
+[x] Read all of Managed Accounts Stripe docs and below
 
 
 Goal: Launchable by end of the week
@@ -191,7 +192,7 @@ Tuesday:
 [] Finish a dashboard page
 	[] Fix x-axis on bottom right graph
 	[x] Make the page layout better with graph labels
-[] Read all of Managed Accounts Stripe docs and below
+	[x] Link to `withdraw` page
 [] Are Stripe charges being copied to TransactionQueue every time?
 [] Strong Params in every controller
 [] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts

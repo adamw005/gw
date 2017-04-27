@@ -1,0 +1,14 @@
+# Rails Console
+@user = User.find(13)
+@account = Stripe::Account.retrieve(@user.accounts.first.stripe_infos.first.stripe_id)
+@stripe_id = @user.accounts.first.stripe_infos.first.stripe_id
+@bank_accounts = Stripe::Account.retrieve(@stripe_id).external_accounts.data
+@account_balance = Stripe::Balance.retrieve(stripe_account: @account.id)
+
+@user = User.find(13)
+@account = Stripe::Account.retrieve(@user.accounts.first.stripe_infos.first.stripe_id)
+@payout_list = Stripe::Payout.list({}, {:stripe_account => @account.id})
+
+@payout_list.each do |p|
+
+Stripe::Account.retrieve(@stripe_id).external_accounts.data#[{id: @p.destination}]
