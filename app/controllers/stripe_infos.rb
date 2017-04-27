@@ -1,5 +1,5 @@
 class StripeInfosController < ApplicationController
-	protect_from_forgery :except => :stripe_webhooks
+	# protect_from_forgery :except => :stripe_webhooks
 
 	def new
 		StripeInfo.new
