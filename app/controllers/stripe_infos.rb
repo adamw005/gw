@@ -1,6 +1,5 @@
 class StripeInfosController < ApplicationController
 	protect_from_forgery :except => :stripe_webhooks
-	skip_before_action :verify_authenticity_token
 
 	def new
 		StripeInfo.new
