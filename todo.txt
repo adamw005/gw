@@ -207,6 +207,7 @@ Tuesday:
 [] Strong Params in every controller
 [] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
 [] Should we show `fields_needed` before the account is disabled? Yes
+[] Registration fields are required in form, but not all in backend
 
 [] Blazer gem
 
