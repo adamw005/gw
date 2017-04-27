@@ -84,14 +84,14 @@ class StripeInfosController < ApplicationController
 		redirect_to :back
 	end
 
-	def stripe_webhooks
-		require "json"
-  	event_json = JSON.parse(params)
-	  # Verify the event by fetching it from Stripe
-	  event = Stripe::Event.retrieve(event_json["id"])
-	  # Do something with event
-	  status 200
-	end
+	# def stripe_webhooks
+	# 	require "json"
+  # 	event_json = JSON.parse(params)
+	#   # Verify the event by fetching it from Stripe
+	#   event = Stripe::Event.retrieve(event_json["id"])
+	#   # Do something with event
+	#   status 200
+	# end
 
 end
 
