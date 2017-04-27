@@ -82,6 +82,8 @@ namespace :charge_transactions do
 						TransactionQueue.where(user_id: u.id).each do |t| # loop through a user's TransactionQueue records
 							attributes = t.attributes
 							attributes.delete("id")
+							attributes.delete("created_at")
+							attributes.delete("updated_at")
 							attributes["type_of"] = attributes["type"]
 							attributes.delete("type")
 							PastTransaction.create(attributes.merge({status: 'successful'})) # copy + status field
