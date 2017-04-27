@@ -47,7 +47,7 @@
 							<td class="wd-history-table-tr"><%= Time.zone.at(p.created).strftime("%B %d, %Y") %></td>
 							<td class="wd-history-table-tr"><%= Time.zone.at(p.arrival_date).strftime("%B %d, %Y") %></td>
 							<td class="wd-history-table-tr"><%= p.destination %></td><!-- TODO: Fix this to lookup BankAccount info using p.destination -->
-							<td class="wd-history-table-tr">$<%= '%.2f' % (p.amount / 100.0) %> USD</td>
+							<td class="wd-history-table-tr wd-right">$<%= '%.2f' % (p.amount / 100.0) %> USD</td>
 							<td class="wd-history-table-tr"><%= p.status %></td>
 						</tr>
 					<% end %>
