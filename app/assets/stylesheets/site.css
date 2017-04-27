@@ -940,6 +940,10 @@
     overflow: hidden;
 }
 
+.wd-right {
+	text-align: right;
+}
+
 .wd-withdraw-section {
 	margin: 20px;
 }
@@ -1074,9 +1078,6 @@
 	color: #444
 }
 
-.wd-right {
-	text-align: right;
-}
 
 
 
