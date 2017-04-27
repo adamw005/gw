@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 	post 'stripe_infos/default_bank_account', to: 'stripe_infos#default_bank_account', as: 'stripe_infos_default_bank_account'
 	post 'stripe_infos/create_payout', to: 'stripe_infos#create_payout', as: 'stripe_infos_create_payout'
 	post 'stripe_infos/submit_fields_needed', to: 'stripe_infos#submit_fields_needed', as: 'stripe_infos_submit_fields_needed'
+	post 'stripe/webhooks', to: 'stripe_infos#stripe_webhooks', as: 'stripe_wehbooks'
 	post 'releases/create'
 	delete 'subscriptions/destroy/:id', to: 'subscriptions#destroy', as: 'subscriptions_destroy'
 	get 'projects/dashboard/:id', to: 'projects#dashboard', as: 'dashboard'

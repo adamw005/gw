@@ -28,3 +28,6 @@ stripe_account = Stripe::Account.create(
 )
 stripe_account.tos_acceptance.date	= Time.now.to_i
 stripe_account.tos_acceptance.ip = request.remote_ip
+
+@user = User.last
+@account = Stripe::Account.retrieve(@user.accounts.first.stripe_infos.first.stripe_id)

@@ -189,6 +189,10 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[x] Link to `withdraw` page
 [x] Collect necessary fields before withdrawal https://stripe.com/docs/connect/required-verification-information
 	[x] Use `fields_needed` to see which are needed. Also `payouts_endabled`, `disabled_reason`, and `due_by` https://stripe.com/docs/connect/updating-accounts
+[x] Add TOS and Stripe TOS at Sign Up
+	[x] Display on Signup screen
+	[x] Require it checked to signup
+	[x] Just assume that on account creation, they were required to accept TOS and send the Stripe update for TOS
 
 
 
@@ -196,18 +200,13 @@ Goal: Launchable by end of the week
 Tuesday:
 [] Create Lean Canvas
 
-
 [] Setup Stripe API Webhooks
-[] Add TOS and Stripe TOS at Sign Up
-	[x] Display on Signup screen
-	[x] Require it checked to signup
-	[] Just assume that on account creation, they were required to accept TOS and send the Stripe update for TOS
 
 [] Are Stripe charges being copied to TransactionQueue every time?
 [] Strong Params in every controller
 [] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
 [] Should we show `fields_needed` before the account is disabled? Yes
-[] Registration fields are required in form, but not all in backend
+[] New User Registration fields are required in html form, but not all of them are required in Rails
 
 [] Blazer gem
 
@@ -224,6 +223,7 @@ Every day:
 [] Apply to 5 jobs
 [] Write job interview responses
 
+Before launch:
 [] Turn off 'show errors' in Rails
 [] Add contact options
 [] Customize Devise Email views
