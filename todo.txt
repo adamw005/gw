@@ -199,8 +199,9 @@ Tuesday:
 
 [] Setup Stripe API Webhooks
 [] Add TOS and Stripe TOS at Sign Up
-	[] Display on Signup screen
-	[] Fill out Stripe Customer fields_needed
+	[x] Display on Signup screen
+	[] Require it checked to signup
+	[] Just assume that on account creation, they were required to accept TOS and send the Stripe update for TOS
 
 [] Are Stripe charges being copied to TransactionQueue every time?
 [] Strong Params in every controller

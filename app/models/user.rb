@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 	validates :username, :presence => true, :uniqueness => { :case_sensitive => false }
 	# Only allow letter, number, underscore and punctuation.
 	validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
+	# Must accept Terms of Service
+	validates :tos, acceptance: { accept: true }
 
 	def create_avatar
 		self.avatar = 'https://api.adorable.io/avatars/64/' + (0...8).map { (65 + rand(26)).chr }.join
