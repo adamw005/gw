@@ -46,7 +46,7 @@ class StripeInfosController < ApplicationController
 		account = Stripe::Account.retrieve(current_user.accounts.first.stripe_infos.first.stripe_id)
 		Stripe::Payout.create(
 		  {
-		    :amount => params[:amount] * 100.0,
+		    :amount => (params[:amount] * 100.0).to_i,
 		    :currency => "usd",
 				:destination => params[:bank_id]
 		  },
