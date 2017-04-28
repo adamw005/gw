@@ -195,6 +195,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[x] Just assume that on account creation, they were required to accept TOS and send the Stripe update for TOS
 [x] Setup Stripe API Webhooks
 	[x] Create charge to test webhooks
+[x] Are Stripe charges being copied to TransactionQueue every time?
 
 
 
@@ -202,11 +203,9 @@ Goal: Launchable by end of the week
 Tuesday:
 [] Create Lean Canvas
 
-
-[] Are Stripe charges being copied to TransactionQueue every time?
+[] Should we show `fields_needed` before the account is disabled? Yes
 [] Strong Params in every controller
 [] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
-[] Should we show `fields_needed` before the account is disabled? Yes
 [] New User Registration fields are required in html form, but not all of them are required in Rails
 
 [] Blazer gem

@@ -31,3 +31,36 @@ stripe_account.tos_acceptance.ip = request.remote_ip
 
 @user = User.last
 @account = Stripe::Account.retrieve(@user.accounts.first.stripe_infos.first.stripe_id)
+
+
+attributes = TransactionQueue.last.attributes
+attributes.delete("id")
+attributes["type_of"] = attributes["type"]
+attributes.delete("type")
+PastTransaction.create(attributes.merge({status: 'failed'})) # copy + status field
+t.destroy # remove from TransactionQueue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
