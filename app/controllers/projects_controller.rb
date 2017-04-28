@@ -2,10 +2,10 @@ class ProjectsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
 
   def show
-		if params[:id]
-			@project = Project.find(params[:id])
+		if project_params[:id]
+			@project = Project.find(project_params[:id])
 		else
-			@project = Project.find_by(slug: params[:slug])
+			@project = Project.find_by(slug: project_params[:slug])
 		end
 		@post = @project.posts.build
   end
