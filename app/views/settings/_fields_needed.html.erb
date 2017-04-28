@@ -4,29 +4,58 @@
 		<div class="w-form">
 			<form action="/stripe_infos/submit_fields_needed" method="POST">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-				<% @account.verification.fields_needed.each do |f| %>
-					<% if f == 'legal_entity.dob.day' %>
-						<label class="wd-withdraw-label" for="dob">Date of Birth:</label>
+				<% @account.verification.fields_needed.each do |field| %>
+					<% if field == 'legal_entity.dob.day' %>
+						<label class="wd-withdraw-label" for="dob">Date of Birth</label>
 						<input type="date" name="dob" placeholder="mm/dd/yyyy" class="w-input wd-withdraw-textbox" data-name="dob" id="dob" required="required">
-					<% elsif f == 'legal_entity.first_name' %>
-						<label class="wd-withdraw-label" for="first_name">First Name:</label>
+					<% elsif field == 'legal_entity.first_name' %>
+						<label class="wd-withdraw-label" for="first_name">First Name</label>
 						<input type="text" name="first_name" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="first_name" id="first_name" required="required">
-					<% elsif f == 'legal_entity.last_name' %>
-						<label class="wd-withdraw-label" for="last_name">First Name:</label>
+					<% elsif field == 'legal_entity.last_name' %>
+						<label class="wd-withdraw-label" for="last_name">Last Name</label>
 						<input type="text" name="last_name" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="last_name" id="last_name" required="required">
-					<% elsif f == 'legal_entity.type' %>
+					<% elsif field == 'legal_entity.type' %>
 						<select class="w-select wd-withdraw-dropdown" data-name="entity_type" id="entity_type" name="entity_type" required="required">
 								<option value="individual">Individual</option>
 								<option value="business">Business</option>
 						</select>
-					<% elsif f == 'tos_acceptance.date' %>
-						<label class="wd-withdraw-label" for="tos">Terms of Service:</label>
+					<% elsif field == 'tos_acceptance.date' %>
+						<label class="wd-withdraw-label" for="tos">Terms of Service</label>
 						<div>
 							<input type="checkbox" name="tos" data-name="tos" id="tos" required="required">
 							<p style="display:inline-block;">By registering your account, you agree to our Services Agreement and the <a href="https://stripe.com/connect-account/legal">Stripe Connected Account Agreement.</a></p>
 						</div>
-					<% elsif f == 'MORE' %>
-						<!-- Put MORE forms -->
+					<% elsif field == 'legal_entity.address.line1' %>
+						<label class="wd-withdraw-label" for="address_line">Address</label>
+						<input type="text" name="address_line" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="address_line" id="address_line" required="required">
+
+					<% elsif field == 'legal_entity.address.postal_code' %>
+						<label class="wd-withdraw-label" for="postal_code">Postal Code</label>
+						<input type="text" name="postal_code" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="postal_code" id="postal_code" required="required">
+
+					<% elsif field == 'legal_entity.address.state' %>
+						<label class="wd-withdraw-label" for="state">State</label>
+						<input type="text" name="state" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="state" id="state" required="required">
+
+					<% elsif field == 'legal_entity.business_name' %>
+						<label class="wd-withdraw-label" for="business_name">Business Name</label>
+						<input type="text" name="business_name" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="business_name" id="business_name" required="required">
+
+					<% elsif field == 'legal_entity.business_tax_id' %>
+						<label class="wd-withdraw-label" for="business_tax_id">Business Tax ID</label>
+						<input type="text" name="business_tax_id" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="business_tax_id" id="business_tax_id" required="required">
+
+					<% elsif field == 'legal_entity.ssn_last_4' %>
+						<label class="wd-withdraw-label" for="ssn_last_4">Lsat 4 of SSN</label>
+						<input type="text" name="ssn_last_4" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="ssn_last_4" id="ssn_last_4" required="required">
+
+					<% elsif field == 'legal_entity.personal_id_number' %>
+						<label class="wd-withdraw-label" for="personal_id_number">Personal ID Number (SSN)</label>
+						<input type="text" name="personal_id_number" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="personal_id_number" id="personal_id_number" required="required">
+
+					<% elsif field == 'legal_entity.verification.document' %>
+						<label class="wd-withdraw-label" for="verification_document">Verification Document (contact Support)</label>
+						<input type="text" name="verification_document" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="verification_document" id="verification_document" required="required">
 					<% end %>
 				<% end %>
 				<input class="w-button wd-withdraw-button" data-wait="Please wait..." type="submit" value="Submit">

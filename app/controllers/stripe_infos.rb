@@ -79,6 +79,28 @@ class StripeInfosController < ApplicationController
 			account.tos_acceptance.date = Time.now.to_i
 			account.tos_acceptance.ip = request.remote_ip # Assumes you're not using a proxy
 		end
+		if params.has_key?(:address_line)
+			account.legal_entity.address.line1 = params[:address_line]
+		end
+		if params.has_key?(:postal_code)
+			account.legal_entity.address.postal_code = params[:postal_code]
+		end
+		if params.has_key?(:state)
+			account.legal_entity.address.state = params[:state]
+		end
+		if params.has_key?(:business_name)
+			account.legal_entity.business_name = params[:business_name]
+		end
+		if params.has_key?(:business_tax_id)
+			account.legal_entity.business_tax_id = params[:business_tax_id]
+		end
+		if params.has_key?(:ssn_last_4)
+			account.legal_entity.ssn_last_4 = params[:ssn_last_4]
+		end
+		if params.has_key?(:personal_id_number)
+			account.legal_entity.personal_id_number = params[:personal_id_number]
+		end
+
 
 		account.save
 		redirect_to :back
