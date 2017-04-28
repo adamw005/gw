@@ -33,6 +33,10 @@
 						<label class="wd-withdraw-label" for="postal_code">Postal Code</label>
 						<input type="text" name="postal_code" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="postal_code" id="postal_code" required="required">
 
+					<% elsif field == 'legal_entity.address.city' %>
+						<label class="wd-withdraw-label" for="city">City</label>
+						<input type="text" name="city" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="city" id="city" required="required">
+	
 					<% elsif field == 'legal_entity.address.state' %>
 						<label class="wd-withdraw-label" for="state">State</label>
 						<input type="text" name="state" placeholder="First Name" class="w-input wd-withdraw-textbox" data-name="state" id="state" required="required">

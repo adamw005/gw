@@ -85,6 +85,9 @@ class StripeInfosController < ApplicationController
 		if params.has_key?(:postal_code)
 			account.legal_entity.address.postal_code = params[:postal_code]
 		end
+		if params.has_key?(:city)
+			account.legal_entity.address.city = params[:city]
+		end
 		if params.has_key?(:state)
 			account.legal_entity.address.state = params[:state]
 		end
