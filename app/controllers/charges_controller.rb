@@ -7,8 +7,8 @@ class ChargesController < ApplicationController
 	  @amount = 500
 
 	  customer = Stripe::Customer.create(
-	    :email => charge_params[:stripeEmail],
-	    :source  => charge_params[:stripeToken]
+	    :email => params[:stripeEmail],
+	    :source  => params[:stripeToken]
 	  )
 
 	  charge = Stripe::Charge.create(
@@ -22,11 +22,4 @@ class ChargesController < ApplicationController
 	  flash[:error] = e.message
 	  redirect_to new_charge_path
 	end
-
-	private
-
-	def charge_params
-    params.permit(:stripeEmail, :stripeToken)
-  end
-
 end

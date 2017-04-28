@@ -2,10 +2,10 @@ class ProjectsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
 
   def show
-		if project_params[:id]
-			@project = Project.find(project_params[:id])
+		if params[:id]
+			@project = Project.find(params[:id])
 		else
-			@project = Project.find_by(slug: project_params[:slug])
+			@project = Project.find_by(slug: params[:slug])
 		end
 		@post = @project.posts.build
   end
@@ -91,7 +91,7 @@ class ProjectsController < ApplicationController
 	private
 
 	def project_params
-		params.permit(:project, :user_id, :title, :format, :charge_occurrence, :body, :box_image, rewards_tiers_attributes: [:min_amount, :body], goals_attributes: [:amount, :body])
+		params.require(:project).permit(:user_id, :title, :format, :charge_occurrence, :body, :box_image, rewards_tiers_attributes: [:min_amount, :body], goals_attributes: [:amount, :body])
 	end
 
 end
