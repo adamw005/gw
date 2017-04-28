@@ -6,7 +6,7 @@
 
 	<% if current_user && current_user == @user %>
 
-		<% if @account.verification.fields_needed.empty? %>
+		<% if @account.verification.disabled_reason == 'fields_needed' %>
 			<%= render '/settings/withdraw_section' %>
 		<% else %>
 			<%= render '/settings/fields_needed' %>
