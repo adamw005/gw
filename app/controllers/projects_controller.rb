@@ -91,7 +91,7 @@ class ProjectsController < ApplicationController
 	private
 
 	def project_params
-		params.require(:project).permit(:user_id, :title, :format, :charge_occurrence, :body, :box_image, rewards_tiers_attributes: [:min_amount, :body], goals_attributes: [:amount, :body])
+		params.permit(:project, :user_id, :title, :format, :charge_occurrence, :body, :box_image, rewards_tiers_attributes: [:min_amount, :body], goals_attributes: [:amount, :body])
 	end
 
 end
