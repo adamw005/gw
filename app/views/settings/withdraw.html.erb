@@ -7,9 +7,9 @@
 	<% if current_user && current_user == @user %>
 
 		<% if @account.verification.disabled_reason == 'fields_needed' %>
-			<%= render '/settings/withdraw_section' %>
-		<% else %>
 			<%= render '/settings/fields_needed' %>
+		<% else %>
+			<%= render '/settings/withdraw_section' %>
 		<% end %>
 
 		<%= render '/settings/accounts_section' %>

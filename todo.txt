@@ -205,7 +205,7 @@ Tuesday:
 [] Create Lean Canvas
 
 [] Should we show `fields_needed` before the account is disabled? Yes
-	[] Add the rest of `fields_needed` attributes
+	[x] Add the rest of `fields_needed` attributes
 [] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
 [] New User Registration fields are required in html form, but not all of them are required in Rails
 
