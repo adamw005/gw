@@ -197,6 +197,8 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 	[x] Create charge to test webhooks
 [x] Are Stripe charges being copied to TransactionQueue every time?
 [x] Strong Params in every controller
+[x] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
+	[x] Increase our fee to 5.5% in order to account for this
 
 
 
@@ -206,8 +208,8 @@ Tuesday:
 
 [] Should we show `fields_needed` before the account is disabled? Yes
 	[x] Add the rest of `fields_needed` attributes
-[] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
 [] New User Registration fields are required in html form, but not all of them are required in Rails
+[] Non-sequential IDs
 
 [] Blazer gem
 

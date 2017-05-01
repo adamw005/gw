@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+	obfuscate_id :spin => 72894092
   belongs_to :user
 	has_many :subscriptions,  dependent: :destroy
 	has_many :posts,  dependent: :destroy

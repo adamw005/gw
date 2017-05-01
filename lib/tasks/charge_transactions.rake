@@ -58,7 +58,7 @@ namespace :charge_transactions do
 					proportions.each do |proj|
 						# Take the amount_charged and multiply it by User-Project.proportion
 						amount_to_transfer = (total_amount_owed * proj[:proportion]).round
-						application_fee = (amount_to_transfer*0.05).round
+						application_fee = (amount_to_transfer*0.055).round
 
 						# Set project_owner variable for later
 						project_owner = Project.find(proj[:project]).user
