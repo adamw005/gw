@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
 	validates :tos, acceptance: { accept: true }
 
 	def create_avatar
-		self.avatar = 'https://api.adorable.io/avatars/64/' + (0...8).map { (65 + rand(26)).chr }.join
+		self.avatar = 'https://robohash.org/' + (0...8).map { (65 + rand(26)).chr }.join + '?size=64x64'
+		# self.avatar = 'https://api.adorable.io/avatars/64/' + (0...8).map { (65 + rand(26)).chr }.join
 	end
 
   def self.find_for_database_authentication(warden_conditions)
