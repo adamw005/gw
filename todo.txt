@@ -199,6 +199,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Strong Params in every controller
 [x] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
 	[x] Increase our fee to 5.5% in order to account for this
+[x] Non-sequential IDs
 
 
 
@@ -209,22 +210,28 @@ Tuesday:
 [] Should we show `fields_needed` before the account is disabled? Yes
 	[x] Add the rest of `fields_needed` attributes
 [] New User Registration fields are required in html form, but not all of them are required in Rails
-[] Non-sequential IDs
+[] Create admin account so I can view everything
+[] Create more realistic projects with more subscribers
+	[] Turn off email authentication temporarily
+	[] Install Faker gem
+	[] Create many fake users (for Subscriptions and Comments)
+	[] Automate their Stripe account creation with test card
+	[] Create/update fake projects to be more realistic (maybe pay Fiverr people to write copy)
+	[] Add subscriptions and comments to projects
 
 [] Blazer gem
 
 [] Email 3 people about GW interview
 [] Write GW interview script
 [] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention
+
+[] Read
+[] Apply to 5 jobs
+[] Write job interview responses
 [] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
 	[] Write outline
 	[] Get images
 	[] Write post
-
-Every day:
-[] Read
-[] Apply to 5 jobs
-[] Write job interview responses
 
 Before launch:
 [] Turn off 'show errors' in Rails
