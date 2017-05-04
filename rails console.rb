@@ -42,17 +42,62 @@ t.destroy # remove from TransactionQueue
 
 
 
+###     Add Fake Users     ###
+100.times do
+# Create user
+username = Faker::Name.unique.first_name
+email = Faker::Internet.unique.email
+user = User.new({:email => email, :username => username, :password => 'password', :password_confirmation => 'password', :country_id => 26, :tos => true })
+user.skip_confirmation!
+user.save!
 
+# Add Stripe account and test card
+token = Stripe::Token.create(
+:card => {
+:number => "4242424242424242",
+:exp_month => 5,
+:exp_year => 2018,
+:cvc => "314"
+},
+)
+current_user = user
+customer = Stripe::Customer.create(
+:email => email,
+:source  => token.id
+)
+@account = Account.new user_id: current_user.id
+@account.save
+@stripe_info = StripeInfo.new customer_id: customer.id, account_id: @account.id
+@stripe_info.save
 
+# Users subscribe to some current projects
+Project.all.each do |proj|
+if rand(100) > 75
+# tier = proj.rewards_tiers.order("random()").first
+tier = proj.rewards_tiers.order("min_amount asc").first
+amount = tier.min_amount.to_i
+if proj.charge_occurrence = "ReleaseSubscription"
+	ReleaseSubscription.create({amount: amount, project_id: proj.id, user_id: user.id, rewards_tier_id: tier.id})
+else
+	MonthlySubscription.create({amount: amount, project_id: proj.id, user_id: user.id, rewards_tier_id: tier.id})
+end
 
+end
+end
 
-
-
-
-
-
-
-
+# Users comment on some subscribed projects
+user.subscriptions.each do |sub|
+if rand(100) > 90
+project_id = sub.project.id
+if rand(100) > 50
+body = Faker::Hipster.paragraph(3)
+else
+body = Faker::Hacker.say_something_smart
+end
+Comment.create({user_id: user.id, project_id: project_id, body: body})
+end
+end
+end
 
 
 

@@ -41,9 +41,9 @@
 		                <p class="backers-p">backers</p>
 		              </div>
 		              <div class="listing-summary">
-		                <p class="funded-amount"><strong><%= number_to_currency(p.amount_sum, :unit => "$") %></strong>
+		                <p class="funded-amount"><strong><%= number_to_currency(p.amount_sum, :unit => "$", :precision => 0) %></strong>
 		                </p>
-		                <p class="perepisode-p"><%= if p.charge_occurrence == 'episodic' then 'per episode' else 'per month' end %></p>
+		                <p class="perepisode-p"><%= if p.charge_occurrence == 'ReleaseSubscription' then 'per episode' else 'per month' end %></p>
 		              </div>
 		            </div>
 		          </div>

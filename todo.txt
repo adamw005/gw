@@ -213,11 +213,13 @@ Tuesday:
 [] Create admin account so I can view everything
 [] Create more realistic projects with more subscribers
 	[] Turn off email authentication temporarily
-	[] Install Faker gem
+	[x] Install Faker gem
 	[] Create many fake users (for Subscriptions and Comments)
 	[] Automate their Stripe account creation with test card
 	[] Create/update fake projects to be more realistic (maybe pay Fiverr people to write copy)
 	[] Add subscriptions and comments to projects
+[] Do something with received Stripe webhooks
+[] Fix Browse page: list always say 'per month' instead of 'per episode'
 
 [] Blazer gem
 
