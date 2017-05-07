@@ -200,6 +200,8 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Pass 0.5% Connect fee to user https://support.stripe.com/questions/what-is-the-connect-fee-for-managed-accounts
 	[x] Increase our fee to 5.5% in order to account for this
 [x] Non-sequential IDs
+[x] Fix Browse page: list always say 'per month' instead of 'per episode'
+[x] Fix subscriptions over time in Dashboard. Should this be Subscription on PastTransaction?
 
 
 
@@ -212,14 +214,14 @@ Tuesday:
 [] New User Registration fields are required in html form, but not all of them are required in Rails
 [] Create admin account so I can view everything
 [] Create more realistic projects with more subscribers
-	[] Turn off email authentication temporarily
+	[x] Turn off email authentication temporarily
 	[x] Install Faker gem
-	[] Create many fake users (for Subscriptions and Comments)
-	[] Automate their Stripe account creation with test card
+	[x] Create many fake users (for Subscriptions and Comments)
+	[x] Automate their Stripe account creation with test card
 	[] Create/update fake projects to be more realistic (maybe pay Fiverr people to write copy)
-	[] Add subscriptions and comments to projects
+	[x] Add subscriptions and comments to projects
 [] Do something with received Stripe webhooks
-[] Fix Browse page: list always say 'per month' instead of 'per episode'
+[] Check logic in Day 1..5 charges
 
 [] Blazer gem
 

@@ -2,11 +2,11 @@
 # https://stripe.com/docs/connect
 namespace :charge_transactions do
 
-  desc "Everyday check to see if it's the 1st of the month and attemp transaction charges"
+  desc "Everyday check to see if it's the 1st of the month and attempt transaction charges"
   task :start => :environment do
 
 		### Charge Transactions ###
-		if (1..31).include?(Time.now.day)	#1..5
+		if (1..8).include?(Time.now.day)	#1..5
 	    puts "Attempting to charge TransactionQueues"
 
 			# Group TransactionQueue by User with summed amounts
