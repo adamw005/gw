@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
 	validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 	# Must accept Terms of Service
 	validates :tos, acceptance: { accept: true }
+	validates :country_id, presence: true
 
 	def create_avatar
 		self.avatar = 'https://robohash.org/' + (0...8).map { (65 + rand(26)).chr }.join + '?size=64x64'
