@@ -76,7 +76,7 @@ if rand(100) > 75
 # tier = proj.rewards_tiers.order("random()").first
 tier = proj.rewards_tiers.order("min_amount asc").first
 amount = tier.min_amount.to_i
-if proj.charge_occurrence = "ReleaseSubscription"
+if proj.charge_occurrence == "ReleaseSubscription"
 	ReleaseSubscription.create({amount: amount, project_id: proj.id, user_id: user.id, rewards_tier_id: tier.id})
 else
 	MonthlySubscription.create({amount: amount, project_id: proj.id, user_id: user.id, rewards_tier_id: tier.id})
@@ -103,6 +103,43 @@ end
 
 
 
+
+
+
+
+#
+Project.all.each do |proj|
+if proj.charge_occurrence == "ReleaseSubscription"
+	puts true
+else
+	puts false
+end
+end
+
+
+
+ReleaseSubscription.all.each do |rs|
+if rs.project.charge_occurrence == "MonthlySubscription"
+	params = {amount: rs.amount, project_id: rs.project_id, user_id: rs.user_id, rewards_tier_id: rs.rewards_tier_id}
+	rs.destroy
+	MonthlySubscription.create(params)
+end
+end
+
+MonthlySubscription.create({amount: amount, project_id: proj.id, user_id: user.id, rewards_tier_id: tier.id})
+
+
+rs = ReleaseSubscription.where(project_id: 117).last
+params = {amount: rs.amount, project_id: rs.project_id, user_id: rs.user_id, rewards_tier_id: rs.rewards_tier_id}
+rs.destroy
+MonthlySubscription.create(params)
+
+ReleaseSubscription.all.each do |rs|
+if rs.project.charge_occurrence == "MonthlySubscription"
+puts "OHNO!"
+end
+end
+ 
 
 
 
