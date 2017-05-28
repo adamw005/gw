@@ -237,9 +237,9 @@ Tuesday:
 [] Write GW interview script
 [] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention
 
-[] Read
-[] Apply to 5 jobs
-[] Write job interview responses
+[x] Read
+[x] Apply to 5 jobs
+[x] Write job interview responses
 [] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
 	[] Write outline
 	[] Get images
@@ -268,7 +268,7 @@ Before launch:
 		Specific Social Proof success
 		High level Social Proof
 
-[] Find a URL
+[x] Find a URL
 [] Create titles for pages
 [] SSL?
 
