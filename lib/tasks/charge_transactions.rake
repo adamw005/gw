@@ -10,11 +10,10 @@ namespace :charge_transactions do
 	    puts "Attempting to charge TransactionQueues"
 
 			# Group TransactionQueue by User with summed amounts
-			@users_with_amounts = TransactionQueue.group(:user_id).sum(:amount)
+			@users_with_amounts = TransactionQueue.group(:user).sum(:amount)
 
 			# Loop through each grouped User in the TransactionQueue
 			@users_with_amounts.each do |u,amount|
-        u = User.find(u)
 				total_amount_owed = (amount * 100).to_i # TODO: FIX THIS, Stripe needs cents we use dollars?
 				# amount_in_balance = Balance.where(account_id: u.accounts).first.amount
 
