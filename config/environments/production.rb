@@ -113,7 +113,7 @@ Rails.application.configure do
 		enable_starttls_auto: true,
 		:address => "smtp.sparkpostmail.com",
 		:port => "587",
-		# :domain => "gmail.com",
+		:domain => "mygroundworks.com",
 		:authentication => :login,
 		:user_name => ENV['MAIL_USER'],
 		:password => ENV['MAIL_PASSWORD']
