@@ -237,7 +237,8 @@ Tuesday:
 [] Fix mobile view
 	[] Look at project pages
 [] Add 'Account/My Projects' link on menu when signed in that has Dashboard links?
-
+[] Fix modals not scrolling
+[] Change Groundwork to MyGroundworks
 
 [] Blazer gem
 
