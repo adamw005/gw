@@ -111,9 +111,9 @@ Rails.application.configure do
 	ActionMailer::Base.delivery_method = :smtp
 	ActionMailer::Base.smtp_settings = {
 		enable_starttls_auto: true,
-		:address => "smtp.gmail.com",
+		:address => "smtp.sparkpostmail.com",
 		:port => "587",
-		:domain => "gmail.com",
+		# :domain => "gmail.com",
 		:authentication => :login,
 		:user_name => ENV['MAIL_USER'],
 		:password => ENV['MAIL_PASSWORD']
