@@ -47,7 +47,7 @@
     <div class="sample-container w-container">
       <div class="benefit-row w-row">
 				<% Project.all.limit(3).each do |p| %>
-        <a class="sample-col w-clearfix w-col w-col-4" href="<%= projects_path(p.id) %>">
+        <a class="sample-col w-clearfix w-col w-col-4" href="<%= projects_path(p.slug) %>">
           <div class="sample-border"></div><img class="sample-image" src="<%= p.box_image.url(:medium) %>">
           <h3 class="sample-h3"><%= p.title %></h3>
           <p class="sample-p"><%= truncate(strip_tags(p.body), :length => 160) %></p>
