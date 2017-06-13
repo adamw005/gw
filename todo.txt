@@ -237,7 +237,7 @@ Things done without pushing to Heroku:
 	[] Registration (new.html.erb)
 [] Fix mobile view
 
-
+ 
 
 [] Blazer gem
 
