@@ -31,7 +31,7 @@
 
 			<%= recaptcha_tags %>
 
-			<%= f.submit "Sign up", class: 'login-button w-button', html: {onclick: 'alert("blah")'} %>
+			<%= f.submit "Sign up", class: 'login-button w-button', data: {wait: 'Please wait...'}} %>
       <!-- #'fbq("track", "CompleteRegistration");' %> -->
 		<% end %>
 		<div class="w-form-done">
