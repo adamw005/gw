@@ -231,13 +231,13 @@ Tuesday:
 [] Run small sample of FB ads
 [] Verify HotJar feedback forms are working
 
-Things done without pushing to Heroku:
-[] Facebook pixel
+[x] Facebook pixel
 	[x] Header (application.html.erb)
-	[] Registration (new.html.erb)
+	[x] Registration (new.html.erb)
 [] Fix mobile view
+	[] Look at project pages
+[] Add 'Account/My Projects' link on menu when signed in that has Dashboard links?
 
- 
 
 [] Blazer gem
 
