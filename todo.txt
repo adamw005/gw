@@ -202,6 +202,8 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Non-sequential IDs
 [x] Fix Browse page: list always say 'per month' instead of 'per episode'
 [x] Fix subscriptions over time in Dashboard. Should this be Subscription on PastTransaction?
+[x] New User Registration fields are required in html form, but not all of them are required in Rails
+	[x] Just need to add `validates :country_id, presence: true` to user.rb
 
 
 
@@ -209,10 +211,6 @@ Goal: Launchable by end of the week
 Tuesday:
 [] Create Lean Canvas
 
-[] Should we show `fields_needed` before the account is disabled? Yes
-	[x] Add the rest of `fields_needed` attributes
-[] New User Registration fields are required in html form, but not all of them are required in Rails
-[] Create admin account so I can view everything
 [] Create more realistic projects with more subscribers
 	[x] Turn off email authentication temporarily
 	[x] Install Faker gem
@@ -220,8 +218,26 @@ Tuesday:
 	[x] Automate their Stripe account creation with test card
 	[] Create/update fake projects to be more realistic (maybe pay Fiverr people to write copy)
 	[x] Add subscriptions and comments to projects
-[] Do something with received Stripe webhooks
 [] Check logic in Day 1..5 charges
+	[x] Fix obfuscate_id error: https://github.com/namick/obfuscate_id/issues/59
+
+[] Do something with received Stripe webhooks
+[] Should we show `fields_needed` before the account is disabled? Yes
+	[x] Add the rest of `fields_needed` attributes
+[] Create admin account so I can view everything
+	[] Add field to User model
+	[] Defaults to false, can only be changed in console?
+	[] Add to all views that check for current_user == User, or current_user is admin
+[] Run small sample of FB ads
+[] Verify HotJar feedback forms are working
+
+Things done without pushing to Heroku:
+[] Facebook pixel
+	[x] Header (application.html.erb)
+	[] Registration (new.html.erb)
+[] Fix mobile view
+
+
 
 [] Blazer gem
 
