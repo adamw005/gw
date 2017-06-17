@@ -204,22 +204,41 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Fix subscriptions over time in Dashboard. Should this be Subscription on PastTransaction?
 [x] New User Registration fields are required in html form, but not all of them are required in Rails
 	[x] Just need to add `validates :country_id, presence: true` to user.rb
-
-
-
-Goal: Launchable by end of the week
-Tuesday:
-[] Create Lean Canvas
-
-[] Create more realistic projects with more subscribers
-	[x] Turn off email authentication temporarily
-	[x] Install Faker gem
-	[x] Create many fake users (for Subscriptions and Comments)
-	[x] Automate their Stripe account creation with test card
-	[] Create/update fake projects to be more realistic (maybe pay Fiverr people to write copy)
-	[x] Add subscriptions and comments to projects
-[] Check logic in Day 1..5 charges
+[x] Read
+[x] Apply to 5 jobs
+	[x] Write job interview responses
+[x] Create more realistic projects with more subscribers
+		[x] Turn off email authentication temporarily
+		[x] Install Faker gem
+		[x] Create many fake users (for Subscriptions and Comments)
+		[x] Automate their Stripe account creation with test card
+		[x] Create/update fake projects to be more realistic (maybe pay Fiverr people to write copy)
+		[x] Add subscriptions and comments to projects
+[x] Check logic in Day 1..5 charges
 	[x] Fix obfuscate_id error: https://github.com/namick/obfuscate_id/issues/59
+[x] Verify HotJar feedback forms are working
+[x] Facebook pixel
+		[x] Header (application.html.erb)
+		[x] Registration (new.html.erb)
+[x] Fix mobile view
+		[x] Look at project pages
+[x] Change Groundwork to MyGroundworks
+[x] Fix modals not scrolling
+
+
+
+Before launch:
+
+***	PUT ALL OF THIS IN agile backlog and prioritize	***
+
+[] Add landing page copy
+[] Turn off 'show errors' in Rails
+[] Add contact options
+[] Customize Devise Email views
+[x] Change Devise email address
+[] Add 'Edit User(Account)' page
+[] Add 'Account/My Projects' link on menu when signed in that has Dashboard links?
+[] Add 'Edit Project' page
 
 [] Do something with received Stripe webhooks
 [] Should we show `fields_needed` before the account is disabled? Yes
@@ -229,44 +248,21 @@ Tuesday:
 	[] Defaults to false, can only be changed in console?
 	[] Add to all views that check for current_user == User, or current_user is admin
 [] Run small sample of FB ads
-[] Verify HotJar feedback forms are working
 
-[x] Facebook pixel
-	[x] Header (application.html.erb)
-	[x] Registration (new.html.erb)
-[x] Fix mobile view
-	[x] Look at project pages
-[x] Change Groundwork to MyGroundworks
-[] Add 'Account/My Projects' link on menu when signed in that has Dashboard links?
-[] Fix modals not scrolling
-
+[] Add recommendation engine (predictor gem?)
 [] Blazer gem
 
 [] Email 3 people about GW interview
 [] Write GW interview script
 [] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention
 
-[] Read
-[] Apply to 5 jobs
-[] Write job interview responses
 [] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
 	[] Write outline
 	[] Get images
 	[] Write post
 
-Before launch:
-[] Turn off 'show errors' in Rails
-[] Add contact options
-[] Customize Devise Email views
-[] Change Devise email address
-[] Create 'Edit User(Account)' page
-[] Add recommendation engine (predictor gem?)
 
-
-
-
-
-[] Have a nice design created
+[] Have a nice design created on 99 designs
 	[] Create a list/screenshot of each page
 
 [] Write copy for landing page
@@ -288,24 +284,12 @@ Before launch:
 
 [] Make section for Goals on Project page
 
-
-
 [] PastTransaction should be STI, I hacked it using 'type_of'
 [] Add flash messages into controller and applicaiton.html.erb
 	[] Create css in webflow for flash div
 [] Rewards Tier column should only be written once, instead of on each tab
 [] Add functionality to 'Share' button
 [] Create landing page for Project Owners similar to Twuffer, mission statement link in footer
-
-
-
-[] Add Paypal integration
-
-Manual changes done to css:
-	.listing-profile: max-width: 100%;
-	.button-block: margin-top: 1rem;
-	added .nav-home-link
-	removed .w-nav-link.w--current color: #0082f3;
 
 
 
