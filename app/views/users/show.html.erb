@@ -8,7 +8,7 @@
 	      <h1 class="user-profile-h1">User Profile</h1>
 				<h4 class="user-profile-h4">for <%= current_user.email %></h4>
 				<div class="dashboard-div-account-balance">
-          <% Project.find(user: @user).each do |p| %>
+          <% Project.find_by(user: @user).each do |p| %>
             <h6 class="dashboard-account-balance"><%= p.title %></h6>
           <% end %>
 				</div>
