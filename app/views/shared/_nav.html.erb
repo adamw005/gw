@@ -3,7 +3,7 @@
 	<div class="nav-container w-container">
 		<nav class="nav-menu w-nav-menu" role="navigation">
 			<% if user_signed_in? %>
-				<%= link_to('My Profile', user_show_path, class: 'w-nav-link') %>
+				<%= link_to('My Profile', user_show_path(current_user.id), class: 'w-nav-link') %>
 				<%= link_to('Sign out', destroy_user_session_path, :method => :delete, class: 'w-nav-link') %>
 			<% else %>
 				<a class="w-nav-link" data-ix="signup-button" href="#">Sign up</a>
