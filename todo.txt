@@ -231,7 +231,7 @@ Before launch:
 
 ***	PUT ALL OF THIS IN agile backlog and prioritize	***
 
-[] Add landing page copy
+[x] Add landing page copy
 [] Turn off 'show errors' in Rails
 [] Add contact options
 [] Customize Devise Email views
