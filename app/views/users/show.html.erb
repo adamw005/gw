@@ -9,7 +9,7 @@
 				<h4 class="user-profile-h4">for <%= current_user.email %></h4>
 				<div class="user-profile-projects">
           <% @user.projects.each do |p| %>
-            <h6 class="user-profile-title"><%= link_to(p.title, projects_path(p.id), class: 'user-profile-link') %></h6>
+            <h6 class="user-profile-title"><%= link_to(p.title, projects_slug_path(p.slug), class: 'user-profile-link') %></h6>
           <% end %>
 				</div>
       </div>
