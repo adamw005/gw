@@ -1,43 +1,44 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= render '/shared/login_modal' %>
+<%= render '/shared/nav' %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<div class="signup-wrapper">
   <%= devise_error_messages! %>
+	<h3 class="signup-modal-title">Sign up</h3>
+	<p>Please enter your email and password to sign up.</p>
+	<div class="w-form">
+		<%= form_for('user', data: {name: "Email Form"}, html: {id: "email-form", name: "email-form", method: :put}, url: user_registration_path ) do |f| %>
+			<label class="form-label" for="email">Email</label>
+			<%= f.email_field :email, data: {name: 'email'}, class: "w-input", id: "email", maxlength: "256", placeholder: "Email", required: "required", type:"email", autofocus: 'true' %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+			<label class="form-label" for="username">Username</label>
+			<%= f.email_field :username, data: {name: 'username'}, class: "w-input", id: "username", maxlength: "256", placeholder: "Username", required: "required", type:"username", autofocus: 'true' %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+			<label class="form-label" for="password">Password</label>
+			<%= f.password_field :password, data: {name: 'password'}, class: "w-input", id: "password", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+			<label class="form-label" for="password_confirmation">Confirm Password</label>
+			<%= f.password_field :password_confirmation, data: {name: 'password_confirmation'}, class: "w-input", id: "password_confirmation", maxlength: "256", placeholder: "Password", required: "required", type:"password" %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+			<label class="form-label" for="username">Country</label>
+			<%= f.collection_select :country_id, Country.order(:name), :id, :name, {}, { class: "w-input", required: "required" } %>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+			<label class="form-label" for="tos">Terms of Service</label>
+			<div style="text-align:left;">
+				<%= check_box :tos, {}, { required: "required" } %>
+				<p style="display:inline-block;">By registering your account, you agree to our Services Agreement and the <a href="https://stripe.com/connect-account/legal">Stripe Connected Account Agreement.</a></p>
+			</div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
 
-<h3>Cancel my account</h3>
+			<%= recaptcha_tags %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+			<%= f.submit "Sign up", class: 'login-button w-button', data: {wait: 'Please wait...'}, onclick: 'fbq("track", "CompleteRegistration");' %>
+      <!-- #'fbq("track", "CompleteRegistration");' %> -->
+		<% end %>
+		<div class="w-form-done">
+			<div>Thank you! Your submission has been received!</div>
+		</div>
+		<div class="w-form-fail">
+			<div>Oops! Something went wrong while submitting the form</div>
+		</div>
+	</div>
+</div>

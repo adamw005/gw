@@ -224,18 +224,27 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 		[x] Look at project pages
 [x] Change Groundwork to MyGroundworks
 [x] Fix modals not scrolling
-
+[x] Add landing page copy
+[x] Turn off 'show errors' in Rails
+[x] Customize Devise Email views
+[x] Change Devise email address
 
 
 Before launch:
 
 ***	PUT ALL OF THIS IN agile backlog and prioritize	***
 
-[x] Add landing page copy
-[] Turn off 'show errors' in Rails
+[x] Write GW interview script
+[] Email 3 people about GW interview
+	[x] Neshcom
+	[] Jury
+	[] Brian Brushwood
+	[] Andrew Mayne
+	[] Tom Merritt
+[] Email top 20 of big Patreon creators
+ 	[] Offer 0% fee (some of them are paying $1500/mo) as a thank you email (after redesign). Attracting big names will garner a lot of attention
+
 [] Add contact options
-[] Customize Devise Email views
-[x] Change Devise email address
 [] Add 'Edit User(Account)' page
 [] Add 'Account/My Projects' link on menu when signed in that has Dashboard links?
 [] Add 'Edit Project' page
@@ -251,10 +260,6 @@ Before launch:
 
 [] Add recommendation engine (predictor gem?)
 [] Blazer gem
-
-[] Email 3 people about GW interview
-[] Write GW interview script
-[] Interview as many of the big Patreon creators as possible, offer 0% fee (some of them are paying $1500/mo) as a thank you. Attracting big names will garner a lot of attention
 
 [] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
 	[] Write outline
