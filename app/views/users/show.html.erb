@@ -1,0 +1,23 @@
+<body class="body-class">
+	<%= render '/shared/signup_modal' %>
+	<%= render '/shared/login_modal' %>
+	<%= render '/shared/nav' %>
+	<% if current_user && current_user == @user %>
+	  <div class="user-profile-section">
+	    <div class="w-container">
+	      <h1 class="user-profile-h1">User Profile</h1>
+				<h4 class="user-profile-h4">for <%= current_user.email %></h4>
+				<div class="dashboard-div-account-balance">
+          <% Project.find(user: @user).each do |p| %>
+            <h6 class="dashboard-account-balance"><%= p.title %></h6>
+          <% end %>
+				</div>
+      </div>
+	  </div>
+	<% else %>
+		You are not allowed to access this page
+	<% end %>
+</body>
+<footer>
+	<%= render '/shared/footer' %>
+</footer>
