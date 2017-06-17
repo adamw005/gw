@@ -8,7 +8,7 @@
 	      <h1 class="user-profile-h1">User Profile</h1>
 				<h4 class="user-profile-h4">for <%= current_user.email %></h4>
 				<div class="user-profile-projects">
-          <% Project.find_by(user: @user.id).each do |p| %>
+          <% @user.projects.each do |p| %>
             <h6 class="user-profile-title"><%= p.title %></h6>
           <% end %>
 				</div>
