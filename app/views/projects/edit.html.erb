@@ -40,7 +40,7 @@
 
 					<label for="box_image">Image</label>
 					<%= f.file_field :box_image, data: {name: 'box-image'}, class: "w-input", id: "box-image", accept: "image/*" %>
-<%
+          <%
           # <div class="rewards-creation-div" id="rewards-creation-div">
           #   <h4>Rewards</h4>
 					# 	<script type="text/javascript">
@@ -48,24 +48,24 @@
 					# 	</script>
 					# 	<%= render 'rewards_tier_form', f: f %>
           # </div>
-%>
-					<div>
-						<a class="add-tier-button w-button" id="add-tier-button" href="#">+ Add tier</a>
-						<script type="text/javascript">
-							$('#add-tier-button').click(function() {
-								rewards_tier_index = rewards_tier_index + 1;
-								$("#rewards-creation-div").append('<%= escape_javascript("#{render 'rewards_tier_form', f: f, child_index: @indx}").html_safe %>');
-							});
-						</script>
-					</div>
-
-					<div class="rewards-creation-div" id="goals-creation-div">
-            <h4>Goals</h4>
-						<script type="text/javascript">
-							var goals_tier_index = 0;
-						</script>
-						<%= render 'goal_form', f: f %>
-          </div>
+					# <div>
+					# 	<a class="add-tier-button w-button" id="add-tier-button" href="#">+ Add tier</a>
+					# 	<script type="text/javascript">
+					# 		$('#add-tier-button').click(function() {
+					# 			rewards_tier_index = rewards_tier_index + 1;
+					# 			$("#rewards-creation-div").append('<%= escape_javascript("#{render 'rewards_tier_form', f: f, child_index: @indx}").html_safe %>');
+					# 		});
+					# 	</script>
+					# </div>
+          #
+					# <div class="rewards-creation-div" id="goals-creation-div">
+          #   <h4>Goals</h4>
+					# 	<script type="text/javascript">
+					# 		var goals_tier_index = 0;
+					# 	</script>
+					# 	<%= render 'goal_form', f: f %>
+          # </div>
+          %>
 					<div>
 						<a class="add-tier-button w-button" id="add-goal-button" href="#">+ Add goal</a>
 						<script type="text/javascript">
