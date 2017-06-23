@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
-  <title>Create Project</title>
-  <meta content="Create Project" property="og:title">
+  <title>Edit Project</title>
+  <meta content="Edit Project" property="og:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
@@ -19,7 +19,7 @@
 	<%= render '/shared/nav' %>
   <div>
     <div class="create-project-container w-container">
-      <h2>Create your project</h2>
+      <h2>Edit your project</h2>
       <div class="w-form">
 			<%= form_for(@project, data: {name: "Email Form 2"}, html: {class: 'w-clearfix', id: "email-form-2", name: "email-form-2"}, url: '/projects/update', method: 'post' ) do |f| %>
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -40,14 +40,15 @@
 
 					<label for="box_image">Image</label>
 					<%= f.file_field :box_image, data: {name: 'box-image'}, class: "w-input", id: "box-image", accept: "image/*" %>
-
-          <div class="rewards-creation-div" id="rewards-creation-div">
-            <h4>Rewards</h4>
-						<script type="text/javascript">
-					  	var rewards_tier_index = 0;
-						</script>
-						<%= render 'rewards_tier_form', f: f %>
-          </div>
+<%
+          # <div class="rewards-creation-div" id="rewards-creation-div">
+          #   <h4>Rewards</h4>
+					# 	<script type="text/javascript">
+					#   	var rewards_tier_index = 0;
+					# 	</script>
+					# 	<%= render 'rewards_tier_form', f: f %>
+          # </div>
+%>
 					<div>
 						<a class="add-tier-button w-button" id="add-tier-button" href="#">+ Add tier</a>
 						<script type="text/javascript">
