@@ -204,6 +204,7 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Fix subscriptions over time in Dashboard. Should this be Subscription on PastTransaction?
 [x] New User Registration fields are required in html form, but not all of them are required in Rails
 	[x] Just need to add `validates :country_id, presence: true` to user.rb
+<<<<<<< HEAD
 [x] Read
 [x] Apply to 5 jobs
 	[x] Write job interview responses
@@ -231,12 +232,36 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Find a URL
 [x] Create titles for pages
 [x] SSL?
+=======
+>>>>>>> 530eb64bfbacad6bb276efd9b24c607c03f9f9bc
 
 
 
 Before launch:
 
+<<<<<<< HEAD
 ***	PUT ALL OF THIS IN agile backlog and prioritize	***
+=======
+[] Create more realistic projects with more subscribers
+	[x] Turn off email authentication temporarily
+	[x] Install Faker gem
+	[x] Create many fake users (for Subscriptions and Comments)
+	[x] Automate their Stripe account creation with test card
+	[] Create/update fake projects to be more realistic (maybe pay Fiverr people to write copy)
+	[x] Add subscriptions and comments to projects
+[] Check logic in Day 1..5 charges
+	[] Fix obfuscate_id error: https://github.com/namick/obfuscate_id/issues/59
+
+[] Do something with received Stripe webhooks
+[] Should we show `fields_needed` before the account is disabled? Yes
+	[x] Add the rest of `fields_needed` attributes
+[] Create admin account so I can view everything
+	[] Add field to User model
+	[] Defaults to false, can only be changed in console?
+	[] Add to all views that check for current_user == User, or current_user is admin
+[] Run small sample of FB ads
+[] Verify HotJar feedback forms are working
+>>>>>>> 530eb64bfbacad6bb276efd9b24c607c03f9f9bc
 
 Interview customers -> Pivot and redesign -> Market and iterate
 
@@ -245,9 +270,19 @@ Interview customers -> Pivot and redesign -> Market and iterate
 [x] Publish to site
 	[x] Restart at work to get Admin access, install apps
 
+<<<<<<< HEAD
 [] Add 'Edit Project' page
 	[] Change project images (probably do edit page 1st)
 [] Backer counts are still wrong
+=======
+[x] Read
+[x] Apply to 5 jobs
+[x] Write job interview responses
+[] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
+	[] Write outline
+	[] Get images
+	[] Write post
+>>>>>>> 530eb64bfbacad6bb276efd9b24c607c03f9f9bc
 
 [] Add better copy to projects and site
 	[] Get more pages written
@@ -299,7 +334,13 @@ Groundworks needs to eventually be the platform that delivers your subscription 
 		Specific Social Proof success
 		High level Social Proof
 
+<<<<<<< HEAD
 [] Make section for Goals on Project page
+=======
+[x] Find a URL
+[] Create titles for pages
+[] SSL?
+>>>>>>> 530eb64bfbacad6bb276efd9b24c607c03f9f9bc
 
 [] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
 	[] Write outline

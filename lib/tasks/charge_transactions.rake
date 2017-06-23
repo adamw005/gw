@@ -6,7 +6,7 @@ namespace :charge_transactions do
   task :start => :environment do
 
 		### Charge Transactions ###
-		if (1..8).include?(Time.now.day)	#1..5
+		if (1..5).include?(Time.now.day)	#1..5
 	    puts "Attempting to charge TransactionQueues"
 
 			# Group TransactionQueue by User with summed amounts

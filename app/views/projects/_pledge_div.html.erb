@@ -1,6 +1,6 @@
 <div class="pledge-div">
 	<h4 class="pledge-title"><%= r.title %></h4>
-	<h6 class="patron-count"><%= r.project.subscriptions.count %> Backers</h6>
+	<h6 class="patron-count"><%= Subscription.where(rewards_tier_id: r.id).count %> Backers</h6>
 	<%= r.body %>
 	<div class="button-block">
 		<!-- If user is signed in and is subscribed at this rewards_tier level -->
