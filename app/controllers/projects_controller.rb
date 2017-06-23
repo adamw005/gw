@@ -24,6 +24,14 @@ class ProjectsController < ApplicationController
 		@project.goals.build
   end
 
+	def edit
+		if params[:id]
+			@project = Project.find(params[:id])
+		else
+			@project = Project.find_by(slug: params[:slug])
+		end
+	end
+
   def create
     @project = Project.new project_params
 		# If User does not have Stripe account_id, create one

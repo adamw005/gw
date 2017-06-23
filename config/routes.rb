@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 	get '/:slug', to: 'projects#show', as: 'projects_slug'
 	get 'settings/withdraw/:id', to: 'settings#withdraw', as: 'withdraw'
 	get 'users/show/:id', to: 'users#show', as: 'user_show'
+	get 'projects/edit/:slug', to: 'projects#edit', as: 'edit_project'
 
 	resources :charges
 

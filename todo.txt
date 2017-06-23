@@ -228,26 +228,59 @@ rails g model PastTransaction type:string amount:decimal project:references stat
 [x] Turn off 'show errors' in Rails
 [x] Customize Devise Email views
 [x] Change Devise email address
+[x] Find a URL
+[x] Create titles for pages
+[x] SSL?
+
 
 
 Before launch:
 
 ***	PUT ALL OF THIS IN agile backlog and prioritize	***
 
+Interview customers -> Pivot and redesign -> Market and iterate
+
+[x] Review WriterAccess pages
+[x] Request revision
+[x] Publish to site
+	[x] Restart at work to get Admin access, install apps
+
+[] Add 'Edit Project' page
+	[] Change project images (probably do edit page 1st)
+[] Backer counts are still wrong
+
+[] Add better copy to projects and site
+	[] Get more pages written
+		[] Review
+		[] Revise
+		[] Publish
+	[] Only show comments/posts to subscribers
+
+[] Post to reddit/patreon
+
+[x] Create Google Form for potential interviewees
+	Creator or Patron, links to Patreons, How long using it, email, Other crowdfunding platforms you've used
+[] Get emails for as many patreon creators and supporters as you can
+[] Email them for 15 minute phone interview for $25 Amazon gift card
+
+
 [x] Write GW interview script
 [] Email 3 people about GW interview
 	[x] Neshcom
-	[] Jury
-	[] Brian Brushwood
-	[] Andrew Mayne
+	[] Jury	justinrobertyoung@gmail.com
+	[] Brian Brushwood	brian@shwood.com
+	[] Andrew Mayne	andrew@andrewmayne.com
 	[] Tom Merritt
-[] Email top 20 of big Patreon creators
+[] Email top 20 big Patreon creators
+	[] Get list of email addresses
  	[] Offer 0% fee (some of them are paying $1500/mo) as a thank you email (after redesign). Attracting big names will garner a lot of attention
 
+[x] Add 'Edit User(Account)' page
+[x] Add 'Account/My Projects' link on menu when signed in that has Dashboard links?
 [] Add contact options
-[] Add 'Edit User(Account)' page
-[] Add 'Account/My Projects' link on menu when signed in that has Dashboard links?
-[] Add 'Edit Project' page
+	[] Create email address
+
+Groundworks needs to eventually be the platform that delivers your subscription content (podcasts/audio, live streams, videos, images, writing)
 
 [] Do something with received Stripe webhooks
 [] Should we show `fields_needed` before the account is disabled? Yes
@@ -258,18 +291,6 @@ Before launch:
 	[] Add to all views that check for current_user == User, or current_user is admin
 [] Run small sample of FB ads
 
-[] Add recommendation engine (predictor gem?)
-[] Blazer gem
-
-[] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
-	[] Write outline
-	[] Get images
-	[] Write post
-
-
-[] Have a nice design created on 99 designs
-	[] Create a list/screenshot of each page
-
 [] Write copy for landing page
 	[] Sections
 		Banner Image & Title
@@ -278,16 +299,24 @@ Before launch:
 		Specific Social Proof success
 		High level Social Proof
 
-[] Find a URL
-[] Create titles for pages
-[] SSL?
+[] Make section for Goals on Project page
 
-[] Talk to Matt about funding
+[] Write 3 articles for Adamwinn.com (Pricing, Customer app, Demogio)
+	[] Write outline
+	[] Get images
+	[] Write post
+
+[] Have a nice design created on 99 designs
+	[] Create a list/screenshot of each page
+
+[] Add recommendation engine (predictor gem?)
+[] Blazer gem
+
+
+[] Talk to Matt about funding (after interviews and first pivot)
 
 [] Create tests for everything (only a priority once we have any traction at all?)
 	[] Create more subscription data and verify all Stripe API stuff works as it should
-
-[] Make section for Goals on Project page
 
 [] PastTransaction should be STI, I hacked it using 'type_of'
 [] Add flash messages into controller and applicaiton.html.erb
