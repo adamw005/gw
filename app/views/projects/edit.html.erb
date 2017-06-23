@@ -21,7 +21,7 @@
     <div class="create-project-container w-container">
       <h2>Create your project</h2>
       <div class="w-form">
-			<%= form_for(@project, data: {name: "Email Form 2"}, html: {class: 'w-clearfix', id: "email-form-2", name: "email-form-2"}, url: '/projects/create', method: 'post' ) do |f| %>
+			<%= form_for(@project, data: {name: "Email Form 2"}, html: {class: 'w-clearfix', id: "email-form-2", name: "email-form-2"}, url: '/projects/update', method: 'post' ) do |f| %>
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 				<%= f.hidden_field :user_id, :value => current_user.id %>
           <label for="title">Title</label>
