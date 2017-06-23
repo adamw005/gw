@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
 		end
 	  if @project.update_attributes(project_params)
 	    flash[:notice] = 'Profile was successfully updated.'
-	    redirect_to(@project)
+	    redirect_to(projects_slug_path(@project.slug))
 	  else
 	    render "edit"
 	  end
