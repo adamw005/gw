@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'projects/index'
   get 'projects/new'
 	post 'projects/create'
+	post 'projects/update'
 	post 'posts/create'
 	post 'comments/create'
 	post 'subscriptions/create'

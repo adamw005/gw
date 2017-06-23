@@ -32,6 +32,20 @@ class ProjectsController < ApplicationController
 		end
 	end
 
+	def update
+		if params[:id]
+			@project = Project.find(params[:id])
+		else
+			@project = Project.find_by(slug: params[:slug])
+		end
+	  if @project.update_attributes(params[:project])
+	    flash[:notice] = 'Profile was successfully updated.'
+	    redirect_to(@project)
+	  else
+	    render "edit"
+	  end
+	end
+
   def create
     @project = Project.new project_params
 		# If User does not have Stripe account_id, create one
