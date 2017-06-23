@@ -24,6 +24,7 @@
 			<%= form_for(@project, data: {name: "Email Form 2"}, html: {class: 'w-clearfix', id: "email-form-2", name: "email-form-2"}, url: '/projects/update', method: 'post' ) do |f| %>
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 				<%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :project_id, :value => @project.id %>
           <label for="title">Title</label>
 					<%= f.text_field :title, data: {name: 'title'}, class: "w-input", id: "title", maxlength: "256", placeholder: "Billy's Podcast", required: "required", type:"text", autofocus: 'true' %>
 
@@ -41,7 +42,7 @@
 					<label for="box_image">Image</label>
 					<%= f.file_field :box_image, data: {name: 'box-image'}, class: "w-input", id: "box-image", accept: "image/*" %>
 
-          <input class="submit-project-button w-button" data-wait="Please wait..." type="submit" value="Create Project"><a class="cancel-button w-button" href="#">Cancel</a>
+          <input class="submit-project-button w-button" data-wait="Please wait..." type="submit" value="Update Project"><a class="cancel-button w-button" href="#">Cancel</a>
 				<% end %>
         <div class="w-form-done">
           <div>Thank you! Your submission has been received!</div>

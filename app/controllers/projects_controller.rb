@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def show
 		if params[:id]
