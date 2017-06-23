@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
 		else
 			@project = Project.find_by(slug: params[:slug])
 		end
-	  if @project.update_attributes(params[:project])
+	  if @project.update_attributes(project_params)
 	    flash[:notice] = 'Profile was successfully updated.'
 	    redirect_to(@project)
 	  else
