@@ -68,6 +68,7 @@
 										<%= link_to 'Create Release', releases_create_path(project_id: @project.id), method: 'post', class: 'create-release-text', confirm: "Are you sure ?" %>
 									<% end %>
 								<% end %>
+                <br>
                 <%= @project.body.html_safe %>
 							</div>
               <div class="w-col w-col-3">
