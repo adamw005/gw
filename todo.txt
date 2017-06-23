@@ -260,7 +260,7 @@ Interview customers -> Pivot and redesign -> Market and iterate
 		[] Revise
 		[] Publish
 	[] Have posts for each project written
-
+	[] Hire someone to write landing page copy
 
 [] Get emails for as many patreon creators and supporters as you can
 [] Email them for 15 minute phone interview for $25 Amazon gift card
