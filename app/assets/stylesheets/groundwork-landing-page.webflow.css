@@ -357,6 +357,10 @@
   line-height: 68px;
 }
 
+.landing-col {
+  margin-top: 1rem;  
+}
+
 @font-face {
   font-family: 'Fontawesome';
   src: url('/assets/FontAwesome.otf') format('opentype');
