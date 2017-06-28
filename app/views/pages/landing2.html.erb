@@ -51,7 +51,7 @@
   <div class="projects-color sample-section">
     <div class="sample-container w-container">
       <div class="benefit-row w-row">
-        <h1>Meet our Creators</h3>
+        <h1 class="landing-row-h1">Meet our Creators</h1>
 				<% Project.all.limit(3).order("updated_at DESC").each do |p| %>
         <a class="sample-col w-clearfix w-col w-col-4" href="<%= projects_slug_path(p.slug) %>">
           <div class="sample-border"></div><img class="sample-image" src="<%= p.box_image.url(:medium) %>">
@@ -67,6 +67,7 @@
   </div>
   <div class="specific-section">
     <div class="specific-container w-container">
+      <h1 class="landing-row-h1">Here's what our creators say..</h1>
       <div class="specific-profile"></div>
       <h4 class="specific-name">Alex Banner, 'The Old West'</h4>
       <blockquote class="block-quote">MyGroundworks has changed my life. I now make enough money to do what I love!</blockquote>

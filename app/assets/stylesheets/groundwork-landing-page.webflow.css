@@ -361,6 +361,11 @@
   margin-top: 1rem;
 }
 
+.landing-row-h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 @font-face {
   font-family: 'Fontawesome';
   src: url('/assets/FontAwesome.otf') format('opentype');
