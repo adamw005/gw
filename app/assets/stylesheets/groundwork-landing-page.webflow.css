@@ -1,7 +1,7 @@
 .banner-div {
   overflow: visible;
   height: 80vh;
-  background-image: url('/assets/rsz_beach_image.jpg');
+  background-image: url('/assets/bg-mic.jpg');
   background-position: 0px 50%;
   background-size: cover;
   background-attachment: fixed;
@@ -358,7 +358,7 @@
 }
 
 .landing-col {
-  margin-top: 1rem;  
+  margin-top: 1rem;
 }
 
 @font-face {
