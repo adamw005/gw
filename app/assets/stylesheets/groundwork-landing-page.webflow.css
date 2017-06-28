@@ -1,8 +1,8 @@
 .banner-div {
-  overflow: visible;
+  /*overflow: visible;*/
   height: 80vh;
   background-image: url('/assets/bg-mic.jpg');
-  background-position: 0px 50%;
+  /*background-position: 0px 50%;*/
   background-size: cover;
   background-attachment: fixed;
 }
