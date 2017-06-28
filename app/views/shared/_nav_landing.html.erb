@@ -6,6 +6,7 @@
 				<%= link_to('My Profile', user_show_path(current_user.id), class: 'w-nav-link') %>
 			  <%= link_to('Sign out', destroy_user_session_path, :method => :delete, class: 'landing-nav-link w-nav-link') %>
 			<% else %>
+				<a class="landing-nav-link w-nav-link" data-ix="signup-button" href="#">Get Started</a>
 				<a class="landing-nav-link w-nav-link" data-ix="signup-button" href="#">Sign up</a>
 				<a class="landing-nav-link w-nav-link" data-ix="login-button" href="#">Sign in</a>
 			<% end %>
