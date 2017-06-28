@@ -253,6 +253,13 @@ Interview customers -> Pivot and redesign -> Market and iterate
 [x] Write GW interview script
 [x] Add 'Edit User(Account)' page
 [x] Add 'Account/My Projects' link on menu when signed in that has Dashboard links?
+[x] Write copy for landing page
+	[x] Sections
+		Banner Image & Title
+		Benefits
+		Sample Projects (See the final product and social proof)
+		Specific Social Proof success
+		High level Social Proof
 
 [] Add better copy to projects and site
 	[] Get more pages written
@@ -260,7 +267,11 @@ Interview customers -> Pivot and redesign -> Market and iterate
 		[] Revise
 		[] Publish
 	[] Have posts for each project written
+[] Outline more detailed landing page
 	[] Hire someone to write landing page copy
+[] Add ability to only show Posts to subscribers
+[] Podcast/RSS Feed for subscribers only
+
 
 [] Get emails for as many patreon creators and supporters as you can
 [] Email them for 15 minute phone interview for $25 Amazon gift card
@@ -289,13 +300,6 @@ Groundworks needs to eventually be the platform that delivers your subscription 
 	[] Add to all views that check for current_user == User, or current_user is admin
 [] Run small sample of FB ads
 
-[] Write copy for landing page
-	[] Sections
-		Banner Image & Title
-		Benefits
-		Sample Projects (See the final product and social proof)
-		Specific Social Proof success
-		High level Social Proof
 
 [] Make section for Goals on Project page
 
