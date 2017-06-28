@@ -120,3 +120,24 @@
 	<%= render '/shared/footer' %>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
+
+
+<script>
+(function(){
+
+  var parallax = document.querySelectorAll(".banner-div"),
+      speed = 0.5;
+
+  window.onscroll = function(){
+    [].slice.call(parallax).forEach(function(el,i){
+
+      var windowYOffset = window.pageYOffset,
+          elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
+
+      el.style.backgroundPosition = elBackgrounPos;
+
+    });
+  };
+
+})();
+</script>
