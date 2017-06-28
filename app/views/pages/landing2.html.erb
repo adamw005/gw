@@ -22,7 +22,7 @@
   <div class="banner-div">
     <div class="title-div">
       <h1 class="heading-2">Make money doing what you love</h1>
-      <h2 class ="heading-2">Start earning today with a <br>membership business your fans will love.</h2>
+      <h2 class ="heading-3">Start earning today with a <br>membership business your fans will love.</h2>
       <div class="button-div"><a class="browse-button w-button" href="/projects/index">Browse Projects</a><a class="button w-button" href="/projects/new">Start my page</a>
       </div>
     </div>
@@ -51,6 +51,7 @@
   <div class="projects-color sample-section">
     <div class="sample-container w-container">
       <div class="benefit-row w-row">
+        <h1>Meet our Creators</h3>
 				<% Project.all.limit(3).order("updated_at DESC").each do |p| %>
         <a class="sample-col w-clearfix w-col w-col-4" href="<%= projects_slug_path(p.slug) %>">
           <div class="sample-border"></div><img class="sample-image" src="<%= p.box_image.url(:medium) %>">
