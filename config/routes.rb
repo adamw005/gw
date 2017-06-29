@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 	post 'stripe_infos/submit_fields_needed', to: 'stripe_infos#submit_fields_needed', as: 'stripe_infos_submit_fields_needed'
 	post 'stripe/webhooks', to: 'stripe_infos#stripe_webhooks', as: 'stripe_wehbooks'
 	post 'releases/create'
+	post 'rss_s3s/create'
 	delete 'subscriptions/destroy/:id', to: 'subscriptions#destroy', as: 'subscriptions_destroy'
 	get 'projects/dashboard/:id', to: 'projects#dashboard', as: 'dashboard'
 	root to: 'pages#landing2'
