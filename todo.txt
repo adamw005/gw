@@ -260,6 +260,8 @@ Interview customers -> Pivot and redesign -> Market and iterate
 		Sample Projects (See the final product and social proof)
 		Specific Social Proof success
 		High level Social Proof
+[x] Outline more detailed landing page
+	[x] Hire someone to write landing page copy
 
 [] Add better copy to projects and site
 	[] Get more pages written
@@ -267,8 +269,6 @@ Interview customers -> Pivot and redesign -> Market and iterate
 		[] Revise
 		[] Publish
 	[] Have posts for each project written
-[] Outline more detailed landing page
-	[] Hire someone to write landing page copy
 [] Add ability to only show Posts to subscribers
 [] Podcast/RSS Feed for subscribers only
 
