@@ -7,7 +7,7 @@ class RssS3sController < ApplicationController
   def create
     @rss_s3 = RssS3.new rss_s3_params
     if @rss_s3.save
-      redirect_to projects_path(@rss_s3.project_id, anchor: "RssS3s")
+      redirect_to projects_path(@rss_s3.project_id)
     else
       render :action => 'new'
     end
@@ -21,7 +21,7 @@ class RssS3sController < ApplicationController
 	private
 
 	def rss_s3_params
-		params.require(:rss_s3).permit(:file)
+		params.require(:rss_s3).permit(:file, :project_id)
 	end
 
 end

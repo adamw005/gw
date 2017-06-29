@@ -69,6 +69,7 @@
 									<% end %>
 
                   <%= form_for @rss_s3, url: {controller: "rss_s3s", action: "create"} do |f| %>
+                  <%= f.hidden_field :project_id, :value => @project.id %>
                   <label for="box_image">RSS File</label>
                   <%= f.file_field :file, class: "w-input", id: "box-image" %>
                   <input class="submit-project-button w-button" data-wait="Please wait..." type="submit" value="Post to RSS Feed">
