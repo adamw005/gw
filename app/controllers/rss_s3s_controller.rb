@@ -13,6 +13,11 @@ class RssS3sController < ApplicationController
     end
   end
 
+  def show
+    @rss_s3 = RssS3.find(params[:id])
+    redirect_to @rss_s3.file.url
+  end
+
 	private
 
 	def rss_s3_params
