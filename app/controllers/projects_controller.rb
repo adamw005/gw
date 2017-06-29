@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
 			@project = Project.find_by(slug: params[:slug])
 		end
 		@post = @project.posts.build
+		@rss_s3 = @project.rss_s3s.build
   end
 
   def index
