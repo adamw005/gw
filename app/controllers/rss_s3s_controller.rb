@@ -14,7 +14,7 @@ class RssS3sController < ApplicationController
   end
 
   def show
-    @rss_s3 = RssS3.find(params[:hashid])
+    @rss_s3 = RssS3.find_by(hashid: params[:hashid])
     redirect_to @rss_s3.file.url
   end
 
