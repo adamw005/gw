@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 	get 'settings/withdraw/:id', to: 'settings#withdraw', as: 'withdraw'
 	get 'users/show/:id', to: 'users#show', as: 'user_show'
 	get 'projects/edit/:slug', to: 'projects#edit', as: 'edit_project'
+	get 'rss_s3s/:hashid', to: 'rss_s3s#show', as: 'rss_s3'
 
 	resources :charges
 
