@@ -91,6 +91,10 @@ GEM
       activesupport (>= 4.2.0)
     groupdate (3.2.0)
       activesupport (>= 3)
+    hashid-rails (1.0.0)
+      activerecord (>= 4.0)
+      hashids (~> 1.0)
+    hashids (1.0.3)
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -219,6 +223,7 @@ DEPENDENCIES
   devise
   faker
   groupdate
+  hashid-rails
   jbuilder (~> 2.0)
   jquery-rails
   obfuscate_id
@@ -238,4 +243,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH
-   1.13.5
+   1.13.6
