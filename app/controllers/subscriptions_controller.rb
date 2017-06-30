@@ -17,6 +17,7 @@ class SubscriptionsController < ApplicationController
 		if subscription_params[:amount].to_i >= RewardsTier.find(subscription_params[:rewards_tier_id]).min_amount.to_i
 	    @subscription = Subscription.new subscription_params
 	    if @subscription.save
+				RssFeed.create(subscription_id: @subscription.id)
 	      redirect_to projects_path(@subscription.project.id)
 	    else
 				# If it doesn't save, it's probably because use can only subscribe to project-rewards_tier once [	validates_uniqueness_of :user_id, scope: :rewards_tier_id ] in subscription.rb
