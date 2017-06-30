@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :body, :release, :project_id, rss_s3s_attributes:[:id, :file])
+		params.require(:post).permit(:title, :body, :release, :project_id, rss_s3_attributes:[:id, :file])
 	end
 
 end
