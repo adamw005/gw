@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 	get 'users/show/:id', to: 'users#show', as: 'user_show'
 	get 'projects/edit/:slug', to: 'projects#edit', as: 'edit_project'
 	get 'rss_s3s/:hashid', to: 'rss_s3s#show', as: 'rss_s3'
+	get 'rss_feeds/:hashid', to: 'rss_feeds#show', as: 'rss_feed'
 
 	resources :charges
 
