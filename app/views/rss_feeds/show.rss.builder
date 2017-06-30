@@ -7,8 +7,8 @@ xml.rss :version => "2.0" do
 
     @rss_urls.each do |r|
       xml.item do
-        xml.title Project.find(@rss_feed.subscription.project_id).title
-        xml.description Project.find(@rss_feed.subscription.project_id).title
+        xml.title r.title #Project.find(@rss_feed.subscription.project_id).title
+        xml.description truncate(r.body, :length => 80) #Project.find(@rss_feed.subscription.project_id).title
         xml.pubDate r.created_at.to_s(:rfc822)
         xml.link 'https:' + r.file.url
         xml.guid 'https:' + r.file.url

@@ -15,7 +15,8 @@ class RssFeedsController < ApplicationController
 
   def show
     @rss_feed = RssFeed.find(params[:hashid])
-    @rss_urls = RssS3.where(project_id: @rss_feed.subscription.project_id)
+    # @rss_urls = RssS3.where(project_id: @rss_feed.subscription.project_id)
+		@rss_urls = @rss_feed.subscription.project.posts.rss_s3s
 		respond_to do |format|
 			format.rss {render :layout => false}
 		end
