@@ -4,6 +4,14 @@
 	<label for="title">Title</label>
 	<%= p.text_field :title, data: {name: 'title'}, class: "w-input", id: "title", maxlength: "256", placeholder: "Post Title", required: "required",  autofocus: 'true' %>
 
+	<%= form_for @rss_s3, url: {controller: "rss_s3s", action: "create"} do |f| %>
+	<%= f.hidden_field :project_id, :value => @project.id %>
+
+	<%= fields_for @rss_s3 do |r| %>
+	<label for="box_image">RSS File</label>
+	<%= r.file_field :file, class: "w-input", id: "box-image" %>
+	<% end %>
+
 	<label for="body">Body</label>
 	<%= p.trix_editor :body %>
 	<% # p.text_area :body, data: {name: 'body'}, class: "w-input", id: "body", maxlength: "5000", placeholder: "Post an update..", required: "required", autofocus: 'true' %>
