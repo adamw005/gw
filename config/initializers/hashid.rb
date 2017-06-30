@@ -7,8 +7,8 @@ Hashid::Rails.configure do |config|
 
   # The alphabet to use for generating hashids
   config.alphabet = "abcdefghijklmnopqrstuvwxyz" \
-                    # "ABCDEFGHIJKLMNOPQRSTUVWXYZ" \
                     "1234567890"
+                    # "ABCDEFGHIJKLMNOPQRSTUVWXYZ" \
 
   # Whether to override the `find` method
   config.override_find = true
